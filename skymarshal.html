@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyMarshal Multi-Agent Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: #0a1628; color: #e0e6ed; min-height: 100vh; }
+        .header { background: linear-gradient(135deg, #1a2744, #0d1a2d); padding: 20px; border-bottom: 2px solid #2d4a6f; }
+        .header h1 { font-size: 26px; color: #4fc3f7; }
+        .header h1::before { content: "✈ "; }
+        .controls { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; align-items: center; }
+        .controls select { padding: 10px 15px; border-radius: 8px; border: 1px solid #2d4a6f; background: #1a2744; color: #e0e6ed; min-width: 350px; }
+        .controls button { padding: 10px 20px; background: #00897b; color: white; border: none; border-radius: 8px; cursor: pointer; }
+        .controls button:hover { background: #00695c; }
+        .update-time { color: #81d4fa; font-size: 12px; }
+        .main { padding: 20px; }
+        .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+        .metric { background: linear-gradient(135deg, #1a2744, #152238); padding: 18px; border-radius: 10px; border: 1px solid #2d4a6f; text-align: center; }
+        .metric:hover { border-color: #4fc3f7; transform: translateY(-2px); transition: all 0.2s; }
+        .metric-val { font-size: 28px; font-weight: 700; color: #4fc3f7; }
+        .metric-lbl { font-size: 11px; color: #81d4fa; text-transform: uppercase; margin-top: 5px; }
+        .metric.critical .metric-val { color: #ef5350; }
+        .metric.warning .metric-val { color: #ffb74d; }
+        .metric.success .metric-val { color: #66bb6a; }
+        .agents { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .agent { background: linear-gradient(135deg, #1a2744, #152238); border-radius: 10px; border: 1px solid #2d4a6f; overflow: hidden; }
+        .agent-head { padding: 12px 15px; background: linear-gradient(135deg, #2d4a6f, #1a3a5c); display: flex; align-items: center; gap: 10px; }
+        .agent-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+        .agent-name { font-weight: 600; flex: 1; }
+        .agent-status { padding: 4px 10px; border-radius: 15px; font-size: 10px; font-weight: 600; }
+        .status-active { background: rgba(102,187,106,0.2); color: #66bb6a; }
+        .status-warning { background: rgba(255,183,77,0.2); color: #ffb74d; }
+        .status-critical { background: rgba(239,83,80,0.2); color: #ef5350; }
+        .agent-body { padding: 15px; }
+        .agent-kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 12px; }
+        .kpi { background: #0d1a2d; padding: 10px; border-radius: 6px; text-align: center; }
+        .kpi-val { font-size: 22px; font-weight: 700; }
+        .kpi-lbl { font-size: 10px; color: #81d4fa; text-transform: uppercase; }
+        .alert-box { padding: 10px; border-radius: 6px; margin-top: 8px; font-size: 12px; }
+        .alert-risk { background: rgba(239,83,80,0.1); border: 1px solid #ef5350; color: #ffcdd2; }
+        .alert-action { background: rgba(102,187,106,0.1); border: 1px solid #66bb6a; color: #c8e6c9; }
+        .alert-title { font-weight: 600; margin-bottom: 5px; }
+        .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .panel { background: linear-gradient(135deg, #1a2744, #152238); border-radius: 10px; padding: 15px; }
+        .panel-risk { border: 1px solid #ef5350; }
+        .panel-action { border: 1px solid #66bb6a; }
+        .panel h3 { margin-bottom: 12px; font-size: 14px; }
+        .panel-risk h3 { color: #ef5350; }
+        .panel-action h3 { color: #66bb6a; }
+        .panel-item { display: flex; gap: 10px; padding: 8px; background: rgba(0,0,0,0.2); border-radius: 6px; margin-bottom: 6px; align-items: center; }
+        .panel-item-icon { font-size: 18px; }
+        .panel-item-text { font-size: 12px; }
+        .panel-item-agent { font-size: 10px; color: #81d4fa; }
+        @media (max-width: 768px) { .bottom { grid-template-columns: 1fr; } .controls select { min-width: 100%; } }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>SkyMarshal Disruption Recovery Dashboard</h1>
+    <div class="controls">
+        <select id="scenarioSelect"></select>
+        <button onclick="refresh()">Refresh</button>
+        <span class="update-time" id="updateTime"></span>
+    </div>
+</div>
+<div class="main">
+    <div class="metrics" id="metrics"></div>
+    <div class="agents" id="agents"></div>
+    <div class="bottom">
+        <div class="panel panel-risk" id="risksPanel"></div>
+        <div class="panel panel-action" id="actionsPanel"></div>
+    </div>
+</div>
+<script src="data.js"></script>
+</body>
+</html>
+
+<script>
+const SCENARIOS = {
+    1: {name: 'Bangkok Typhoon + Critical MEL Aircraft', date: '2026-01-19'},
+    2: {name: 'London Fog + Multiple Aircraft AOG', date: '2026-01-20'},
+    3: {name: 'Singapore Thunderstorms + MEL Expiry', date: '2026-01-21'},
+    4: {name: 'Paris Winter Storm + Cargo Crisis', date: '2026-01-22'},
+    5: {name: 'Dubai Sandstorm + Hub Congestion', date: '2026-01-23'},
+    6: {name: 'Multiple Aircraft AOG + Engine Failure', date: '2026-01-24'},
+    7: {name: 'Crew Out of Hours + Cabin Crew Crisis', date: '2026-01-25'},
+    8: {name: 'Runway Closure + Airspace Restrictions', date: '2026-01-27'},
+    9: {name: 'Security Threat + Airspace Diversion', date: '2026-01-28'},
+    10: {name: 'Medical Emergency + Tarmac Delay', date: '2026-01-29'},
+    11: {name: 'EY401 Typhoon to EY406 LIAC', date: '2026-01-31'}
+};
+
+const AGENTS = {
+    flight: {name: 'Flight Operations', icon: '✈️', color: '#4fc3f7'},
+    pax: {name: 'Passenger Services', icon: '👥', color: '#ba68c8'},
+    crew: {name: 'Crew Management', icon: '👨‍✈️', color: '#ffb74d'},
+    maint: {name: 'Maintenance', icon: '🔧', color: '#ef5350'},
+    cargo: {name: 'Cargo', icon: '📦', color: '#66bb6a'},
+    recovery: {name: 'Recovery Planning', icon: '📊', color: '#42a5f5'},
+    safety: {name: 'Safety & Compliance', icon: '🛡️', color: '#ff7043'}
+};
+
+let currentScenario = 1;
+
+function init() {
+    const sel = document.getElementById('scenarioSelect');
+    for (let id in SCENARIOS) {
+        const opt = document.createElement('option');
+        opt.value = id;
+        opt.textContent = `Scenario ${id}: ${SCENARIOS[id].name} (${SCENARIOS[id].date})`;
+        sel.appendChild(opt);
+    }
+    sel.onchange = e => { currentScenario = parseInt(e.target.value); refresh(); };
+    refresh();
+}
+
+function filter(data, sid) {
+    return (data || []).filter(r => r.scenario_id === sid);
+}
+
+function refresh() {
+    const sid = currentScenario;
+    const D = DASHBOARD_DATA;
+    
+    const flights = filter(D.flights_scenarios, sid);
+    const pax = filter(D.passengers, sid);
+    const bookings = filter(D.bookings, sid);
+    const crew = filter(D.crew_roster, sid);
+    const reserve = filter(D.reserve_crew_pool, sid);
+    const maint = filter(D.aircraft_maintenance_workorders, sid);
+    const aircraft = filter(D.aircraft_availability_mel, sid);
+    const cargo = filter(D.cargo_shipments, sid);
+    const recovery = filter(D.recovery_scenarios, sid);
+    const disruption = filter(D.disruption_events, sid)[0] || {};
+    const financial = filter(D.financial_impact, sid)[0] || {};
+    const safety = filter(D.safety_constraints, sid);
+    const weather = filter(D.weather, sid);
+    const oal = filter(D.oal_rebooking_options, sid);
+    const swap = filter(D.aircraft_swap_options, sid);
+    
+    // Global metrics
+    const delayed = flights.filter(f => f.delay_minutes > 0).length;
+    const cancelled = flights.filter(f => f.flight_status === 'CANCELLED').length;
+    const avgDelay = flights.length ? Math.round(flights.reduce((s,f) => s + (f.delay_minutes||0), 0) / flights.length) : 0;
+    const affectedPax = pax.filter(p => p.is_disrupted === true || p.is_disrupted === 'True').length;
+    
+    document.getElementById('metrics').innerHTML = `
+        <div class="metric"><div class="metric-val">${flights.length}</div><div class="metric-lbl">Flights</div></div>
+        <div class="metric ${delayed > 5 ? 'warning' : ''}"><div class="metric-val">${delayed}</div><div class="metric-lbl">Delayed</div></div>
+        <div class="metric ${cancelled > 0 ? 'critical' : ''}"><div class="metric-val">${cancelled}</div><div class="metric-lbl">Cancelled</div></div>
+        <div class="metric ${avgDelay > 60 ? 'critical' : avgDelay > 30 ? 'warning' : ''}"><div class="metric-val">${avgDelay}m</div><div class="metric-lbl">Avg Delay</div></div>
+        <div class="metric"><div class="metric-val">${pax.length.toLocaleString()}</div><div class="metric-lbl">Passengers</div></div>
+        <div class="metric ${affectedPax > 100 ? 'critical' : 'warning'}"><div class="metric-val">${affectedPax}</div><div class="metric-lbl">Affected</div></div>
+        <div class="metric"><div class="metric-val">${crew.length}</div><div class="metric-lbl">Crew</div></div>
+        <div class="metric ${(financial.total_cost_usd||0) > 100000 ? 'critical' : ''}"><div class="metric-val">$${((financial.total_cost_usd||0)/1000).toFixed(0)}K</div><div class="metric-lbl">Est Cost</div></div>
+    `;
+    
+    // Agent KPIs
+    const agentData = {
+        flight: {
+            status: cancelled > 2 ? 'critical' : delayed > 5 ? 'warning' : 'active',
+            kpis: [{l:'On-Time',v:flights.filter(f=>!f.delay_minutes).length},{l:'Delayed',v:delayed},{l:'Cancelled',v:cancelled},{l:'Swaps',v:swap.length}],
+            risks: weather.filter(w=>w.severity==='SEVERE').map(w=>`${w.weather_type} at ${w.airport_code}`),
+            actions: swap.length ? [`${swap.length} swap options available`] : []
+        },
+        pax: {
+            status: affectedPax > 500 ? 'critical' : affectedPax > 100 ? 'warning' : 'active',
+            kpis: [{l:'Total',v:pax.length},{l:'Disrupted',v:affectedPax},{l:'Rebooked',v:pax.filter(p=>p.rebook_status==='CONFIRMED').length},{l:'OAL Opts',v:oal.length}],
+            risks: pax.filter(p=>p.requires_wheelchair||p.is_unaccompanied_minor).length ? ['Special assistance pax affected'] : [],
+            actions: oal.length ? [`${oal.length} OAL rebooking options`] : []
+        },
+        crew: {
+            status: crew.filter(c=>c.duty_hours_remaining<2).length > 5 ? 'critical' : 'active',
+            kpis: [{l:'Assigned',v:crew.length},{l:'Available',v:crew.filter(c=>c.roster_status==='AVAILABLE').length},{l:'Reserve',v:reserve.length},{l:'Near Limit',v:crew.filter(c=>c.duty_hours_remaining<2).length}],
+            risks: crew.filter(c=>c.duty_hours_remaining<1).length ? ['Crew at duty limits'] : [],
+            actions: reserve.length ? [`${reserve.length} reserve crew ready`] : []
+        },
+        maint: {
+            status: aircraft.filter(a=>a.status==='AOG').length ? 'critical' : 'active',
+            kpis: [{l:'Work Orders',v:maint.length},{l:'AOG',v:aircraft.filter(a=>a.status==='AOG').length},{l:'MEL Items',v:aircraft.filter(a=>a.mel_category).length},{l:'Available',v:aircraft.filter(a=>a.status==='AVAILABLE').length}],
+            risks: aircraft.filter(a=>a.status==='AOG').map(a=>`${a.aircraft_registration} AOG`),
+            actions: maint.filter(m=>m.priority==='HIGH').length ? ['High priority maintenance'] : []
+        },
+        cargo: {
+            status: cargo.filter(c=>c.is_dangerous_goods===true||c.is_dangerous_goods==='True').length ? 'warning' : 'active',
+            kpis: [{l:'Shipments',v:cargo.length},{l:'DG Goods',v:cargo.filter(c=>c.is_dangerous_goods===true||c.is_dangerous_goods==='True').length},{l:'Temp Sens',v:cargo.filter(c=>c.is_temperature_sensitive===true||c.is_temperature_sensitive==='True').length},{l:'Priority',v:cargo.filter(c=>c.priority==='HIGH'||c.priority==='CRITICAL').length}],
+            risks: cargo.filter(c=>c.is_dangerous_goods).length ? ['DG goods need handling'] : [],
+            actions: []
+        },
+        recovery: {
+            status: recovery.filter(r=>r.status==='IN_PROGRESS').length ? 'active' : 'warning',
+            kpis: [{l:'Plans',v:recovery.length},{l:'Active',v:recovery.filter(r=>r.status==='IN_PROGRESS').length},{l:'Done',v:recovery.filter(r=>r.status==='COMPLETED').length},{l:'Pending',v:recovery.filter(r=>r.status==='PENDING').length}],
+            risks: [],
+            actions: recovery.filter(r=>r.priority==='HIGH').map(r=>r.action_type||'Recovery action')
+        },
+        safety: {
+            status: safety.filter(s=>s.is_violated===true||s.is_violated==='True').length ? 'critical' : 'active',
+            kpis: [{l:'Rules',v:safety.length},{l:'Active',v:safety.filter(s=>s.is_active===true||s.is_active==='True').length},{l:'Violations',v:safety.filter(s=>s.is_violated===true||s.is_violated==='True').length},{l:'Warnings',v:safety.filter(s=>s.severity==='WARNING').length}],
+            risks: safety.filter(s=>s.is_violated).map(s=>`${s.constraint_type} violation`),
+            actions: []
+        }
+    };
+    
+    renderAgents(agentData);
+    renderPanels(agentData);
+    document.getElementById('updateTime').textContent = `Updated: ${new Date().toLocaleTimeString()}`;
+}
+</script>
+
+<script>
+function renderAgents(data) {
+    const container = document.getElementById('agents');
+    container.innerHTML = '';
+    for (let id in AGENTS) {
+        const a = AGENTS[id];
+        const d = data[id];
+        const statusCls = d.status === 'critical' ? 'status-critical' : d.status === 'warning' ? 'status-warning' : 'status-active';
+        container.innerHTML += `
+            <div class="agent">
+                <div class="agent-head">
+                    <div class="agent-icon" style="background:${a.color}20;color:${a.color}">${a.icon}</div>
+                    <div class="agent-name">${a.name}</div>
+                    <span class="agent-status ${statusCls}">${d.status.toUpperCase()}</span>
+                </div>
+                <div class="agent-body">
+                    <div class="agent-kpis">
+                        ${d.kpis.map(k=>`<div class="kpi"><div class="kpi-val" style="color:${a.color}">${k.v}</div><div class="kpi-lbl">${k.l}</div></div>`).join('')}
+                    </div>
+                    ${d.risks.length ? `<div class="alert-box alert-risk"><div class="alert-title">⚠️ Risks</div>${d.risks.slice(0,2).map(r=>`<div>• ${r}</div>`).join('')}</div>` : ''}
+                    ${d.actions.length ? `<div class="alert-box alert-action"><div class="alert-title">✓ Actions</div>${d.actions.slice(0,2).map(r=>`<div>• ${r}</div>`).join('')}</div>` : ''}
+                </div>
+            </div>
+        `;
+    }
+}
+
+function renderPanels(data) {
+    let risks = [], actions = [];
+    for (let id in AGENTS) {
+        const a = AGENTS[id], d = data[id];
+        d.risks.forEach(r => risks.push({icon: a.icon, agent: a.name, text: r}));
+        d.actions.forEach(r => actions.push({icon: a.icon, agent: a.name, text: r}));
+    }
+    
+    document.getElementById('risksPanel').innerHTML = `
+        <h3>⚠️ Top Risks (${risks.length})</h3>
+        ${risks.length ? risks.slice(0,5).map(r=>`
+            <div class="panel-item">
+                <span class="panel-item-icon">${r.icon}</span>
+                <div><div class="panel-item-agent">${r.agent}</div><div class="panel-item-text" style="color:#ffcdd2">${r.text}</div></div>
+            </div>
+        `).join('') : '<div style="color:#66bb6a;padding:10px">No critical risks</div>'}
+    `;
+    
+    document.getElementById('actionsPanel').innerHTML = `
+        <h3>✓ Recommended Actions (${actions.length})</h3>
+        ${actions.length ? actions.slice(0,5).map(a=>`
+            <div class="panel-item">
+                <span class="panel-item-icon">${a.icon}</span>
+                <div><div class="panel-item-agent">${a.agent}</div><div class="panel-item-text" style="color:#c8e6c9">${a.text}</div></div>
+            </div>
+        `).join('') : '<div style="color:#81d4fa;padding:10px">No pending actions</div>'}
+    `;
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>

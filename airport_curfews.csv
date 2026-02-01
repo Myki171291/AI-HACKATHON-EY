@@ -1,0 +1,45 @@
+curfew_id,scenario_id,scenario_name,airport_code,airport_name,curfew_start_local,curfew_end_local,curfew_type,exceptions_allowed,exception_fee_usd,is_active
+CRF-1-LHR,1,Bangkok Typhoon + Critical MEL Aircraft,LHR,Heathrow,23:00,06:00,NOISE,N,28850,Y
+CRF-1-CDG,1,Bangkok Typhoon + Critical MEL Aircraft,CDG,Charles de Gaulle,00:00,05:00,NOISE,N,24069,Y
+CRF-1-FRA,1,Bangkok Typhoon + Critical MEL Aircraft,FRA,Frankfurt,23:00,05:00,NOISE,Y,25431,Y
+CRF-1-SYD,1,Bangkok Typhoon + Critical MEL Aircraft,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,N,10089,Y
+CRF-2-LHR,2,London Fog + Multiple Aircraft AOG,LHR,Heathrow,23:00,06:00,NOISE,Y,43468,Y
+CRF-2-CDG,2,London Fog + Multiple Aircraft AOG,CDG,Charles de Gaulle,00:00,05:00,NOISE,N,22759,Y
+CRF-2-FRA,2,London Fog + Multiple Aircraft AOG,FRA,Frankfurt,23:00,05:00,NOISE,N,35862,Y
+CRF-2-SYD,2,London Fog + Multiple Aircraft AOG,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,N,29803,Y
+CRF-3-LHR,3,Singapore Thunderstorms + MEL Expiry Cascade,LHR,Heathrow,23:00,06:00,NOISE,Y,24162,Y
+CRF-3-CDG,3,Singapore Thunderstorms + MEL Expiry Cascade,CDG,Charles de Gaulle,00:00,05:00,NOISE,Y,25461,Y
+CRF-3-FRA,3,Singapore Thunderstorms + MEL Expiry Cascade,FRA,Frankfurt,23:00,05:00,NOISE,N,17040,Y
+CRF-3-SYD,3,Singapore Thunderstorms + MEL Expiry Cascade,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,N,42704,Y
+CRF-4-LHR,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,LHR,Heathrow,23:00,06:00,NOISE,N,19761,Y
+CRF-4-CDG,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CDG,Charles de Gaulle,00:00,05:00,NOISE,N,15081,Y
+CRF-4-FRA,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FRA,Frankfurt,23:00,05:00,NOISE,Y,44905,Y
+CRF-4-SYD,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,N,34260,Y
+CRF-5-LHR,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,LHR,Heathrow,23:00,06:00,NOISE,Y,28288,Y
+CRF-5-CDG,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CDG,Charles de Gaulle,00:00,05:00,NOISE,N,27095,Y
+CRF-5-FRA,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FRA,Frankfurt,23:00,05:00,NOISE,N,26913,Y
+CRF-5-SYD,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,N,35787,Y
+CRF-6-LHR,6,Multiple Aircraft AOG + Engine Failure Cascade,LHR,Heathrow,23:00,06:00,NOISE,N,31065,Y
+CRF-6-CDG,6,Multiple Aircraft AOG + Engine Failure Cascade,CDG,Charles de Gaulle,00:00,05:00,NOISE,Y,36519,Y
+CRF-6-FRA,6,Multiple Aircraft AOG + Engine Failure Cascade,FRA,Frankfurt,23:00,05:00,NOISE,Y,39523,Y
+CRF-6-SYD,6,Multiple Aircraft AOG + Engine Failure Cascade,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,Y,19540,Y
+CRF-7-LHR,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,LHR,Heathrow,23:00,06:00,NOISE,N,30898,Y
+CRF-7-CDG,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CDG,Charles de Gaulle,00:00,05:00,NOISE,N,14381,Y
+CRF-7-FRA,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FRA,Frankfurt,23:00,05:00,NOISE,N,44813,Y
+CRF-7-SYD,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,Y,42880,Y
+CRF-8-LHR,8,Runway Closure + Airspace Flow Rate Restrictions,LHR,Heathrow,23:00,06:00,NOISE,N,42945,Y
+CRF-8-CDG,8,Runway Closure + Airspace Flow Rate Restrictions,CDG,Charles de Gaulle,00:00,05:00,NOISE,Y,23946,Y
+CRF-8-FRA,8,Runway Closure + Airspace Flow Rate Restrictions,FRA,Frankfurt,23:00,05:00,NOISE,Y,24230,Y
+CRF-8-SYD,8,Runway Closure + Airspace Flow Rate Restrictions,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,Y,6511,Y
+CRF-9-LHR,9,Security Threat + Geopolitical Airspace Diversion,LHR,Heathrow,23:00,06:00,NOISE,N,9308,Y
+CRF-9-CDG,9,Security Threat + Geopolitical Airspace Diversion,CDG,Charles de Gaulle,00:00,05:00,NOISE,N,43065,Y
+CRF-9-FRA,9,Security Threat + Geopolitical Airspace Diversion,FRA,Frankfurt,23:00,05:00,NOISE,Y,23030,Y
+CRF-9-SYD,9,Security Threat + Geopolitical Airspace Diversion,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,Y,33837,Y
+CRF-10-LHR,10,Medical Emergency + Tarmac Delay + Slot Unavailability,LHR,Heathrow,23:00,06:00,NOISE,N,29103,Y
+CRF-10-CDG,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CDG,Charles de Gaulle,00:00,05:00,NOISE,N,14669,Y
+CRF-10-FRA,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FRA,Frankfurt,23:00,05:00,NOISE,N,16294,Y
+CRF-10-SYD,10,Medical Emergency + Tarmac Delay + Slot Unavailability,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,Y,41785,Y
+CRF-11-LHR,11,EY401 Typhoon -> EY406 LIAC,LHR,Heathrow,23:00,06:00,NOISE,N,45708,Y
+CRF-11-CDG,11,EY401 Typhoon -> EY406 LIAC,CDG,Charles de Gaulle,00:00,05:00,NOISE,N,42833,Y
+CRF-11-FRA,11,EY401 Typhoon -> EY406 LIAC,FRA,Frankfurt,23:00,05:00,NOISE,N,23996,Y
+CRF-11-SYD,11,EY401 Typhoon -> EY406 LIAC,SYD,Sydney Kingsford Smith,23:00,06:00,NOISE,N,11716,Y
