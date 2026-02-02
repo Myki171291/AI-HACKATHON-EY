@@ -1,12 +1,9 @@
-event_id,scenario_id,scenario_name,event_type,event_description,start_time,end_time,severity,affected_airports,primary_flights_affected,secondary_flights_affected,total_flights_affected,estimated_pax_affected,weather_condition,wind_speed,visibility,resolution_status,resolution_time
-EVT-1,1,Bangkok Typhoon + Critical MEL Aircraft,WEATHER,Bangkok Typhoon + Critical MEL Aircraft,2026-01-19T06:00:00Z,2026-01-19T15:00:00Z,LOW,"BKK,AUH",2,8,10,360,TYPHOON,85,500,RESOLVED,2026-01-20T09:00:00Z
-EVT-2,2,London Fog + Multiple Aircraft AOG,WEATHER,London Fog + Multiple Aircraft AOG,2026-01-20T06:00:00Z,2026-01-20T13:00:00Z,MEDIUM,"LHR,AUH",5,7,12,1690,FOG,5,100,RESOLVED,2026-01-20T19:00:00Z
-EVT-3,3,Singapore Thunderstorms + MEL Expiry Cascade,WEATHER,Singapore Thunderstorms + MEL Expiry Cascade,2026-01-21T06:00:00Z,2026-01-21T14:00:00Z,MEDIUM,"SIN,AUH",4,4,8,1092,THUNDERSTORM,45,2000,RESOLVED,2026-01-22T04:00:00Z
-EVT-4,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,WEATHER,Paris Winter Storm + Temperature-Controlled Cargo Crisis,2026-01-22T06:00:00Z,2026-01-22T16:00:00Z,MEDIUM,"CDG,FRA,AUH",4,4,8,1360,WINTER_STORM,55,800,RESOLVED,2026-01-22T18:00:00Z
-EVT-5,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,WEATHER,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,2026-01-23T06:00:00Z,2026-01-23T15:00:00Z,HIGH,"AUH,LHR,JFK,DEL,DOH",8,6,14,2758,SANDSTORM,65,200,RESOLVED,2026-01-24T06:00:00Z
-EVT-6,6,Multiple Aircraft AOG + Engine Failure Cascade,TECHNICAL,Multiple Aircraft AOG + Engine Failure Cascade,2026-01-24T06:00:00Z,2026-01-24T10:00:00Z,MEDIUM,"FCO,CAI,AUH,DEL",3,5,8,1150,CLEAR,10,10000,RESOLVED,2026-01-25T12:00:00Z
-EVT-7,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CREW,Crew Out of Hours + Insufficient Cabin Crew Crisis,2026-01-25T06:00:00Z,2026-01-25T07:00:00Z,HIGH,"SYD,AUH,LHR,FCO,CDG,DEL",6,4,10,2186,CLEAR,8,10000,RESOLVED,2026-01-26T08:00:00Z
-EVT-8,8,Runway Closure + Airspace Flow Rate Restrictions,OPERATIONAL,Runway Closure + Airspace Flow Rate Restrictions,2026-01-27T06:00:00Z,2026-01-27T10:00:00Z,HIGH,"SYD,AUH,LHR,CAI,FCO,CDG,JFK,DEL,DOH",12,2,14,4144,CLEAR,12,10000,RESOLVED,2026-01-28T00:00:00Z
-EVT-9,9,Security Threat + Geopolitical Airspace Diversion,SECURITY,Security Threat + Geopolitical Airspace Diversion,2026-01-28T06:00:00Z,2026-01-28T13:00:00Z,HIGH,"BKK,AUH,LHR,FCO,CDG,JFK,DEL",12,8,20,3782,CLEAR,10,10000,RESOLVED,2026-01-29T04:00:00Z
-EVT-10,10,Medical Emergency + Tarmac Delay + Slot Unavailability,MEDICAL,Medical Emergency + Tarmac Delay + Slot Unavailability,2026-01-29T06:00:00Z,2026-01-29T17:00:00Z,LOW,"FCO,AUH",1,2,3,330,CLEAR,8,10000,RESOLVED,2026-01-29T17:00:00Z
-EVT-11,11,EY401 Typhoon -> EY406 LIAC,WEATHER,EY401 Typhoon -> EY406 LIAC,2026-01-31T06:00:00Z,2026-01-31T15:00:00Z,LOW,"BKK,AUH",2,8,10,360,TYPHOON,80,600,RESOLVED,2026-02-01T12:00:00Z
+event_id,flight_number,event_type,event_time,location,severity,description,status
+EVENT-001,EY117,WEATHER_DISRUPTION,2026-01-30 00:00:00,BKK,CRITICAL,Bangkok Typhoon - All flights cancelled,ACTIVE
+EVENT-002,EY402,WEATHER_DISRUPTION,2026-01-30 18:15:00,BKK,CRITICAL,Flight cancelled due to airport closure,ACTIVE
+EVENT-003,EY5293,CASCADING_DELAY,2026-01-30 08:37:00,AUH,HIGH,LIAC from EY117 disruption,ACTIVE
+EVENT-004,EY8184,WEATHER_DISRUPTION,2026-01-30 08:30:00,LHR,MEDIUM,London Fog - Arrival delayed,ACTIVE
+EVENT-005,EY6268,WEATHER_DISRUPTION,2026-01-30 10:15:00,LHR,MEDIUM,London Fog - Arrival delayed,ACTIVE
+EVENT-006,EY25,WEATHER_DISRUPTION,2026-01-31 20:00:00,LHR,HIGH,London Fog - Departure prohibited,ACTIVE
+EVENT-007,EY19,WEATHER_DISRUPTION,2026-01-31 22:00:00,LHR,HIGH,London Fog - Departure prohibited,ACTIVE
+EVENT-008,EY11,WEATHER_DISRUPTION,2026-02-01 00:00:00,LHR,CRITICAL,London Fog - Departure prohibited,ACTIVE
