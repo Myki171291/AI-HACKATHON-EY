@@ -1,0 +1,54 @@
+1. editing_files
+Read all CSV files. then remove unecessary datasets not needed and update the csv files which would create good relationship with all csvs and by satisfying a good demo simulation for the ai hackathon.
+1. Frozen Date & Time: Jan 30, 2026; 0000H  Frozen operational data (not pre-computed scenarios) where the system can dynamically discover the cascade by following relationships.
+2. Happy flow of flights and schedule
+3. Remove Scenario as we will dictate the scenario but we need to implant the other disruption (weather related) by putting it in the weather.csv
+4. Add aircraft rotation that explicitly links flights in a rotation chain, so the system can traverse and discover impacts dynamically
+5. synthesize data to ensure a proper simulation for the following test scenario
+
+2. data_creation_scenarios 
+Scenario 1: Bangkok Typhoon + Critical MEL Aircraft
+Primary Flights (Directly Disrupted):
+EY117 (BKK→AUH) - Cannot depart due to typhoon
+EY5293 (AUH→BKK) - LIAC (Late Inbound Aircraft Connection)
+Secondary Flights (Indirectly Affected):
+Connecting flights at AUH fed by EY117 passengers (estimated 6-8 flights)
+European/US banks affected by misconnects
+Total Impact: 2 primary + ~8 secondary = 10 flights
+ 
+Scenario 2: London Fog + Multiple Aircraft AOG
+Primary Flights (Directly Disrupted):
+EY8184 (AUH→LHR) - Fog delays arrival
+EY6268 (AUH→LHR) - Fog delays arrival
+EY25 (LHR→AUH) - Cannot depart due to fog
+EY19 (LHR→AUH) - Cannot depart due to fog
+EY11 (LHR→AUH) - Cannot depart due to fog
+Secondary Flights (Indirectly Affected):
+Aircraft rotations for EY25, EY19, EY11 (next sectors)
+Connecting flights at AUH from LHR arrivals
+3 flights at AUH delayed due to AOG aircraft
+Total Impact: 5 primary + ~7 secondary = 12 flights
+ 
+
+4. report creation v2
+EY402 with scheduled departure on 30 Jan experience a disruption from Bangkok typhoon. 
+Create a detailed disruption report following this format 
+A. Situation and show affected cascading flights
+B. Network option (short delay, long delay, cancellation) & show affected cascading flights
+C. Financial benefit and other impact of each options
+
+
+5. report_creation
+EY402 with scheduled departure on 30 Jan experience a disruption from Bangkok due to typhoon
+ 
+Create a detailed disruption report following this format
+ 
+A. Situation and show affected cascading flights
+B. Network option (short delay, long delay, cancellation) & show affected cascading flights
+C. Financial benefit and other impact of each options
+ 
+Note: Only include information in report which is available in the datasets
+
+6. report_creation FOR 
+run a disruption report for this:
+1 PAX of EY8086 (29 Jan) had a medical emergency diverted to MCT

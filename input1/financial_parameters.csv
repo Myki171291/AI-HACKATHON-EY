@@ -1,0 +1,102 @@
+parameter_id,category,parameter_code,parameter_name,value,unit,currency,effective_date,expiry_date,aircraft_type,route_type,description,regulatory_reference,notes
+FIN-001,DELAY_COST,DELAY_COST_PER_MIN,Delay Cost Per Minute,50,AED/minute,AED,2026-01-01,2026-12-31,ALL,ALL,Standard hard cost per minute of delay including fuel/crew/handling,OCC Finance Matrix,Industry standard 2024 adjusted
+FIN-002,DELAY_COST,DELAY_COST_FUEL_BURN,Ground Fuel Burn Rate,20,AED/minute,AED,2026-01-01,2026-12-31,B787,ALL,APU fuel burn during ground delay,Fuel Matrix,Jet-A at $2.80/gallon
+FIN-003,DELAY_COST,DELAY_COST_FUEL_BURN,Ground Fuel Burn Rate,30,AED/minute,AED,2026-01-01,2026-12-31,A380,ALL,APU fuel burn during ground delay,Fuel Matrix,Jet-A at $2.80/gallon
+FIN-004,DELAY_COST,DELAY_COST_FUEL_BURN,Ground Fuel Burn Rate,25,AED/minute,AED,2026-01-01,2026-12-31,A350,ALL,APU fuel burn during ground delay,Fuel Matrix,Jet-A at $2.80/gallon
+FIN-005,DELAY_COST,DELAY_COST_FUEL_BURN,Ground Fuel Burn Rate,15,AED/minute,AED,2026-01-01,2026-12-31,A321,ALL,APU fuel burn during ground delay,Fuel Matrix,Jet-A at $2.80/gallon
+FIN-006,CREW_COST,CREW_OVERTIME_PILOT,Pilot Overtime Rate,100,AED/hour,AED,2026-01-01,2026-12-31,ALL,ALL,Captain/FO overtime beyond scheduled duty,14 CFR Part 117,Per pilot
+FIN-007,CREW_COST,CREW_OVERTIME_CABIN,Cabin Crew Overtime Rate,50,AED/hour,AED,2026-01-01,2026-12-31,ALL,ALL,Flight attendant overtime rate,EASA FTL,Per crew member
+FIN-008,CREW_COST,CREW_POSITIONING,Crew Positioning Cost,1500,AED/positioning,AED,2026-01-01,2026-12-31,ALL,DOMESTIC,Cost to deadhead crew domestically,Operations,Includes travel + per diem
+FIN-009,CREW_COST,CREW_POSITIONING,Crew Positioning Cost,3500,AED/positioning,AED,2026-01-01,2026-12-31,ALL,INTERNATIONAL,Cost to deadhead crew internationally,Operations,Includes travel + per diem + visa
+FIN-010,CREW_COST,CREW_HOTEL,Crew Hotel Cost,250,AED/night,AED,2026-01-01,2026-12-31,ALL,ALL,Crew rest accommodation,Operations,Average 4-star hotel
+FIN-011,CREW_COST,CREW_MEAL,Crew Meal Allowance,75,AED/day,AED,2026-01-01,2026-12-31,ALL,ALL,Daily meal per diem,Operations,Standard per diem
+FIN-012,GROUND_HANDLING,GROUND_HANDLING_DELAY,Extended Ground Handling,300,AED/hour,AED,2026-01-01,2026-12-31,ALL,ALL,Additional ground handling for delayed flights,Ground Ops,Per hour beyond scheduled
+FIN-013,GROUND_HANDLING,GATE_HOLD_FEE,Gate Hold Fee,120,AED/hour,AED,2026-01-01,2026-12-31,ALL,ALL,Extended gate occupancy charge,Airport Authority,Varies by airport
+FIN-014,GROUND_HANDLING,TARMAC_DELAY_COST,Tarmac Delay Cost,900,AED/hour,AED,2026-01-01,2026-12-31,ALL,ALL,Cost of tarmac delay including services,DOT Regulation,Catering/lavatory/fuel
+FIN-015,PAX_COMPENSATION,EU261_SHORT,EU261 Compensation Short Haul,250,EUR/passenger,EUR,2026-01-01,2026-12-31,ALL,SHORT_HAUL,Flights under 1500km delayed 3+ hours,EU Regulation 261/2004,Mandatory
+FIN-016,PAX_COMPENSATION,EU261_MEDIUM,EU261 Compensation Medium Haul,400,EUR/passenger,EUR,2026-01-01,2026-12-31,ALL,MEDIUM_HAUL,Flights 1500-3500km delayed 3+ hours,EU Regulation 261/2004,Mandatory
+FIN-017,PAX_COMPENSATION,EU261_LONG,EU261 Compensation Long Haul,600,EUR/passenger,EUR,2026-01-01,2026-12-31,ALL,LONG_HAUL,Flights over 3500km delayed 4+ hours,EU Regulation 261/2004,Mandatory
+FIN-018,PAX_COMPENSATION,DOT_COMPENSATION,DOT Tarmac Delay Compensation,500,AED/passenger,AED,2026-01-01,2026-12-31,ALL,US_ROUTES,Tarmac delay exceeding 3 hours,US DOT Regulation,Plus rebooking
+FIN-019,PAX_COMPENSATION,DENIED_BOARDING,Denied Boarding Compensation,1350,AED/passenger,AED,2026-01-01,2026-12-31,ALL,ALL,Involuntary denied boarding (400% fare),US DOT Regulation,Maximum cap
+FIN-020,PAX_CARE,MEAL_VOUCHER,Passenger Meal Voucher,20,AED/passenger,AED,2026-01-01,2026-12-31,ALL,ALL,Meal voucher for delays 2+ hours,EU261/Goodwill,Standard amount
+FIN-021,PAX_CARE,HOTEL_ACCOMMODATION,Passenger Hotel Cost,150,AED/night,AED,2026-01-01,2026-12-31,ALL,ALL,Overnight accommodation for stranded pax,EU261/Goodwill,Average 3-star
+FIN-022,PAX_CARE,TRANSPORT_HOTEL,Ground Transport to Hotel,35,AED/passenger,AED,2026-01-01,2026-12-31,ALL,ALL,Shuttle/taxi to accommodation,EU261/Goodwill,Round trip
+FIN-023,PAX_CARE,COMMUNICATION,Communication Allowance,3,AED/passenger,AED,2026-01-01,2026-12-31,ALL,ALL,Phone calls/emails/messages,EU261/Goodwill,Two communications
+FIN-024,REBOOKING,OAL_REBOOKING_ECONOMY,OAL Rebooking Economy,600,AED/passenger,AED,2026-01-01,2026-12-31,ALL,ALL,Other Airline rebooking - Economy,Interline Agreement,Average cost
+FIN-025,REBOOKING,OAL_REBOOKING_BUSINESS,OAL Rebooking Business,1800,AED/passenger,AED,2026-01-01,2026-12-31,ALL,ALL,Other Airline rebooking - Business,Interline Agreement,Average cost
+FIN-026,REBOOKING,OAL_REBOOKING_FIRST,OAL Rebooking First,3500,AED/passenger,AED,2026-01-01,2026-12-31,ALL,ALL,Other Airline rebooking - First,Interline Agreement,Average cost
+FIN-027,REBOOKING,REFUND_PROCESSING,Refund Processing Cost,25,AED/transaction,AED,2026-01-01,2026-12-31,ALL,ALL,Administrative cost per refund,Finance,Payment processing fees
+FIN-028,CANCELLATION,CANCEL_COST_NARROW,Flight Cancellation Cost Narrowbody,27000,AED/flight,AED,2026-01-01,2026-12-31,A321,ALL,Total cost to cancel narrowbody flight,Operations,Includes all pax handling
+FIN-029,CANCELLATION,CANCEL_COST_WIDE,Flight Cancellation Cost Widebody,75000,AED/flight,AED,2026-01-01,2026-12-31,B787,ALL,Total cost to cancel widebody flight,Operations,Includes all pax handling
+FIN-030,CANCELLATION,CANCEL_COST_JUMBO,Flight Cancellation Cost Jumbo,150000,AED/flight,AED,2026-01-01,2026-12-31,A380,ALL,Total cost to cancel A380 flight,Operations,Includes all pax handling
+FIN-031,AIRCRAFT_SWAP,FERRY_FLIGHT_NARROW,Ferry Flight Cost Narrowbody,9000,AED/flight,AED,2026-01-01,2026-12-31,A321,ALL,Empty positioning flight cost,Operations,Fuel + crew + handling
+FIN-032,AIRCRAFT_SWAP,FERRY_FLIGHT_WIDE,Ferry Flight Cost Widebody,27000,AED/flight,AED,2026-01-01,2026-12-31,B787,ALL,Empty positioning flight cost,Operations,Fuel + crew + handling
+FIN-033,AIRCRAFT_SWAP,FERRY_FLIGHT_JUMBO,Ferry Flight Cost Jumbo,51000,AED/flight,AED,2026-01-01,2026-12-31,A380,ALL,Empty positioning flight cost,Operations,Fuel + crew + handling
+FIN-034,AIRCRAFT_SWAP,DOWNGRADE_COMPENSATION,Cabin Downgrade Compensation,75,%,PERCENT,2026-01-01,2026-12-31,ALL,ALL,Refund percentage for involuntary downgrade,EU261,Of fare difference
+FIN-035,CARGO,CARGO_DELAY_PENALTY,Cargo Delay Penalty,30,AED/kg/day,AED,2026-01-01,2026-12-31,ALL,ALL,Contractual penalty for delayed cargo,AWB Terms,Per kg per day late
+FIN-036,CARGO,CARGO_SPOILAGE_PHARMA,Pharmaceutical Spoilage Cost,300,AED/kg,AED,2026-01-01,2026-12-31,ALL,ALL,Value of spoiled pharmaceutical cargo,Cold Chain,Average value
+FIN-037,CARGO,CARGO_SPOILAGE_PERISHABLE,Perishable Spoilage Cost,15,AED/kg,AED,2026-01-01,2026-12-31,ALL,ALL,Value of spoiled perishable cargo,Cold Chain,Average value
+FIN-038,CARGO,CARGO_REBOOK_FEE,Cargo Rebooking Fee,60,AED/shipment,AED,2026-01-01,2026-12-31,ALL,ALL,Administrative fee to rebook cargo,AWB Terms,Per AWB
+FIN-039,CARGO,DG_HANDLING_DELAY,Dangerous Goods Delay Handling,120,AED/shipment,AED,2026-01-01,2026-12-31,ALL,ALL,Special handling for delayed DG,IATA DGR,Per shipment
+FIN-040,NPS_IMPACT,NPS_DELAY_30MIN,NPS Impact 30min Delay,-2,points,NPS,2026-01-01,2026-12-31,ALL,ALL,NPS score reduction for 30min delay,NPS Model,Average impact
+FIN-041,NPS_IMPACT,NPS_DELAY_60MIN,NPS Impact 60min Delay,-5,points,NPS,2026-01-01,2026-12-31,ALL,ALL,NPS score reduction for 60min delay,NPS Model,Average impact
+FIN-042,NPS_IMPACT,NPS_DELAY_120MIN,NPS Impact 120min Delay,-12,points,NPS,2026-01-01,2026-12-31,ALL,ALL,NPS score reduction for 2hr delay,NPS Model,Average impact
+FIN-043,NPS_IMPACT,NPS_DELAY_180MIN,NPS Impact 180min Delay,-20,points,NPS,2026-01-01,2026-12-31,ALL,ALL,NPS score reduction for 3hr delay,NPS Model,Average impact
+FIN-044,NPS_IMPACT,NPS_CANCELLATION,NPS Impact Cancellation,-35,points,NPS,2026-01-01,2026-12-31,ALL,ALL,NPS score reduction for cancellation,NPS Model,Average impact
+FIN-045,NPS_IMPACT,NPS_MISCONNECT,NPS Impact Misconnection,-25,points,NPS,2026-01-01,2026-12-31,ALL,ALL,NPS score reduction for missed connection,NPS Model,Average impact
+FIN-046,SOFT_COST,SOFT_COST_MULTIPLIER,Soft Cost Multiplier,2.5,multiplier,RATIO,2026-01-01,2026-12-31,ALL,ALL,Multiplier for future revenue loss,Industry Study,Applied to hard costs
+FIN-047,SOFT_COST,CUSTOMER_LIFETIME_VALUE,Average Customer Lifetime Value,15000,AED,AED,2026-01-01,2026-12-31,ALL,ALL,Average CLV for loyalty calculation,Loyalty Program,5-year horizon
+FIN-048,SOFT_COST,HVP_MULTIPLIER,High Value Passenger Multiplier,3,multiplier,RATIO,2026-01-01,2026-12-31,ALL,ALL,Cost multiplier for Platinum/Diamond,Loyalty Program,Priority handling
+FIN-049,SLOT_COST,SLOT_LOSS_LHR,Heathrow Slot Loss Value,75000000,AED/slot/year,AED,2026-01-01,2026-12-31,ALL,LHR,Annual value of LHR slot pair,Slot Trading,Market value
+FIN-050,SLOT_COST,SLOT_LOSS_JFK,JFK Slot Loss Value,25000000,AED/slot/year,AED,2026-01-01,2026-12-31,ALL,JFK,Annual value of JFK slot pair,Slot Trading,Market value
+
+FIN-051,SLOT_COST,SLOT_PENALTY,Slot Misuse Penalty,5000,AED/occurrence,AED,2026-01-01,2026-12-31,ALL,ALL,Penalty for slot time violation,Airport Authority,Per occurrence
+FIN-052,CURFEW,CURFEW_EXCEPTION_LHR,LHR Curfew Exception Fee,15000,GBP/movement,GBP,2026-01-01,2026-12-31,ALL,LHR,Fee for curfew violation at Heathrow,Airport Authority,If approved
+FIN-053,CURFEW,CURFEW_EXCEPTION_FRA,FRA Curfew Exception Fee,12000,EUR/movement,EUR,2026-01-01,2026-12-31,ALL,FRA,Fee for curfew violation at Frankfurt,Airport Authority,If approved
+FIN-054,CURFEW,CURFEW_EXCEPTION_CDG,CDG Curfew Exception Fee,18000,EUR/movement,EUR,2026-01-01,2026-12-31,ALL,CDG,Fee for curfew violation at Paris CDG,Airport Authority,If approved
+FIN-055,CURFEW,CURFEW_EXCEPTION_SYD,SYD Curfew Exception Fee,20000,AUD/movement,AUD,2026-01-01,2026-12-31,ALL,SYD,Fee for curfew violation at Sydney,Airport Authority,If approved
+FIN-056,MAINTENANCE,AOG_RECOVERY_COST,AOG Recovery Cost Per Day,90000,AED/day,AED,2026-01-01,2026-12-31,ALL,ALL,Daily cost of AOG situation,M&E,Parts + labor + lost revenue
+FIN-057,MAINTENANCE,MEL_DEFERRAL_COST,MEL Deferral Admin Cost,300,AED/item,AED,2026-01-01,2026-12-31,ALL,ALL,Administrative cost per MEL item,M&E,Documentation + tracking
+FIN-058,MAINTENANCE,EMERGENCY_REPAIR,Emergency Repair Premium,30,%,PERCENT,2026-01-01,2026-12-31,ALL,ALL,Premium for emergency maintenance,M&E,Above standard rates
+FIN-059,DIVERSION,DIVERSION_COST_NARROW,Diversion Cost Narrowbody,21000,AED/diversion,AED,2026-01-01,2026-12-31,A321,ALL,Total cost of flight diversion,Operations,Fuel + handling + pax care
+FIN-060,DIVERSION,DIVERSION_COST_WIDE,Diversion Cost Widebody,45000,AED/diversion,AED,2026-01-01,2026-12-31,B787,ALL,Total cost of flight diversion,Operations,Fuel + handling + pax care
+FIN-061,DIVERSION,DIVERSION_COST_JUMBO,Diversion Cost Jumbo,90000,AED/diversion,AED,2026-01-01,2026-12-31,A380,ALL,Total cost of flight diversion,Operations,Fuel + handling + pax care
+FIN-062,FUEL,FUEL_PRICE_JETA,Jet-A Fuel Price,1.80,AED/gallon,AED,2026-01-01,2026-12-31,ALL,ALL,Current Jet-A fuel price,Fuel Procurement,Market rate
+FIN-063,FUEL,FUEL_TANKERING_COST,Fuel Tankering Premium,0.15,AED/gallon,AED,2026-01-01,2026-12-31,ALL,ALL,Additional cost for tankering fuel,Fuel Procurement,Weight penalty
+FIN-064,FUEL,FUEL_BURN_DELAY,Extra Fuel Burn Per Delay Hour,800,AED/hour,AED,2026-01-01,2026-12-31,B787,ALL,Additional fuel for holding/rerouting,Flight Ops,Average
+FIN-065,INSURANCE,DELAY_INSURANCE_CLAIM,Delay Insurance Threshold,4,hours,HOURS,2026-01-01,2026-12-31,ALL,ALL,Minimum delay for insurance claim,Insurance Policy,Deductible threshold
+FIN-066,INSURANCE,CANCELLATION_INSURANCE,Cancellation Insurance Recovery,60,%,PERCENT,2026-01-01,2026-12-31,ALL,ALL,Percentage recoverable from insurance,Insurance Policy,After deductible
+FIN-067,REVENUE,REVENUE_LOSS_ECONOMY,Revenue Loss Economy Seat,350,AED/seat,AED,2026-01-01,2026-12-31,ALL,LONG_HAUL,Average revenue per economy seat,Revenue Management,Long haul average
+FIN-068,REVENUE,REVENUE_LOSS_BUSINESS,Revenue Loss Business Seat,2200,AED/seat,AED,2026-01-01,2026-12-31,ALL,LONG_HAUL,Average revenue per business seat,Revenue Management,Long haul average
+FIN-069,REVENUE,REVENUE_LOSS_FIRST,Revenue Loss First Seat,6500,AED/seat,AED,2026-01-01,2026-12-31,ALL,LONG_HAUL,Average revenue per first seat,Revenue Management,Long haul average
+FIN-070,REVENUE,CARGO_REVENUE_KG,Cargo Revenue Per Kg,2.50,AED/kg,AED,2026-01-01,2026-12-31,ALL,ALL,Average cargo revenue per kg,Cargo Revenue,Network average
+FIN-071,RECOVERY_SAVINGS,DELAY_VS_CANCEL_THRESHOLD,Delay vs Cancel Break-even,180,minutes,MINUTES,2026-01-01,2026-12-31,ALL,ALL,Delay duration where cancel becomes cheaper,OCC Analysis,Varies by aircraft
+FIN-072,RECOVERY_SAVINGS,SWAP_SAVINGS_POTENTIAL,Aircraft Swap Savings,40,%,PERCENT,2026-01-01,2026-12-31,ALL,ALL,Potential savings from optimal swap,AIRS Model,Vs cancellation
+FIN-073,RECOVERY_SAVINGS,CREW_SWAP_SAVINGS,Crew Swap Savings,25,%,PERCENT,2026-01-01,2026-12-31,ALL,ALL,Savings from reserve crew vs delay,AIRS Model,Vs overtime
+FIN-074,RECOVERY_SAVINGS,REROUTE_SAVINGS,Rerouting Savings Potential,35,%,PERCENT,2026-01-01,2026-12-31,ALL,ALL,Savings from passenger rerouting,AIRS Model,Vs compensation
+FIN-075,RECOVERY_SAVINGS,PROACTIVE_REBOOKING,Proactive Rebooking Savings,50,%,PERCENT,2026-01-01,2026-12-31,ALL,ALL,Savings from early rebooking,NPS Model,Vs reactive handling
+FIN-076,THRESHOLD,DELAY_NOTIFICATION_1,First Delay Notification,30,minutes,MINUTES,2026-01-01,2026-12-31,ALL,ALL,Threshold for first pax notification,Customer Service,Proactive comms
+FIN-077,THRESHOLD,DELAY_NOTIFICATION_2,Second Delay Notification,60,minutes,MINUTES,2026-01-01,2026-12-31,ALL,ALL,Threshold for rebooking offer,Customer Service,Proactive comms
+FIN-078,THRESHOLD,MEAL_VOUCHER_THRESHOLD,Meal Voucher Threshold,120,minutes,MINUTES,2026-01-01,2026-12-31,ALL,ALL,Delay duration triggering meal voucher,EU261,Mandatory
+FIN-079,THRESHOLD,HOTEL_THRESHOLD,Hotel Accommodation Threshold,240,minutes,MINUTES,2026-01-01,2026-12-31,ALL,ALL,Delay duration triggering hotel,EU261,If overnight
+FIN-080,THRESHOLD,EU261_COMPENSATION_THRESHOLD,EU261 Compensation Threshold,180,minutes,MINUTES,2026-01-01,2026-12-31,ALL,SHORT_HAUL,Delay triggering EU261 compensation,EU261,Short/medium haul
+FIN-081,THRESHOLD,EU261_LONG_THRESHOLD,EU261 Long Haul Threshold,240,minutes,MINUTES,2026-01-01,2026-12-31,ALL,LONG_HAUL,Delay triggering EU261 for long haul,EU261,Over 3500km
+FIN-082,THRESHOLD,DOT_TARMAC_THRESHOLD,DOT Tarmac Delay Threshold,180,minutes,MINUTES,2026-01-01,2026-12-31,ALL,US_ROUTES,Maximum tarmac delay before deplaning,US DOT,Mandatory
+FIN-083,PRIORITY,HVP_PLATINUM_WEIGHT,Platinum Member Priority Weight,3.0,multiplier,RATIO,2026-01-01,2026-12-31,ALL,ALL,Priority multiplier for Platinum,Loyalty Program,Rebooking priority
+FIN-084,PRIORITY,HVP_GOLD_WEIGHT,Gold Member Priority Weight,2.0,multiplier,RATIO,2026-01-01,2026-12-31,ALL,ALL,Priority multiplier for Gold,Loyalty Program,Rebooking priority
+FIN-085,PRIORITY,HVP_SILVER_WEIGHT,Silver Member Priority Weight,1.5,multiplier,RATIO,2026-01-01,2026-12-31,ALL,ALL,Priority multiplier for Silver,Loyalty Program,Rebooking priority
+FIN-086,PRIORITY,VIP_WEIGHT,VIP Priority Weight,5.0,multiplier,RATIO,2026-01-01,2026-12-31,ALL,ALL,Priority multiplier for VIPs,Customer Service,Rebooking priority
+FIN-087,PRIORITY,CONNECTING_PAX_WEIGHT,Connecting Passenger Weight,2.0,multiplier,RATIO,2026-01-01,2026-12-31,ALL,ALL,Priority for passengers with connections,Operations,Misconnect prevention
+FIN-088,PRIORITY,SPECIAL_NEEDS_WEIGHT,Special Needs Priority Weight,2.5,multiplier,RATIO,2026-01-01,2026-12-31,ALL,ALL,Priority for WCHR/UMNR/Medical,Customer Service,Care priority
+FIN-089,COLD_CHAIN,PHARMA_MAX_EXPOSURE,Pharmaceutical Max Exposure,4,hours,HOURS,2026-01-01,2026-12-31,ALL,ALL,Maximum time outside cold chain,Cold Chain,Before spoilage
+FIN-090,COLD_CHAIN,PERISHABLE_MAX_EXPOSURE,Perishable Max Exposure,8,hours,HOURS,2026-01-01,2026-12-31,ALL,ALL,Maximum time outside cold chain,Cold Chain,Before spoilage
+FIN-091,COLD_CHAIN,LIVE_ANIMAL_MAX_DELAY,Live Animal Max Delay,6,hours,HOURS,2026-01-01,2026-12-31,ALL,ALL,Maximum delay for live animals,IATA LAR,Welfare threshold
+FIN-092,OPTIMIZATION,PARETO_COST_WEIGHT,Cost Optimization Weight,0.35,weight,RATIO,2026-01-01,2026-12-31,ALL,ALL,Weight for cost in Pareto optimization,AIRS Model,Multi-objective
+FIN-093,OPTIMIZATION,PARETO_NPS_WEIGHT,NPS Optimization Weight,0.30,weight,RATIO,2026-01-01,2026-12-31,ALL,ALL,Weight for NPS in Pareto optimization,AIRS Model,Multi-objective
+FIN-094,OPTIMIZATION,PARETO_NETWORK_WEIGHT,Network Stability Weight,0.25,weight,RATIO,2026-01-01,2026-12-31,ALL,ALL,Weight for network in Pareto optimization,AIRS Model,Multi-objective
+FIN-095,OPTIMIZATION,PARETO_SAFETY_WEIGHT,Safety Compliance Weight,0.10,weight,RATIO,2026-01-01,2026-12-31,ALL,ALL,Weight for safety (non-negotiable floor),AIRS Model,Multi-objective
+FIN-096,EXCHANGE_RATE,USD_EUR,USD to EUR Exchange Rate,0.92,rate,RATIO,2026-01-30,2026-01-30,ALL,ALL,Exchange rate for EU261 calculations,Finance,Daily rate
+FIN-097,EXCHANGE_RATE,USD_GBP,USD to GBP Exchange Rate,0.79,rate,RATIO,2026-01-30,2026-01-30,ALL,ALL,Exchange rate for UK calculations,Finance,Daily rate
+FIN-098,EXCHANGE_RATE,USD_AUD,USD to AUD Exchange Rate,1.53,rate,RATIO,2026-01-30,2026-01-30,ALL,ALL,Exchange rate for AUS calculations,Finance,Daily rate
+FIN-099,CUMULATIVE,MAX_FLIGHT_HOURS_672,Max Flight Hours in 672 Hours,100,hours,HOURS,2026-01-01,2026-12-31,ALL,ALL,Cumulative flight hour limit,14 CFR Part 117,28-day rolling
+FIN-100,CUMULATIVE,MAX_FLIGHT_HOURS_365,Max Flight Hours in 365 Days,1000,hours,HOURS,2026-01-01,2026-12-31,ALL,ALL,Annual flight hour limit,14 CFR Part 117,Rolling year

@@ -1,0 +1,5 @@
+curfew_id,airport_code,airport_name,curfew_start_local,curfew_end_local,curfew_type,exceptions_allowed,exception_fee_usd,is_active
+CRF-001,LHR,London Heathrow,23:30,06:00,NIGHT_CURFEW,True,15000,True
+CRF-002,FRA,Frankfurt Airport,23:00,05:00,NIGHT_CURFEW,True,12000,True
+CRF-003,CDG,Paris Charles de Gaulle,00:00,05:30,NIGHT_CURFEW,True,18000,True
+CRF-004,SYD,Sydney Kingsford Smith,23:00,06:00,NIGHT_CURFEW,True,20000,True

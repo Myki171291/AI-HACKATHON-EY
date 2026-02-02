@@ -1,0 +1,41 @@
+rule_id,rule_type,rule_code,description,min_value,max_value,unit,applies_to,priority_override,regulatory_reference,violation_action,notes
+BRUL-001,RECONCILIATION,POSITIVE_BAG_MATCH,All checked bags must match boarded passenger,100,,percent,ALL_FLIGHTS,False,ICAO Annex 17,OFFLOAD_BAG,Security requirement
+BRUL-002,RECONCILIATION,NO_SHOW_OFFLOAD,Offload bags if passenger no-show,0,,minutes,ALL_FLIGHTS,False,ICAO Annex 17,MANDATORY_OFFLOAD,Cannot fly unaccompanied
+BRUL-003,RECONCILIATION,OFFLOAD_TIME,Maximum time to offload bag,15,,minutes,ALL_FLIGHTS,False,Operations,DELAY_FLIGHT,Per bag average
+BRUL-004,TRANSFER,MCT_BAGGAGE_DOM,Minimum Connection Time Baggage Domestic,45,,minutes,DOMESTIC,False,Operations,RUSH_TAG,Standard MCT
+BRUL-005,TRANSFER,MCT_BAGGAGE_INT,Minimum Connection Time Baggage International,60,,minutes,INTERNATIONAL,False,Operations,RUSH_TAG,Includes customs
+BRUL-006,TRANSFER,MCT_BAGGAGE_TIGHT,Tight Connection Threshold,30,,minutes,ALL_FLIGHTS,True,Operations,PRIORITY_HANDLING,Rush handling required
+BRUL-007,TRANSFER,SHORT_CONNECT_ALERT,Short Connection Alert,45,,minutes,ALL_FLIGHTS,True,Operations,NOTIFY_HANDLING,Proactive monitoring
+BRUL-008,WEIGHT,MAX_CHECKED_ECONOMY,Maximum Checked Bag Weight Economy,23,,kg,ECONOMY,False,Tariff Rules,EXCESS_FEE,Per piece
+BRUL-009,WEIGHT,MAX_CHECKED_BUSINESS,Maximum Checked Bag Weight Business,32,,kg,BUSINESS,False,Tariff Rules,EXCESS_FEE,Per piece
+BRUL-010,WEIGHT,MAX_CHECKED_FIRST,Maximum Checked Bag Weight First,32,,kg,FIRST,False,Tariff Rules,EXCESS_FEE,Per piece
+BRUL-011,WEIGHT,MAX_SINGLE_PIECE,Maximum Single Piece Weight,32,,kg,ALL_CLASSES,False,Handling Safety,REJECT_OR_SPLIT,Manual handling limit
+BRUL-012,ALLOWANCE,FREE_ALLOWANCE_ECONOMY,Free Baggage Allowance Economy,1,,pieces,ECONOMY,False,Tariff Rules,EXCESS_FEE,Route dependent
+BRUL-013,ALLOWANCE,FREE_ALLOWANCE_BUSINESS,Free Baggage Allowance Business,2,,pieces,BUSINESS,False,Tariff Rules,EXCESS_FEE,Route dependent
+BRUL-014,ALLOWANCE,FREE_ALLOWANCE_FIRST,Free Baggage Allowance First,3,,pieces,FIRST,False,Tariff Rules,EXCESS_FEE,Route dependent
+BRUL-015,ALLOWANCE,LOYALTY_BONUS_GOLD,Gold Member Extra Allowance,1,,pieces,GOLD_MEMBER,False,Loyalty Program,COMPLIMENTARY,Additional piece
+BRUL-016,ALLOWANCE,LOYALTY_BONUS_PLATINUM,Platinum Member Extra Allowance,2,,pieces,PLATINUM_MEMBER,False,Loyalty Program,COMPLIMENTARY,Additional pieces
+BRUL-017,SPECIAL,WHEELCHAIR_HANDLING,Wheelchair/Mobility Aid Priority,0,,minutes,SPECIAL_NEEDS,True,Accessibility,LAST_LOAD_FIRST_UNLOAD,Gate delivery
+BRUL-018,SPECIAL,FRAGILE_HANDLING,Fragile Item Handling,0,,boolean,FRAGILE,True,Operations,SPECIAL_CONTAINER,Limited stacking
+BRUL-019,SPECIAL,SPORTS_EQUIPMENT,Sports Equipment Handling,0,,boolean,SPORTS,False,Operations,OVERSIZED_HANDLING,Skis/golf/bikes
+BRUL-020,SPECIAL,MUSICAL_INSTRUMENT,Musical Instrument Handling,0,,boolean,MUSICAL,True,Operations,CABIN_OR_SPECIAL,Fragile handling
+BRUL-021,DELAY,PILFERAGE_REPORT_TIME,Pilferage Report Window,,,21,days,ALL_FLIGHTS,False,Montreal Convention,CLAIM_DEADLINE,From delivery
+BRUL-022,DELAY,DAMAGE_REPORT_TIME,Damage Report Window,,,7,days,ALL_FLIGHTS,False,Montreal Convention,CLAIM_DEADLINE,From delivery
+BRUL-023,DELAY,DELAY_REPORT_TIME,Delay Report Window,,,21,days,ALL_FLIGHTS,False,Montreal Convention,CLAIM_DEADLINE,From delivery
+BRUL-024,LIABILITY,MAX_LIABILITY_CHECKED,Maximum Liability Checked Bag,,,1288,SDR,ALL_FLIGHTS,False,Montreal Convention,COMPENSATION_CAP,Special Drawing Rights
+BRUL-025,LIABILITY,EXCESS_VALUATION,Excess Valuation Declaration,,,5000,USD,ALL_FLIGHTS,False,Tariff Rules,ADDITIONAL_FEE,Optional coverage
+BRUL-026,MISHANDLED,DELAYED_BAG_ESSENTIALS,Delayed Bag Essentials Allowance,,,100,USD,ALL_FLIGHTS,False,Customer Service,INTERIM_EXPENSE,Per day max
+BRUL-027,MISHANDLED,DELAYED_BAG_MAX,Maximum Delayed Bag Expense,,,500,USD,ALL_FLIGHTS,False,Customer Service,TOTAL_EXPENSE,Total claim
+BRUL-028,MISHANDLED,LOST_BAG_THRESHOLD,Lost Bag Declaration Threshold,,,21,days,ALL_FLIGHTS,False,Montreal Convention,DECLARE_LOST,After delay
+BRUL-029,MISHANDLED,TRACING_WORLDTRACER,WorldTracer Filing Required,0,,hours,ALL_FLIGHTS,False,IATA Resolution 743,MANDATORY,Immediate filing
+BRUL-030,PRIORITY,RUSH_TAG_THRESHOLD,Rush Tag Application Threshold,60,,minutes,ALL_FLIGHTS,True,Operations,PRIORITY_SORT,Connection time
+BRUL-031,PRIORITY,PRIORITY_LOAD_ORDER,Priority Loading Sequence,0,,boolean,PRIORITY,True,Operations,LAST_IN_FIRST_OUT,First/Business/Gold
+BRUL-032,PRIORITY,VIP_HANDLING,VIP Baggage Handling,0,,boolean,VIP,True,Operations,PERSONAL_DELIVERY,Meet and assist
+BRUL-033,CONTAINER,ULD_WEIGHT_LIMIT_AKE,AKE Container Weight Limit,,,1588,kg,AKE,False,Aircraft Limits,WEIGHT_CHECK,LD3 container
+BRUL-034,CONTAINER,ULD_WEIGHT_LIMIT_AKH,AKH Container Weight Limit,,,1588,kg,AKH,False,Aircraft Limits,WEIGHT_CHECK,LD3 container
+BRUL-035,CONTAINER,BULK_LOAD_LIMIT,Bulk Hold Weight Limit,,,3000,kg,BULK,False,Aircraft Limits,WEIGHT_CHECK,Varies by aircraft
+BRUL-036,SECURITY,SCREENING_REQUIRED,100% Baggage Screening,100,,percent,ALL_FLIGHTS,False,TSA/ECAC,MANDATORY,X-ray or ETD
+BRUL-037,SECURITY,RANDOM_SEARCH,Random Physical Search Rate,10,,percent,ALL_FLIGHTS,False,TSA/ECAC,RANDOM_SELECTION,Additional screening
+BRUL-038,SECURITY,UNIDENTIFIED_BAG,Unidentified Bag Protocol,0,,minutes,ALL_FLIGHTS,False,Security,SECURITY_ALERT,Immediate action
+BRUL-039,INTERLINE,INTERLINE_TRANSFER,Interline Baggage Agreement,0,,boolean,INTERLINE,False,IATA Resolution 780,CHECK_AGREEMENT,Partner airlines
+BRUL-040,INTERLINE,THROUGH_CHECK_LIMIT,Through Check Destination Limit,,,3,segments,INTERLINE,False,Operations,RECHECK_REQUIRED,Maximum segments

@@ -1,0 +1,617 @@
+mct_id,scenario_id,scenario_name,airport_code,airport_name,connection_type,standard_mct_min,premium_mct_min,wheelchair_mct_min,is_same_terminal
+MCT-1-AUH-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,AUH,Abu Dhabi International,DOM-DOM,93,66,95,N
+MCT-1-AUH-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,AUH,Abu Dhabi International,DOM-INT,59,66,62,N
+MCT-1-AUH-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,AUH,Abu Dhabi International,INT-DOM,53,72,80,Y
+MCT-1-AUH-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,AUH,Abu Dhabi International,INT-INT,46,58,81,Y
+MCT-1-BKK-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,BKK,Suvarnabhumi,DOM-DOM,90,33,77,Y
+MCT-1-BKK-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,BKK,Suvarnabhumi,DOM-INT,75,85,99,Y
+MCT-1-BKK-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,BKK,Suvarnabhumi,INT-DOM,79,57,102,N
+MCT-1-BKK-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,BKK,Suvarnabhumi,INT-INT,118,82,141,N
+MCT-1-LHR-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,LHR,Heathrow,DOM-DOM,103,49,110,N
+MCT-1-LHR-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,LHR,Heathrow,DOM-INT,107,37,68,Y
+MCT-1-LHR-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,LHR,Heathrow,INT-DOM,74,64,144,N
+MCT-1-LHR-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,LHR,Heathrow,INT-INT,98,63,84,Y
+MCT-1-SIN-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,SIN,Changi,DOM-DOM,51,72,65,Y
+MCT-1-SIN-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,SIN,Changi,DOM-INT,53,86,106,Y
+MCT-1-SIN-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,SIN,Changi,INT-DOM,50,34,119,N
+MCT-1-SIN-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,SIN,Changi,INT-INT,86,84,112,N
+MCT-1-CDG-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,CDG,Charles de Gaulle,DOM-DOM,91,70,99,Y
+MCT-1-CDG-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,CDG,Charles de Gaulle,DOM-INT,50,62,86,Y
+MCT-1-CDG-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,CDG,Charles de Gaulle,INT-DOM,99,70,149,Y
+MCT-1-CDG-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,CDG,Charles de Gaulle,INT-INT,101,87,78,N
+MCT-1-FRA-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,FRA,Frankfurt,DOM-DOM,104,77,117,N
+MCT-1-FRA-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,FRA,Frankfurt,DOM-INT,120,44,90,Y
+MCT-1-FRA-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,FRA,Frankfurt,INT-DOM,104,40,150,N
+MCT-1-FRA-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,FRA,Frankfurt,INT-INT,73,40,125,Y
+MCT-1-JFK-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,JFK,John F Kennedy,DOM-DOM,110,86,66,Y
+MCT-1-JFK-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,JFK,John F Kennedy,DOM-INT,98,48,131,Y
+MCT-1-JFK-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,JFK,John F Kennedy,INT-DOM,111,42,147,N
+MCT-1-JFK-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,JFK,John F Kennedy,INT-INT,66,51,100,Y
+MCT-1-DEL-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,DEL,Indira Gandhi,DOM-DOM,93,90,78,N
+MCT-1-DEL-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,DEL,Indira Gandhi,DOM-INT,97,46,85,N
+MCT-1-DEL-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,DEL,Indira Gandhi,INT-DOM,63,41,106,Y
+MCT-1-DEL-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,DEL,Indira Gandhi,INT-INT,111,84,120,Y
+MCT-1-SYD-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,SYD,Sydney Kingsford Smith,DOM-DOM,115,31,137,Y
+MCT-1-SYD-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,SYD,Sydney Kingsford Smith,DOM-INT,118,75,66,Y
+MCT-1-SYD-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,SYD,Sydney Kingsford Smith,INT-DOM,64,50,112,Y
+MCT-1-SYD-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,SYD,Sydney Kingsford Smith,INT-INT,45,52,75,Y
+MCT-1-CAI-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,CAI,Cairo International,DOM-DOM,73,39,76,N
+MCT-1-CAI-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,CAI,Cairo International,DOM-INT,51,56,110,N
+MCT-1-CAI-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,CAI,Cairo International,INT-DOM,81,55,123,Y
+MCT-1-CAI-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,CAI,Cairo International,INT-INT,82,40,112,Y
+MCT-1-FCO-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,FCO,Fiumicino,DOM-DOM,47,37,106,N
+MCT-1-FCO-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,FCO,Fiumicino,DOM-INT,68,41,107,Y
+MCT-1-FCO-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,FCO,Fiumicino,INT-DOM,81,32,150,Y
+MCT-1-FCO-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,FCO,Fiumicino,INT-INT,56,43,74,Y
+MCT-1-DOH-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,DOH,Hamad International,DOM-DOM,103,64,107,N
+MCT-1-DOH-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,DOH,Hamad International,DOM-INT,109,40,84,N
+MCT-1-DOH-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,DOH,Hamad International,INT-DOM,66,61,122,N
+MCT-1-DOH-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,DOH,Hamad International,INT-INT,116,49,109,N
+MCT-1-MCT-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,MCT,Muscat International,DOM-DOM,93,55,136,Y
+MCT-1-MCT-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,MCT,Muscat International,DOM-INT,96,62,97,N
+MCT-1-MCT-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,MCT,Muscat International,INT-DOM,78,57,74,N
+MCT-1-MCT-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,MCT,Muscat International,INT-INT,113,57,79,Y
+MCT-1-JED-DOM-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,JED,King Abdulaziz,DOM-DOM,116,38,76,N
+MCT-1-JED-DOM-INT,1,Bangkok Typhoon + Critical MEL Aircraft,JED,King Abdulaziz,DOM-INT,78,78,133,Y
+MCT-1-JED-INT-DOM,1,Bangkok Typhoon + Critical MEL Aircraft,JED,King Abdulaziz,INT-DOM,106,75,106,N
+MCT-1-JED-INT-INT,1,Bangkok Typhoon + Critical MEL Aircraft,JED,King Abdulaziz,INT-INT,81,52,126,N
+MCT-2-AUH-DOM-DOM,2,London Fog + Multiple Aircraft AOG,AUH,Abu Dhabi International,DOM-DOM,71,42,93,Y
+MCT-2-AUH-DOM-INT,2,London Fog + Multiple Aircraft AOG,AUH,Abu Dhabi International,DOM-INT,65,79,75,N
+MCT-2-AUH-INT-DOM,2,London Fog + Multiple Aircraft AOG,AUH,Abu Dhabi International,INT-DOM,70,69,86,Y
+MCT-2-AUH-INT-INT,2,London Fog + Multiple Aircraft AOG,AUH,Abu Dhabi International,INT-INT,95,84,108,Y
+MCT-2-BKK-DOM-DOM,2,London Fog + Multiple Aircraft AOG,BKK,Suvarnabhumi,DOM-DOM,51,84,131,N
+MCT-2-BKK-DOM-INT,2,London Fog + Multiple Aircraft AOG,BKK,Suvarnabhumi,DOM-INT,115,66,124,Y
+MCT-2-BKK-INT-DOM,2,London Fog + Multiple Aircraft AOG,BKK,Suvarnabhumi,INT-DOM,116,76,68,Y
+MCT-2-BKK-INT-INT,2,London Fog + Multiple Aircraft AOG,BKK,Suvarnabhumi,INT-INT,81,89,71,Y
+MCT-2-LHR-DOM-DOM,2,London Fog + Multiple Aircraft AOG,LHR,Heathrow,DOM-DOM,48,73,150,Y
+MCT-2-LHR-DOM-INT,2,London Fog + Multiple Aircraft AOG,LHR,Heathrow,DOM-INT,82,57,96,Y
+MCT-2-LHR-INT-DOM,2,London Fog + Multiple Aircraft AOG,LHR,Heathrow,INT-DOM,93,76,71,N
+MCT-2-LHR-INT-INT,2,London Fog + Multiple Aircraft AOG,LHR,Heathrow,INT-INT,82,78,91,N
+MCT-2-SIN-DOM-DOM,2,London Fog + Multiple Aircraft AOG,SIN,Changi,DOM-DOM,46,64,117,N
+MCT-2-SIN-DOM-INT,2,London Fog + Multiple Aircraft AOG,SIN,Changi,DOM-INT,98,85,123,N
+MCT-2-SIN-INT-DOM,2,London Fog + Multiple Aircraft AOG,SIN,Changi,INT-DOM,114,66,142,N
+MCT-2-SIN-INT-INT,2,London Fog + Multiple Aircraft AOG,SIN,Changi,INT-INT,69,58,91,Y
+MCT-2-CDG-DOM-DOM,2,London Fog + Multiple Aircraft AOG,CDG,Charles de Gaulle,DOM-DOM,74,47,74,N
+MCT-2-CDG-DOM-INT,2,London Fog + Multiple Aircraft AOG,CDG,Charles de Gaulle,DOM-INT,76,31,109,N
+MCT-2-CDG-INT-DOM,2,London Fog + Multiple Aircraft AOG,CDG,Charles de Gaulle,INT-DOM,55,36,145,N
+MCT-2-CDG-INT-INT,2,London Fog + Multiple Aircraft AOG,CDG,Charles de Gaulle,INT-INT,54,75,75,Y
+MCT-2-FRA-DOM-DOM,2,London Fog + Multiple Aircraft AOG,FRA,Frankfurt,DOM-DOM,67,60,137,Y
+MCT-2-FRA-DOM-INT,2,London Fog + Multiple Aircraft AOG,FRA,Frankfurt,DOM-INT,116,90,105,Y
+MCT-2-FRA-INT-DOM,2,London Fog + Multiple Aircraft AOG,FRA,Frankfurt,INT-DOM,89,66,102,Y
+MCT-2-FRA-INT-INT,2,London Fog + Multiple Aircraft AOG,FRA,Frankfurt,INT-INT,82,45,100,Y
+MCT-2-JFK-DOM-DOM,2,London Fog + Multiple Aircraft AOG,JFK,John F Kennedy,DOM-DOM,48,45,138,N
+MCT-2-JFK-DOM-INT,2,London Fog + Multiple Aircraft AOG,JFK,John F Kennedy,DOM-INT,52,59,133,Y
+MCT-2-JFK-INT-DOM,2,London Fog + Multiple Aircraft AOG,JFK,John F Kennedy,INT-DOM,58,77,138,Y
+MCT-2-JFK-INT-INT,2,London Fog + Multiple Aircraft AOG,JFK,John F Kennedy,INT-INT,119,41,93,Y
+MCT-2-DEL-DOM-DOM,2,London Fog + Multiple Aircraft AOG,DEL,Indira Gandhi,DOM-DOM,65,84,107,Y
+MCT-2-DEL-DOM-INT,2,London Fog + Multiple Aircraft AOG,DEL,Indira Gandhi,DOM-INT,81,50,90,N
+MCT-2-DEL-INT-DOM,2,London Fog + Multiple Aircraft AOG,DEL,Indira Gandhi,INT-DOM,90,50,99,N
+MCT-2-DEL-INT-INT,2,London Fog + Multiple Aircraft AOG,DEL,Indira Gandhi,INT-INT,80,76,109,Y
+MCT-2-SYD-DOM-DOM,2,London Fog + Multiple Aircraft AOG,SYD,Sydney Kingsford Smith,DOM-DOM,55,43,66,N
+MCT-2-SYD-DOM-INT,2,London Fog + Multiple Aircraft AOG,SYD,Sydney Kingsford Smith,DOM-INT,50,43,142,N
+MCT-2-SYD-INT-DOM,2,London Fog + Multiple Aircraft AOG,SYD,Sydney Kingsford Smith,INT-DOM,54,70,146,Y
+MCT-2-SYD-INT-INT,2,London Fog + Multiple Aircraft AOG,SYD,Sydney Kingsford Smith,INT-INT,60,35,66,Y
+MCT-2-CAI-DOM-DOM,2,London Fog + Multiple Aircraft AOG,CAI,Cairo International,DOM-DOM,96,82,110,N
+MCT-2-CAI-DOM-INT,2,London Fog + Multiple Aircraft AOG,CAI,Cairo International,DOM-INT,69,77,92,Y
+MCT-2-CAI-INT-DOM,2,London Fog + Multiple Aircraft AOG,CAI,Cairo International,INT-DOM,73,44,103,Y
+MCT-2-CAI-INT-INT,2,London Fog + Multiple Aircraft AOG,CAI,Cairo International,INT-INT,56,86,135,Y
+MCT-2-FCO-DOM-DOM,2,London Fog + Multiple Aircraft AOG,FCO,Fiumicino,DOM-DOM,61,47,95,Y
+MCT-2-FCO-DOM-INT,2,London Fog + Multiple Aircraft AOG,FCO,Fiumicino,DOM-INT,97,82,117,Y
+MCT-2-FCO-INT-DOM,2,London Fog + Multiple Aircraft AOG,FCO,Fiumicino,INT-DOM,90,33,66,Y
+MCT-2-FCO-INT-INT,2,London Fog + Multiple Aircraft AOG,FCO,Fiumicino,INT-INT,108,32,78,N
+MCT-2-DOH-DOM-DOM,2,London Fog + Multiple Aircraft AOG,DOH,Hamad International,DOM-DOM,109,68,124,Y
+MCT-2-DOH-DOM-INT,2,London Fog + Multiple Aircraft AOG,DOH,Hamad International,DOM-INT,92,56,123,Y
+MCT-2-DOH-INT-DOM,2,London Fog + Multiple Aircraft AOG,DOH,Hamad International,INT-DOM,57,55,147,N
+MCT-2-DOH-INT-INT,2,London Fog + Multiple Aircraft AOG,DOH,Hamad International,INT-INT,78,87,96,N
+MCT-2-MCT-DOM-DOM,2,London Fog + Multiple Aircraft AOG,MCT,Muscat International,DOM-DOM,71,31,149,Y
+MCT-2-MCT-DOM-INT,2,London Fog + Multiple Aircraft AOG,MCT,Muscat International,DOM-INT,73,79,105,Y
+MCT-2-MCT-INT-DOM,2,London Fog + Multiple Aircraft AOG,MCT,Muscat International,INT-DOM,63,80,69,N
+MCT-2-MCT-INT-INT,2,London Fog + Multiple Aircraft AOG,MCT,Muscat International,INT-INT,56,40,113,Y
+MCT-2-JED-DOM-DOM,2,London Fog + Multiple Aircraft AOG,JED,King Abdulaziz,DOM-DOM,119,71,91,Y
+MCT-2-JED-DOM-INT,2,London Fog + Multiple Aircraft AOG,JED,King Abdulaziz,DOM-INT,78,35,126,Y
+MCT-2-JED-INT-DOM,2,London Fog + Multiple Aircraft AOG,JED,King Abdulaziz,INT-DOM,96,88,91,Y
+MCT-2-JED-INT-INT,2,London Fog + Multiple Aircraft AOG,JED,King Abdulaziz,INT-INT,86,53,121,N
+MCT-3-AUH-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,AUH,Abu Dhabi International,DOM-DOM,120,30,66,N
+MCT-3-AUH-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,AUH,Abu Dhabi International,DOM-INT,50,37,128,N
+MCT-3-AUH-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,AUH,Abu Dhabi International,INT-DOM,86,61,76,Y
+MCT-3-AUH-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,AUH,Abu Dhabi International,INT-INT,69,48,87,Y
+MCT-3-BKK-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,BKK,Suvarnabhumi,DOM-DOM,64,81,83,N
+MCT-3-BKK-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,BKK,Suvarnabhumi,DOM-INT,47,52,141,Y
+MCT-3-BKK-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,BKK,Suvarnabhumi,INT-DOM,61,57,67,Y
+MCT-3-BKK-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,BKK,Suvarnabhumi,INT-INT,69,51,92,Y
+MCT-3-LHR-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,LHR,Heathrow,DOM-DOM,53,78,77,Y
+MCT-3-LHR-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,LHR,Heathrow,DOM-INT,102,32,137,N
+MCT-3-LHR-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,LHR,Heathrow,INT-DOM,56,50,146,Y
+MCT-3-LHR-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,LHR,Heathrow,INT-INT,93,77,134,Y
+MCT-3-SIN-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,SIN,Changi,DOM-DOM,64,54,111,Y
+MCT-3-SIN-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,SIN,Changi,DOM-INT,81,52,89,N
+MCT-3-SIN-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,SIN,Changi,INT-DOM,72,76,100,N
+MCT-3-SIN-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,SIN,Changi,INT-INT,111,78,107,Y
+MCT-3-CDG-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,CDG,Charles de Gaulle,DOM-DOM,54,50,70,N
+MCT-3-CDG-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,CDG,Charles de Gaulle,DOM-INT,71,33,60,Y
+MCT-3-CDG-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,CDG,Charles de Gaulle,INT-DOM,46,73,110,N
+MCT-3-CDG-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,CDG,Charles de Gaulle,INT-INT,88,82,77,N
+MCT-3-FRA-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,FRA,Frankfurt,DOM-DOM,66,70,79,N
+MCT-3-FRA-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,FRA,Frankfurt,DOM-INT,93,78,147,Y
+MCT-3-FRA-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,FRA,Frankfurt,INT-DOM,107,69,136,Y
+MCT-3-FRA-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,FRA,Frankfurt,INT-INT,104,53,88,N
+MCT-3-JFK-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,JFK,John F Kennedy,DOM-DOM,110,89,113,Y
+MCT-3-JFK-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,JFK,John F Kennedy,DOM-INT,114,61,127,N
+MCT-3-JFK-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,JFK,John F Kennedy,INT-DOM,108,50,94,N
+MCT-3-JFK-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,JFK,John F Kennedy,INT-INT,106,83,101,N
+MCT-3-DEL-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,DEL,Indira Gandhi,DOM-DOM,102,38,74,N
+MCT-3-DEL-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,DEL,Indira Gandhi,DOM-INT,86,36,119,N
+MCT-3-DEL-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,DEL,Indira Gandhi,INT-DOM,66,60,83,N
+MCT-3-DEL-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,DEL,Indira Gandhi,INT-INT,48,79,81,N
+MCT-3-SYD-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,SYD,Sydney Kingsford Smith,DOM-DOM,53,85,104,Y
+MCT-3-SYD-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,SYD,Sydney Kingsford Smith,DOM-INT,46,81,133,Y
+MCT-3-SYD-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,SYD,Sydney Kingsford Smith,INT-DOM,57,34,107,Y
+MCT-3-SYD-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,SYD,Sydney Kingsford Smith,INT-INT,84,40,140,N
+MCT-3-CAI-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,CAI,Cairo International,DOM-DOM,114,73,105,Y
+MCT-3-CAI-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,CAI,Cairo International,DOM-INT,73,82,69,N
+MCT-3-CAI-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,CAI,Cairo International,INT-DOM,67,59,85,Y
+MCT-3-CAI-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,CAI,Cairo International,INT-INT,80,68,120,Y
+MCT-3-FCO-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,FCO,Fiumicino,DOM-DOM,73,30,100,N
+MCT-3-FCO-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,FCO,Fiumicino,DOM-INT,113,40,94,Y
+MCT-3-FCO-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,FCO,Fiumicino,INT-DOM,59,50,61,Y
+MCT-3-FCO-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,FCO,Fiumicino,INT-INT,99,35,107,N
+MCT-3-DOH-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,DOH,Hamad International,DOM-DOM,53,51,115,N
+MCT-3-DOH-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,DOH,Hamad International,DOM-INT,106,86,101,N
+MCT-3-DOH-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,DOH,Hamad International,INT-DOM,100,81,69,N
+MCT-3-DOH-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,DOH,Hamad International,INT-INT,48,89,82,N
+MCT-3-MCT-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,MCT,Muscat International,DOM-DOM,105,88,111,Y
+MCT-3-MCT-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,MCT,Muscat International,DOM-INT,120,67,127,N
+MCT-3-MCT-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,MCT,Muscat International,INT-DOM,47,40,135,Y
+MCT-3-MCT-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,MCT,Muscat International,INT-INT,79,77,83,N
+MCT-3-JED-DOM-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,JED,King Abdulaziz,DOM-DOM,91,55,67,N
+MCT-3-JED-DOM-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,JED,King Abdulaziz,DOM-INT,66,80,64,N
+MCT-3-JED-INT-DOM,3,Singapore Thunderstorms + MEL Expiry Cascade,JED,King Abdulaziz,INT-DOM,86,36,143,Y
+MCT-3-JED-INT-INT,3,Singapore Thunderstorms + MEL Expiry Cascade,JED,King Abdulaziz,INT-INT,88,81,112,N
+MCT-4-AUH-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,AUH,Abu Dhabi International,DOM-DOM,118,58,89,Y
+MCT-4-AUH-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,AUH,Abu Dhabi International,DOM-INT,86,36,97,Y
+MCT-4-AUH-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,AUH,Abu Dhabi International,INT-DOM,51,61,109,N
+MCT-4-AUH-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,AUH,Abu Dhabi International,INT-INT,96,61,87,N
+MCT-4-BKK-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,BKK,Suvarnabhumi,DOM-DOM,86,37,92,Y
+MCT-4-BKK-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,BKK,Suvarnabhumi,DOM-INT,71,73,133,Y
+MCT-4-BKK-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,BKK,Suvarnabhumi,INT-DOM,110,57,87,N
+MCT-4-BKK-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,BKK,Suvarnabhumi,INT-INT,115,74,131,Y
+MCT-4-LHR-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,LHR,Heathrow,DOM-DOM,104,76,89,N
+MCT-4-LHR-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,LHR,Heathrow,DOM-INT,50,39,90,Y
+MCT-4-LHR-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,LHR,Heathrow,INT-DOM,92,76,112,Y
+MCT-4-LHR-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,LHR,Heathrow,INT-INT,114,46,106,N
+MCT-4-SIN-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,SIN,Changi,DOM-DOM,84,46,60,Y
+MCT-4-SIN-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,SIN,Changi,DOM-INT,90,84,62,N
+MCT-4-SIN-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,SIN,Changi,INT-DOM,54,86,124,Y
+MCT-4-SIN-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,SIN,Changi,INT-INT,66,66,119,Y
+MCT-4-CDG-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CDG,Charles de Gaulle,DOM-DOM,69,30,90,N
+MCT-4-CDG-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CDG,Charles de Gaulle,DOM-INT,70,70,119,Y
+MCT-4-CDG-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CDG,Charles de Gaulle,INT-DOM,52,50,137,Y
+MCT-4-CDG-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CDG,Charles de Gaulle,INT-INT,95,55,72,N
+MCT-4-FRA-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FRA,Frankfurt,DOM-DOM,119,57,107,N
+MCT-4-FRA-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FRA,Frankfurt,DOM-INT,116,77,148,Y
+MCT-4-FRA-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FRA,Frankfurt,INT-DOM,64,54,64,N
+MCT-4-FRA-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FRA,Frankfurt,INT-INT,115,85,138,N
+MCT-4-JFK-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,JFK,John F Kennedy,DOM-DOM,53,64,109,N
+MCT-4-JFK-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,JFK,John F Kennedy,DOM-INT,82,74,87,Y
+MCT-4-JFK-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,JFK,John F Kennedy,INT-DOM,56,44,109,N
+MCT-4-JFK-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,JFK,John F Kennedy,INT-INT,88,38,112,N
+MCT-4-DEL-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,DEL,Indira Gandhi,DOM-DOM,92,65,139,Y
+MCT-4-DEL-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,DEL,Indira Gandhi,DOM-INT,109,87,87,Y
+MCT-4-DEL-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,DEL,Indira Gandhi,INT-DOM,106,46,107,Y
+MCT-4-DEL-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,DEL,Indira Gandhi,INT-INT,69,75,76,Y
+MCT-4-SYD-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,SYD,Sydney Kingsford Smith,DOM-DOM,120,68,132,N
+MCT-4-SYD-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,SYD,Sydney Kingsford Smith,DOM-INT,86,56,137,N
+MCT-4-SYD-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,SYD,Sydney Kingsford Smith,INT-DOM,49,89,93,Y
+MCT-4-SYD-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,SYD,Sydney Kingsford Smith,INT-INT,46,73,97,Y
+MCT-4-CAI-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CAI,Cairo International,DOM-DOM,117,65,100,Y
+MCT-4-CAI-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CAI,Cairo International,DOM-INT,99,56,132,N
+MCT-4-CAI-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CAI,Cairo International,INT-DOM,112,61,63,Y
+MCT-4-CAI-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CAI,Cairo International,INT-INT,70,75,62,N
+MCT-4-FCO-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FCO,Fiumicino,DOM-DOM,76,70,99,Y
+MCT-4-FCO-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FCO,Fiumicino,DOM-INT,78,48,139,N
+MCT-4-FCO-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FCO,Fiumicino,INT-DOM,108,43,103,N
+MCT-4-FCO-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FCO,Fiumicino,INT-INT,120,34,110,Y
+MCT-4-DOH-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,DOH,Hamad International,DOM-DOM,73,40,134,Y
+MCT-4-DOH-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,DOH,Hamad International,DOM-INT,62,86,61,N
+MCT-4-DOH-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,DOH,Hamad International,INT-DOM,94,85,61,Y
+MCT-4-DOH-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,DOH,Hamad International,INT-INT,107,80,94,N
+MCT-4-MCT-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,MCT,Muscat International,DOM-DOM,63,53,108,N
+MCT-4-MCT-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,MCT,Muscat International,DOM-INT,104,70,105,Y
+MCT-4-MCT-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,MCT,Muscat International,INT-DOM,118,47,62,N
+MCT-4-MCT-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,MCT,Muscat International,INT-INT,61,43,134,Y
+MCT-4-JED-DOM-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,JED,King Abdulaziz,DOM-DOM,98,66,124,Y
+MCT-4-JED-DOM-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,JED,King Abdulaziz,DOM-INT,97,40,106,Y
+MCT-4-JED-INT-DOM,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,JED,King Abdulaziz,INT-DOM,67,79,124,Y
+MCT-4-JED-INT-INT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,JED,King Abdulaziz,INT-INT,68,50,75,N
+MCT-5-AUH-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,AUH,Abu Dhabi International,DOM-DOM,65,46,87,N
+MCT-5-AUH-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,AUH,Abu Dhabi International,DOM-INT,89,33,92,Y
+MCT-5-AUH-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,AUH,Abu Dhabi International,INT-DOM,66,51,123,Y
+MCT-5-AUH-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,AUH,Abu Dhabi International,INT-INT,66,57,74,Y
+MCT-5-BKK-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,BKK,Suvarnabhumi,DOM-DOM,77,52,82,Y
+MCT-5-BKK-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,BKK,Suvarnabhumi,DOM-INT,111,76,74,Y
+MCT-5-BKK-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,BKK,Suvarnabhumi,INT-DOM,105,56,116,Y
+MCT-5-BKK-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,BKK,Suvarnabhumi,INT-INT,96,80,135,N
+MCT-5-LHR-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,LHR,Heathrow,DOM-DOM,119,44,125,Y
+MCT-5-LHR-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,LHR,Heathrow,DOM-INT,94,53,80,N
+MCT-5-LHR-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,LHR,Heathrow,INT-DOM,70,66,130,N
+MCT-5-LHR-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,LHR,Heathrow,INT-INT,66,50,64,Y
+MCT-5-SIN-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,SIN,Changi,DOM-DOM,53,87,81,N
+MCT-5-SIN-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,SIN,Changi,DOM-INT,79,62,149,Y
+MCT-5-SIN-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,SIN,Changi,INT-DOM,73,41,119,Y
+MCT-5-SIN-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,SIN,Changi,INT-INT,68,39,69,Y
+MCT-5-CDG-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CDG,Charles de Gaulle,DOM-DOM,114,61,118,Y
+MCT-5-CDG-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CDG,Charles de Gaulle,DOM-INT,52,39,148,Y
+MCT-5-CDG-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CDG,Charles de Gaulle,INT-DOM,75,68,96,Y
+MCT-5-CDG-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CDG,Charles de Gaulle,INT-INT,86,39,77,Y
+MCT-5-FRA-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FRA,Frankfurt,DOM-DOM,51,32,131,N
+MCT-5-FRA-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FRA,Frankfurt,DOM-INT,70,54,134,Y
+MCT-5-FRA-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FRA,Frankfurt,INT-DOM,76,46,61,N
+MCT-5-FRA-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FRA,Frankfurt,INT-INT,120,52,137,Y
+MCT-5-JFK-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,JFK,John F Kennedy,DOM-DOM,60,67,133,Y
+MCT-5-JFK-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,JFK,John F Kennedy,DOM-INT,85,54,112,Y
+MCT-5-JFK-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,JFK,John F Kennedy,INT-DOM,115,79,116,Y
+MCT-5-JFK-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,JFK,John F Kennedy,INT-INT,65,69,116,N
+MCT-5-DEL-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,DEL,Indira Gandhi,DOM-DOM,52,47,78,Y
+MCT-5-DEL-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,DEL,Indira Gandhi,DOM-INT,59,73,86,Y
+MCT-5-DEL-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,DEL,Indira Gandhi,INT-DOM,66,73,65,N
+MCT-5-DEL-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,DEL,Indira Gandhi,INT-INT,77,55,73,N
+MCT-5-SYD-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,SYD,Sydney Kingsford Smith,DOM-DOM,90,48,113,Y
+MCT-5-SYD-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,SYD,Sydney Kingsford Smith,DOM-INT,88,76,103,N
+MCT-5-SYD-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,SYD,Sydney Kingsford Smith,INT-DOM,74,46,141,N
+MCT-5-SYD-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,SYD,Sydney Kingsford Smith,INT-INT,57,61,133,Y
+MCT-5-CAI-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CAI,Cairo International,DOM-DOM,76,77,85,N
+MCT-5-CAI-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CAI,Cairo International,DOM-INT,74,36,119,Y
+MCT-5-CAI-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CAI,Cairo International,INT-DOM,45,74,61,N
+MCT-5-CAI-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CAI,Cairo International,INT-INT,100,69,129,N
+MCT-5-FCO-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FCO,Fiumicino,DOM-DOM,90,63,115,N
+MCT-5-FCO-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FCO,Fiumicino,DOM-INT,99,58,82,N
+MCT-5-FCO-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FCO,Fiumicino,INT-DOM,115,58,100,Y
+MCT-5-FCO-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FCO,Fiumicino,INT-INT,107,69,147,N
+MCT-5-DOH-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,DOH,Hamad International,DOM-DOM,57,33,144,Y
+MCT-5-DOH-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,DOH,Hamad International,DOM-INT,103,39,136,N
+MCT-5-DOH-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,DOH,Hamad International,INT-DOM,75,87,86,N
+MCT-5-DOH-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,DOH,Hamad International,INT-INT,113,38,101,Y
+MCT-5-MCT-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,MCT,Muscat International,DOM-DOM,86,65,138,Y
+MCT-5-MCT-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,MCT,Muscat International,DOM-INT,70,85,104,N
+MCT-5-MCT-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,MCT,Muscat International,INT-DOM,69,68,68,N
+MCT-5-MCT-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,MCT,Muscat International,INT-INT,120,34,72,Y
+MCT-5-JED-DOM-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,JED,King Abdulaziz,DOM-DOM,97,76,121,N
+MCT-5-JED-DOM-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,JED,King Abdulaziz,DOM-INT,62,55,95,N
+MCT-5-JED-INT-DOM,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,JED,King Abdulaziz,INT-DOM,91,59,60,Y
+MCT-5-JED-INT-INT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,JED,King Abdulaziz,INT-INT,100,40,101,N
+MCT-6-AUH-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,AUH,Abu Dhabi International,DOM-DOM,113,60,127,Y
+MCT-6-AUH-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,AUH,Abu Dhabi International,DOM-INT,101,40,140,Y
+MCT-6-AUH-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,AUH,Abu Dhabi International,INT-DOM,112,72,96,N
+MCT-6-AUH-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,AUH,Abu Dhabi International,INT-INT,81,84,64,Y
+MCT-6-BKK-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,BKK,Suvarnabhumi,DOM-DOM,77,37,80,Y
+MCT-6-BKK-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,BKK,Suvarnabhumi,DOM-INT,102,69,119,N
+MCT-6-BKK-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,BKK,Suvarnabhumi,INT-DOM,65,77,115,N
+MCT-6-BKK-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,BKK,Suvarnabhumi,INT-INT,56,56,125,Y
+MCT-6-LHR-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,LHR,Heathrow,DOM-DOM,105,51,149,N
+MCT-6-LHR-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,LHR,Heathrow,DOM-INT,51,31,114,Y
+MCT-6-LHR-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,LHR,Heathrow,INT-DOM,65,50,134,Y
+MCT-6-LHR-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,LHR,Heathrow,INT-INT,77,89,105,N
+MCT-6-SIN-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,SIN,Changi,DOM-DOM,117,35,112,Y
+MCT-6-SIN-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,SIN,Changi,DOM-INT,104,32,77,N
+MCT-6-SIN-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,SIN,Changi,INT-DOM,59,33,60,N
+MCT-6-SIN-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,SIN,Changi,INT-INT,105,42,114,Y
+MCT-6-CDG-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,CDG,Charles de Gaulle,DOM-DOM,116,87,144,Y
+MCT-6-CDG-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,CDG,Charles de Gaulle,DOM-INT,93,72,68,Y
+MCT-6-CDG-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,CDG,Charles de Gaulle,INT-DOM,106,87,140,N
+MCT-6-CDG-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,CDG,Charles de Gaulle,INT-INT,93,67,130,Y
+MCT-6-FRA-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,FRA,Frankfurt,DOM-DOM,60,82,64,N
+MCT-6-FRA-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,FRA,Frankfurt,DOM-INT,83,62,113,N
+MCT-6-FRA-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,FRA,Frankfurt,INT-DOM,66,71,99,N
+MCT-6-FRA-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,FRA,Frankfurt,INT-INT,61,77,64,Y
+MCT-6-JFK-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,JFK,John F Kennedy,DOM-DOM,105,67,102,Y
+MCT-6-JFK-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,JFK,John F Kennedy,DOM-INT,89,62,131,Y
+MCT-6-JFK-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,JFK,John F Kennedy,INT-DOM,82,47,131,N
+MCT-6-JFK-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,JFK,John F Kennedy,INT-INT,57,64,70,Y
+MCT-6-DEL-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,DEL,Indira Gandhi,DOM-DOM,93,54,89,N
+MCT-6-DEL-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,DEL,Indira Gandhi,DOM-INT,108,87,142,N
+MCT-6-DEL-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,DEL,Indira Gandhi,INT-DOM,62,67,101,N
+MCT-6-DEL-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,DEL,Indira Gandhi,INT-INT,115,68,96,Y
+MCT-6-SYD-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,SYD,Sydney Kingsford Smith,DOM-DOM,91,65,110,N
+MCT-6-SYD-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,SYD,Sydney Kingsford Smith,DOM-INT,120,67,64,Y
+MCT-6-SYD-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,SYD,Sydney Kingsford Smith,INT-DOM,56,68,137,N
+MCT-6-SYD-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,SYD,Sydney Kingsford Smith,INT-INT,60,35,106,N
+MCT-6-CAI-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,CAI,Cairo International,DOM-DOM,69,82,137,N
+MCT-6-CAI-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,CAI,Cairo International,DOM-INT,95,55,144,Y
+MCT-6-CAI-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,CAI,Cairo International,INT-DOM,76,43,106,N
+MCT-6-CAI-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,CAI,Cairo International,INT-INT,90,46,88,Y
+MCT-6-FCO-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,FCO,Fiumicino,DOM-DOM,76,32,80,Y
+MCT-6-FCO-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,FCO,Fiumicino,DOM-INT,58,85,109,N
+MCT-6-FCO-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,FCO,Fiumicino,INT-DOM,72,38,146,Y
+MCT-6-FCO-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,FCO,Fiumicino,INT-INT,85,70,106,Y
+MCT-6-DOH-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,DOH,Hamad International,DOM-DOM,60,68,78,N
+MCT-6-DOH-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,DOH,Hamad International,DOM-INT,81,85,62,N
+MCT-6-DOH-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,DOH,Hamad International,INT-DOM,92,90,136,Y
+MCT-6-DOH-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,DOH,Hamad International,INT-INT,67,31,99,N
+MCT-6-MCT-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,MCT,Muscat International,DOM-DOM,69,68,85,N
+MCT-6-MCT-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,MCT,Muscat International,DOM-INT,98,72,87,Y
+MCT-6-MCT-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,MCT,Muscat International,INT-DOM,76,47,115,Y
+MCT-6-MCT-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,MCT,Muscat International,INT-INT,81,33,133,Y
+MCT-6-JED-DOM-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,JED,King Abdulaziz,DOM-DOM,64,86,140,Y
+MCT-6-JED-DOM-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,JED,King Abdulaziz,DOM-INT,86,71,114,N
+MCT-6-JED-INT-DOM,6,Multiple Aircraft AOG + Engine Failure Cascade,JED,King Abdulaziz,INT-DOM,69,84,72,Y
+MCT-6-JED-INT-INT,6,Multiple Aircraft AOG + Engine Failure Cascade,JED,King Abdulaziz,INT-INT,87,32,142,Y
+MCT-7-AUH-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,AUH,Abu Dhabi International,DOM-DOM,45,64,129,N
+MCT-7-AUH-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,AUH,Abu Dhabi International,DOM-INT,114,39,83,Y
+MCT-7-AUH-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,AUH,Abu Dhabi International,INT-DOM,51,90,85,Y
+MCT-7-AUH-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,AUH,Abu Dhabi International,INT-INT,88,45,106,Y
+MCT-7-BKK-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,BKK,Suvarnabhumi,DOM-DOM,98,53,62,N
+MCT-7-BKK-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,BKK,Suvarnabhumi,DOM-INT,78,89,122,Y
+MCT-7-BKK-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,BKK,Suvarnabhumi,INT-DOM,68,90,148,N
+MCT-7-BKK-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,BKK,Suvarnabhumi,INT-INT,61,44,78,N
+MCT-7-LHR-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,LHR,Heathrow,DOM-DOM,69,85,135,Y
+MCT-7-LHR-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,LHR,Heathrow,DOM-INT,55,31,98,N
+MCT-7-LHR-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,LHR,Heathrow,INT-DOM,76,42,98,Y
+MCT-7-LHR-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,LHR,Heathrow,INT-INT,109,43,110,N
+MCT-7-SIN-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,SIN,Changi,DOM-DOM,115,38,84,Y
+MCT-7-SIN-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,SIN,Changi,DOM-INT,51,67,89,Y
+MCT-7-SIN-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,SIN,Changi,INT-DOM,81,38,94,N
+MCT-7-SIN-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,SIN,Changi,INT-INT,78,78,127,Y
+MCT-7-CDG-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CDG,Charles de Gaulle,DOM-DOM,49,35,127,Y
+MCT-7-CDG-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CDG,Charles de Gaulle,DOM-INT,65,78,81,N
+MCT-7-CDG-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CDG,Charles de Gaulle,INT-DOM,110,64,70,N
+MCT-7-CDG-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CDG,Charles de Gaulle,INT-INT,88,39,144,Y
+MCT-7-FRA-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FRA,Frankfurt,DOM-DOM,75,55,112,N
+MCT-7-FRA-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FRA,Frankfurt,DOM-INT,54,87,72,N
+MCT-7-FRA-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FRA,Frankfurt,INT-DOM,81,44,110,N
+MCT-7-FRA-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FRA,Frankfurt,INT-INT,83,68,78,Y
+MCT-7-JFK-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,JFK,John F Kennedy,DOM-DOM,94,62,130,Y
+MCT-7-JFK-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,JFK,John F Kennedy,DOM-INT,83,36,91,Y
+MCT-7-JFK-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,JFK,John F Kennedy,INT-DOM,92,83,81,N
+MCT-7-JFK-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,JFK,John F Kennedy,INT-INT,110,62,87,Y
+MCT-7-DEL-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,DEL,Indira Gandhi,DOM-DOM,86,49,139,N
+MCT-7-DEL-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,DEL,Indira Gandhi,DOM-INT,78,84,62,Y
+MCT-7-DEL-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,DEL,Indira Gandhi,INT-DOM,100,69,88,Y
+MCT-7-DEL-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,DEL,Indira Gandhi,INT-INT,55,58,108,N
+MCT-7-SYD-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,SYD,Sydney Kingsford Smith,DOM-DOM,82,61,107,Y
+MCT-7-SYD-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,SYD,Sydney Kingsford Smith,DOM-INT,66,56,132,N
+MCT-7-SYD-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,SYD,Sydney Kingsford Smith,INT-DOM,72,40,95,Y
+MCT-7-SYD-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,SYD,Sydney Kingsford Smith,INT-INT,88,70,74,Y
+MCT-7-CAI-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CAI,Cairo International,DOM-DOM,84,57,80,Y
+MCT-7-CAI-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CAI,Cairo International,DOM-INT,94,54,119,Y
+MCT-7-CAI-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CAI,Cairo International,INT-DOM,68,81,142,N
+MCT-7-CAI-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CAI,Cairo International,INT-INT,71,51,128,Y
+MCT-7-FCO-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FCO,Fiumicino,DOM-DOM,107,76,80,Y
+MCT-7-FCO-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FCO,Fiumicino,DOM-INT,52,63,147,N
+MCT-7-FCO-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FCO,Fiumicino,INT-DOM,78,67,136,N
+MCT-7-FCO-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FCO,Fiumicino,INT-INT,76,55,80,Y
+MCT-7-DOH-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,DOH,Hamad International,DOM-DOM,84,89,92,Y
+MCT-7-DOH-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,DOH,Hamad International,DOM-INT,61,42,132,Y
+MCT-7-DOH-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,DOH,Hamad International,INT-DOM,81,88,138,N
+MCT-7-DOH-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,DOH,Hamad International,INT-INT,47,40,109,Y
+MCT-7-MCT-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,MCT,Muscat International,DOM-DOM,87,42,101,Y
+MCT-7-MCT-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,MCT,Muscat International,DOM-INT,96,83,65,Y
+MCT-7-MCT-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,MCT,Muscat International,INT-DOM,82,52,71,Y
+MCT-7-MCT-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,MCT,Muscat International,INT-INT,115,84,71,Y
+MCT-7-JED-DOM-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,JED,King Abdulaziz,DOM-DOM,65,32,115,N
+MCT-7-JED-DOM-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,JED,King Abdulaziz,DOM-INT,70,84,140,N
+MCT-7-JED-INT-DOM,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,JED,King Abdulaziz,INT-DOM,47,58,134,N
+MCT-7-JED-INT-INT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,JED,King Abdulaziz,INT-INT,87,33,98,Y
+MCT-8-AUH-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,AUH,Abu Dhabi International,DOM-DOM,54,49,114,Y
+MCT-8-AUH-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,AUH,Abu Dhabi International,DOM-INT,106,77,115,N
+MCT-8-AUH-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,AUH,Abu Dhabi International,INT-DOM,107,48,111,N
+MCT-8-AUH-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,AUH,Abu Dhabi International,INT-INT,70,72,68,Y
+MCT-8-BKK-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,BKK,Suvarnabhumi,DOM-DOM,60,82,84,Y
+MCT-8-BKK-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,BKK,Suvarnabhumi,DOM-INT,110,57,122,N
+MCT-8-BKK-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,BKK,Suvarnabhumi,INT-DOM,112,40,89,N
+MCT-8-BKK-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,BKK,Suvarnabhumi,INT-INT,93,51,92,Y
+MCT-8-LHR-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,LHR,Heathrow,DOM-DOM,67,56,60,N
+MCT-8-LHR-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,LHR,Heathrow,DOM-INT,117,49,125,N
+MCT-8-LHR-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,LHR,Heathrow,INT-DOM,85,63,116,Y
+MCT-8-LHR-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,LHR,Heathrow,INT-INT,109,84,127,N
+MCT-8-SIN-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,SIN,Changi,DOM-DOM,56,60,133,Y
+MCT-8-SIN-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,SIN,Changi,DOM-INT,108,86,139,N
+MCT-8-SIN-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,SIN,Changi,INT-DOM,89,80,144,N
+MCT-8-SIN-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,SIN,Changi,INT-INT,120,36,84,Y
+MCT-8-CDG-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,CDG,Charles de Gaulle,DOM-DOM,55,76,98,Y
+MCT-8-CDG-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,CDG,Charles de Gaulle,DOM-INT,89,59,67,N
+MCT-8-CDG-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,CDG,Charles de Gaulle,INT-DOM,63,54,135,Y
+MCT-8-CDG-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,CDG,Charles de Gaulle,INT-INT,80,84,146,N
+MCT-8-FRA-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,FRA,Frankfurt,DOM-DOM,115,30,100,N
+MCT-8-FRA-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,FRA,Frankfurt,DOM-INT,59,41,82,Y
+MCT-8-FRA-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,FRA,Frankfurt,INT-DOM,96,30,145,Y
+MCT-8-FRA-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,FRA,Frankfurt,INT-INT,89,73,72,Y
+MCT-8-JFK-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,JFK,John F Kennedy,DOM-DOM,88,55,126,Y
+MCT-8-JFK-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,JFK,John F Kennedy,DOM-INT,65,44,88,N
+MCT-8-JFK-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,JFK,John F Kennedy,INT-DOM,47,36,90,N
+MCT-8-JFK-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,JFK,John F Kennedy,INT-INT,117,32,93,N
+MCT-8-DEL-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,DEL,Indira Gandhi,DOM-DOM,72,37,105,N
+MCT-8-DEL-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,DEL,Indira Gandhi,DOM-INT,93,85,117,Y
+MCT-8-DEL-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,DEL,Indira Gandhi,INT-DOM,55,56,80,N
+MCT-8-DEL-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,DEL,Indira Gandhi,INT-INT,88,72,61,N
+MCT-8-SYD-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,SYD,Sydney Kingsford Smith,DOM-DOM,100,37,106,Y
+MCT-8-SYD-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,SYD,Sydney Kingsford Smith,DOM-INT,78,89,73,N
+MCT-8-SYD-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,SYD,Sydney Kingsford Smith,INT-DOM,107,73,101,N
+MCT-8-SYD-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,SYD,Sydney Kingsford Smith,INT-INT,69,70,63,Y
+MCT-8-CAI-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,CAI,Cairo International,DOM-DOM,106,47,91,Y
+MCT-8-CAI-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,CAI,Cairo International,DOM-INT,116,38,76,N
+MCT-8-CAI-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,CAI,Cairo International,INT-DOM,71,65,111,N
+MCT-8-CAI-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,CAI,Cairo International,INT-INT,76,59,150,N
+MCT-8-FCO-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,FCO,Fiumicino,DOM-DOM,85,38,149,Y
+MCT-8-FCO-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,FCO,Fiumicino,DOM-INT,95,33,128,N
+MCT-8-FCO-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,FCO,Fiumicino,INT-DOM,54,37,116,N
+MCT-8-FCO-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,FCO,Fiumicino,INT-INT,96,46,130,Y
+MCT-8-DOH-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,DOH,Hamad International,DOM-DOM,56,69,88,N
+MCT-8-DOH-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,DOH,Hamad International,DOM-INT,57,34,76,N
+MCT-8-DOH-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,DOH,Hamad International,INT-DOM,70,54,131,N
+MCT-8-DOH-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,DOH,Hamad International,INT-INT,110,88,109,Y
+MCT-8-MCT-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,MCT,Muscat International,DOM-DOM,50,78,88,Y
+MCT-8-MCT-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,MCT,Muscat International,DOM-INT,63,89,67,Y
+MCT-8-MCT-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,MCT,Muscat International,INT-DOM,55,75,147,Y
+MCT-8-MCT-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,MCT,Muscat International,INT-INT,77,72,75,N
+MCT-8-JED-DOM-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,JED,King Abdulaziz,DOM-DOM,108,49,84,Y
+MCT-8-JED-DOM-INT,8,Runway Closure + Airspace Flow Rate Restrictions,JED,King Abdulaziz,DOM-INT,102,74,75,Y
+MCT-8-JED-INT-DOM,8,Runway Closure + Airspace Flow Rate Restrictions,JED,King Abdulaziz,INT-DOM,68,40,120,Y
+MCT-8-JED-INT-INT,8,Runway Closure + Airspace Flow Rate Restrictions,JED,King Abdulaziz,INT-INT,65,53,98,N
+MCT-9-AUH-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,AUH,Abu Dhabi International,DOM-DOM,52,44,63,N
+MCT-9-AUH-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,AUH,Abu Dhabi International,DOM-INT,112,52,138,N
+MCT-9-AUH-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,AUH,Abu Dhabi International,INT-DOM,61,77,133,N
+MCT-9-AUH-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,AUH,Abu Dhabi International,INT-INT,107,71,119,N
+MCT-9-BKK-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,BKK,Suvarnabhumi,DOM-DOM,106,51,132,Y
+MCT-9-BKK-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,BKK,Suvarnabhumi,DOM-INT,67,83,64,N
+MCT-9-BKK-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,BKK,Suvarnabhumi,INT-DOM,79,58,75,Y
+MCT-9-BKK-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,BKK,Suvarnabhumi,INT-INT,70,65,125,Y
+MCT-9-LHR-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,LHR,Heathrow,DOM-DOM,67,89,64,Y
+MCT-9-LHR-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,LHR,Heathrow,DOM-INT,66,46,110,N
+MCT-9-LHR-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,LHR,Heathrow,INT-DOM,55,76,136,N
+MCT-9-LHR-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,LHR,Heathrow,INT-INT,48,37,119,Y
+MCT-9-SIN-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,SIN,Changi,DOM-DOM,90,73,92,Y
+MCT-9-SIN-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,SIN,Changi,DOM-INT,66,35,74,N
+MCT-9-SIN-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,SIN,Changi,INT-DOM,98,79,123,N
+MCT-9-SIN-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,SIN,Changi,INT-INT,89,65,130,Y
+MCT-9-CDG-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,CDG,Charles de Gaulle,DOM-DOM,102,38,117,Y
+MCT-9-CDG-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,CDG,Charles de Gaulle,DOM-INT,95,41,148,N
+MCT-9-CDG-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,CDG,Charles de Gaulle,INT-DOM,58,78,62,N
+MCT-9-CDG-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,CDG,Charles de Gaulle,INT-INT,67,61,93,Y
+MCT-9-FRA-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,FRA,Frankfurt,DOM-DOM,108,88,70,Y
+MCT-9-FRA-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,FRA,Frankfurt,DOM-INT,56,46,117,N
+MCT-9-FRA-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,FRA,Frankfurt,INT-DOM,81,55,140,N
+MCT-9-FRA-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,FRA,Frankfurt,INT-INT,116,31,133,Y
+MCT-9-JFK-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,JFK,John F Kennedy,DOM-DOM,99,66,118,N
+MCT-9-JFK-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,JFK,John F Kennedy,DOM-INT,54,35,135,Y
+MCT-9-JFK-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,JFK,John F Kennedy,INT-DOM,49,61,61,Y
+MCT-9-JFK-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,JFK,John F Kennedy,INT-INT,46,80,142,N
+MCT-9-DEL-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,DEL,Indira Gandhi,DOM-DOM,110,54,86,N
+MCT-9-DEL-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,DEL,Indira Gandhi,DOM-INT,115,87,65,N
+MCT-9-DEL-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,DEL,Indira Gandhi,INT-DOM,73,46,138,N
+MCT-9-DEL-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,DEL,Indira Gandhi,INT-INT,117,79,98,N
+MCT-9-SYD-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,SYD,Sydney Kingsford Smith,DOM-DOM,83,65,63,N
+MCT-9-SYD-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,SYD,Sydney Kingsford Smith,DOM-INT,98,68,87,Y
+MCT-9-SYD-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,SYD,Sydney Kingsford Smith,INT-DOM,92,60,102,N
+MCT-9-SYD-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,SYD,Sydney Kingsford Smith,INT-INT,81,54,80,N
+MCT-9-CAI-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,CAI,Cairo International,DOM-DOM,105,64,92,Y
+MCT-9-CAI-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,CAI,Cairo International,DOM-INT,117,46,129,N
+MCT-9-CAI-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,CAI,Cairo International,INT-DOM,64,86,102,Y
+MCT-9-CAI-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,CAI,Cairo International,INT-INT,59,87,66,N
+MCT-9-FCO-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,FCO,Fiumicino,DOM-DOM,79,79,106,N
+MCT-9-FCO-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,FCO,Fiumicino,DOM-INT,113,50,116,Y
+MCT-9-FCO-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,FCO,Fiumicino,INT-DOM,62,44,133,Y
+MCT-9-FCO-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,FCO,Fiumicino,INT-INT,77,76,76,N
+MCT-9-DOH-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,DOH,Hamad International,DOM-DOM,50,50,74,Y
+MCT-9-DOH-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,DOH,Hamad International,DOM-INT,56,76,123,Y
+MCT-9-DOH-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,DOH,Hamad International,INT-DOM,117,36,122,Y
+MCT-9-DOH-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,DOH,Hamad International,INT-INT,86,72,128,Y
+MCT-9-MCT-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,MCT,Muscat International,DOM-DOM,65,38,116,N
+MCT-9-MCT-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,MCT,Muscat International,DOM-INT,63,47,66,Y
+MCT-9-MCT-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,MCT,Muscat International,INT-DOM,90,71,120,Y
+MCT-9-MCT-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,MCT,Muscat International,INT-INT,103,36,117,N
+MCT-9-JED-DOM-DOM,9,Security Threat + Geopolitical Airspace Diversion,JED,King Abdulaziz,DOM-DOM,91,33,66,N
+MCT-9-JED-DOM-INT,9,Security Threat + Geopolitical Airspace Diversion,JED,King Abdulaziz,DOM-INT,64,74,121,N
+MCT-9-JED-INT-DOM,9,Security Threat + Geopolitical Airspace Diversion,JED,King Abdulaziz,INT-DOM,58,36,113,Y
+MCT-9-JED-INT-INT,9,Security Threat + Geopolitical Airspace Diversion,JED,King Abdulaziz,INT-INT,104,78,128,N
+MCT-10-AUH-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,AUH,Abu Dhabi International,DOM-DOM,115,58,116,Y
+MCT-10-AUH-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,AUH,Abu Dhabi International,DOM-INT,51,39,119,Y
+MCT-10-AUH-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,AUH,Abu Dhabi International,INT-DOM,116,49,127,Y
+MCT-10-AUH-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,AUH,Abu Dhabi International,INT-INT,76,63,148,N
+MCT-10-BKK-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,BKK,Suvarnabhumi,DOM-DOM,91,55,134,Y
+MCT-10-BKK-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,BKK,Suvarnabhumi,DOM-INT,120,41,130,N
+MCT-10-BKK-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,BKK,Suvarnabhumi,INT-DOM,118,78,67,N
+MCT-10-BKK-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,BKK,Suvarnabhumi,INT-INT,98,75,106,Y
+MCT-10-LHR-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,LHR,Heathrow,DOM-DOM,115,41,95,Y
+MCT-10-LHR-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,LHR,Heathrow,DOM-INT,114,47,144,N
+MCT-10-LHR-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,LHR,Heathrow,INT-DOM,118,39,149,Y
+MCT-10-LHR-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,LHR,Heathrow,INT-INT,108,33,128,Y
+MCT-10-SIN-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,SIN,Changi,DOM-DOM,50,62,75,N
+MCT-10-SIN-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,SIN,Changi,DOM-INT,92,52,122,Y
+MCT-10-SIN-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,SIN,Changi,INT-DOM,85,67,90,N
+MCT-10-SIN-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,SIN,Changi,INT-INT,95,38,111,Y
+MCT-10-CDG-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CDG,Charles de Gaulle,DOM-DOM,89,74,92,N
+MCT-10-CDG-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CDG,Charles de Gaulle,DOM-INT,98,75,91,N
+MCT-10-CDG-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CDG,Charles de Gaulle,INT-DOM,66,44,73,Y
+MCT-10-CDG-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CDG,Charles de Gaulle,INT-INT,49,54,118,Y
+MCT-10-FRA-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FRA,Frankfurt,DOM-DOM,100,40,93,Y
+MCT-10-FRA-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FRA,Frankfurt,DOM-INT,87,78,80,Y
+MCT-10-FRA-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FRA,Frankfurt,INT-DOM,66,48,97,Y
+MCT-10-FRA-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FRA,Frankfurt,INT-INT,77,47,112,N
+MCT-10-JFK-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,JFK,John F Kennedy,DOM-DOM,71,80,94,N
+MCT-10-JFK-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,JFK,John F Kennedy,DOM-INT,46,43,118,Y
+MCT-10-JFK-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,JFK,John F Kennedy,INT-DOM,48,80,92,N
+MCT-10-JFK-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,JFK,John F Kennedy,INT-INT,110,48,79,N
+MCT-10-DEL-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,DEL,Indira Gandhi,DOM-DOM,117,61,128,N
+MCT-10-DEL-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,DEL,Indira Gandhi,DOM-INT,51,30,74,Y
+MCT-10-DEL-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,DEL,Indira Gandhi,INT-DOM,109,76,69,Y
+MCT-10-DEL-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,DEL,Indira Gandhi,INT-INT,74,68,63,Y
+MCT-10-SYD-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,SYD,Sydney Kingsford Smith,DOM-DOM,86,82,68,Y
+MCT-10-SYD-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,SYD,Sydney Kingsford Smith,DOM-INT,119,35,102,Y
+MCT-10-SYD-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,SYD,Sydney Kingsford Smith,INT-DOM,103,44,135,N
+MCT-10-SYD-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,SYD,Sydney Kingsford Smith,INT-INT,98,45,78,N
+MCT-10-CAI-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CAI,Cairo International,DOM-DOM,103,34,77,N
+MCT-10-CAI-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CAI,Cairo International,DOM-INT,100,43,61,N
+MCT-10-CAI-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CAI,Cairo International,INT-DOM,116,86,93,N
+MCT-10-CAI-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CAI,Cairo International,INT-INT,105,85,77,N
+MCT-10-FCO-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FCO,Fiumicino,DOM-DOM,100,36,136,Y
+MCT-10-FCO-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FCO,Fiumicino,DOM-INT,94,80,88,N
+MCT-10-FCO-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FCO,Fiumicino,INT-DOM,87,90,137,Y
+MCT-10-FCO-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FCO,Fiumicino,INT-INT,92,44,139,Y
+MCT-10-DOH-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,DOH,Hamad International,DOM-DOM,108,78,70,N
+MCT-10-DOH-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,DOH,Hamad International,DOM-INT,85,70,126,Y
+MCT-10-DOH-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,DOH,Hamad International,INT-DOM,96,59,126,N
+MCT-10-DOH-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,DOH,Hamad International,INT-INT,45,76,147,Y
+MCT-10-MCT-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,MCT,Muscat International,DOM-DOM,52,68,75,Y
+MCT-10-MCT-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,MCT,Muscat International,DOM-INT,61,87,71,Y
+MCT-10-MCT-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,MCT,Muscat International,INT-DOM,84,82,69,N
+MCT-10-MCT-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,MCT,Muscat International,INT-INT,59,38,74,Y
+MCT-10-JED-DOM-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,JED,King Abdulaziz,DOM-DOM,90,36,101,N
+MCT-10-JED-DOM-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,JED,King Abdulaziz,DOM-INT,65,77,112,N
+MCT-10-JED-INT-DOM,10,Medical Emergency + Tarmac Delay + Slot Unavailability,JED,King Abdulaziz,INT-DOM,47,41,72,N
+MCT-10-JED-INT-INT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,JED,King Abdulaziz,INT-INT,97,64,137,Y
+MCT-11-AUH-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,AUH,Abu Dhabi International,DOM-DOM,98,67,62,N
+MCT-11-AUH-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,AUH,Abu Dhabi International,DOM-INT,60,57,116,Y
+MCT-11-AUH-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,AUH,Abu Dhabi International,INT-DOM,53,58,89,N
+MCT-11-AUH-INT-INT,11,EY401 Typhoon -> EY406 LIAC,AUH,Abu Dhabi International,INT-INT,120,73,82,Y
+MCT-11-BKK-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,BKK,Suvarnabhumi,DOM-DOM,95,88,146,Y
+MCT-11-BKK-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,BKK,Suvarnabhumi,DOM-INT,117,49,116,N
+MCT-11-BKK-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,BKK,Suvarnabhumi,INT-DOM,89,64,135,Y
+MCT-11-BKK-INT-INT,11,EY401 Typhoon -> EY406 LIAC,BKK,Suvarnabhumi,INT-INT,92,71,65,N
+MCT-11-LHR-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,LHR,Heathrow,DOM-DOM,55,67,122,Y
+MCT-11-LHR-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,LHR,Heathrow,DOM-INT,88,61,102,Y
+MCT-11-LHR-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,LHR,Heathrow,INT-DOM,114,31,97,N
+MCT-11-LHR-INT-INT,11,EY401 Typhoon -> EY406 LIAC,LHR,Heathrow,INT-INT,85,53,114,N
+MCT-11-SIN-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,SIN,Changi,DOM-DOM,103,84,98,N
+MCT-11-SIN-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,SIN,Changi,DOM-INT,57,70,116,N
+MCT-11-SIN-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,SIN,Changi,INT-DOM,74,89,70,Y
+MCT-11-SIN-INT-INT,11,EY401 Typhoon -> EY406 LIAC,SIN,Changi,INT-INT,80,44,108,Y
+MCT-11-CDG-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,CDG,Charles de Gaulle,DOM-DOM,84,78,74,N
+MCT-11-CDG-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,CDG,Charles de Gaulle,DOM-INT,93,65,67,Y
+MCT-11-CDG-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,CDG,Charles de Gaulle,INT-DOM,98,48,83,Y
+MCT-11-CDG-INT-INT,11,EY401 Typhoon -> EY406 LIAC,CDG,Charles de Gaulle,INT-INT,88,42,67,Y
+MCT-11-FRA-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,FRA,Frankfurt,DOM-DOM,110,51,108,N
+MCT-11-FRA-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,FRA,Frankfurt,DOM-INT,94,40,146,N
+MCT-11-FRA-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,FRA,Frankfurt,INT-DOM,63,79,119,N
+MCT-11-FRA-INT-INT,11,EY401 Typhoon -> EY406 LIAC,FRA,Frankfurt,INT-INT,89,52,118,Y
+MCT-11-JFK-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,JFK,John F Kennedy,DOM-DOM,50,90,79,Y
+MCT-11-JFK-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,JFK,John F Kennedy,DOM-INT,106,84,75,N
+MCT-11-JFK-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,JFK,John F Kennedy,INT-DOM,68,50,131,N
+MCT-11-JFK-INT-INT,11,EY401 Typhoon -> EY406 LIAC,JFK,John F Kennedy,INT-INT,75,74,96,Y
+MCT-11-DEL-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,DEL,Indira Gandhi,DOM-DOM,81,69,129,Y
+MCT-11-DEL-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,DEL,Indira Gandhi,DOM-INT,116,85,61,N
+MCT-11-DEL-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,DEL,Indira Gandhi,INT-DOM,96,52,62,Y
+MCT-11-DEL-INT-INT,11,EY401 Typhoon -> EY406 LIAC,DEL,Indira Gandhi,INT-INT,110,71,92,N
+MCT-11-SYD-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,SYD,Sydney Kingsford Smith,DOM-DOM,108,71,70,N
+MCT-11-SYD-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,SYD,Sydney Kingsford Smith,DOM-INT,58,48,69,Y
+MCT-11-SYD-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,SYD,Sydney Kingsford Smith,INT-DOM,71,88,78,N
+MCT-11-SYD-INT-INT,11,EY401 Typhoon -> EY406 LIAC,SYD,Sydney Kingsford Smith,INT-INT,61,75,60,N
+MCT-11-CAI-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,CAI,Cairo International,DOM-DOM,117,89,72,N
+MCT-11-CAI-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,CAI,Cairo International,DOM-INT,118,71,112,Y
+MCT-11-CAI-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,CAI,Cairo International,INT-DOM,70,64,91,N
+MCT-11-CAI-INT-INT,11,EY401 Typhoon -> EY406 LIAC,CAI,Cairo International,INT-INT,88,90,104,N
+MCT-11-FCO-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,FCO,Fiumicino,DOM-DOM,104,87,67,Y
+MCT-11-FCO-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,FCO,Fiumicino,DOM-INT,58,82,145,Y
+MCT-11-FCO-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,FCO,Fiumicino,INT-DOM,102,34,94,N
+MCT-11-FCO-INT-INT,11,EY401 Typhoon -> EY406 LIAC,FCO,Fiumicino,INT-INT,91,36,144,Y
+MCT-11-DOH-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,DOH,Hamad International,DOM-DOM,85,32,126,N
+MCT-11-DOH-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,DOH,Hamad International,DOM-INT,62,48,115,N
+MCT-11-DOH-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,DOH,Hamad International,INT-DOM,54,83,118,Y
+MCT-11-DOH-INT-INT,11,EY401 Typhoon -> EY406 LIAC,DOH,Hamad International,INT-INT,74,79,101,Y
+MCT-11-MCT-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,MCT,Muscat International,DOM-DOM,83,64,87,Y
+MCT-11-MCT-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,MCT,Muscat International,DOM-INT,70,69,89,N
+MCT-11-MCT-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,MCT,Muscat International,INT-DOM,100,40,125,Y
+MCT-11-MCT-INT-INT,11,EY401 Typhoon -> EY406 LIAC,MCT,Muscat International,INT-INT,48,78,132,N
+MCT-11-JED-DOM-DOM,11,EY401 Typhoon -> EY406 LIAC,JED,King Abdulaziz,DOM-DOM,52,53,88,N
+MCT-11-JED-DOM-INT,11,EY401 Typhoon -> EY406 LIAC,JED,King Abdulaziz,DOM-INT,56,81,101,Y
+MCT-11-JED-INT-DOM,11,EY401 Typhoon -> EY406 LIAC,JED,King Abdulaziz,INT-DOM,84,77,144,Y
+MCT-11-JED-INT-INT,11,EY401 Typhoon -> EY406 LIAC,JED,King Abdulaziz,INT-INT,108,32,80,Y

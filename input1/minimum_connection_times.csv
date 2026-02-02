@@ -1,0 +1,53 @@
+mct_id,airport_code,airport_name,connection_type,standard_mct_min,premium_mct_min,wheelchair_mct_min,is_same_terminal
+MCT-0001,AUH,Abu Dhabi International,DOM-DOM,45,30,60,True
+MCT-0002,AUH,Abu Dhabi International,DOM-INT,60,45,90,True
+MCT-0003,AUH,Abu Dhabi International,INT-DOM,60,45,90,True
+MCT-0004,AUH,Abu Dhabi International,INT-INT,90,60,120,True
+MCT-0005,BKK,Suvarnabhumi Airport,DOM-DOM,45,30,60,True
+MCT-0006,BKK,Suvarnabhumi Airport,DOM-INT,60,45,90,False
+MCT-0007,BKK,Suvarnabhumi Airport,INT-DOM,60,45,90,False
+MCT-0008,BKK,Suvarnabhumi Airport,INT-INT,90,60,120,True
+MCT-0009,LHR,London Heathrow,DOM-DOM,45,30,60,False
+MCT-0010,LHR,London Heathrow,DOM-INT,60,45,90,False
+MCT-0011,LHR,London Heathrow,INT-DOM,60,45,90,False
+MCT-0012,LHR,London Heathrow,INT-INT,90,60,120,False
+MCT-0013,SIN,Singapore Changi,DOM-DOM,45,30,60,True
+MCT-0014,SIN,Singapore Changi,DOM-INT,60,45,90,True
+MCT-0015,SIN,Singapore Changi,INT-DOM,60,45,90,True
+MCT-0016,SIN,Singapore Changi,INT-INT,90,60,120,True
+MCT-0017,CDG,Paris Charles de Gaulle,DOM-DOM,45,30,60,False
+MCT-0018,CDG,Paris Charles de Gaulle,DOM-INT,60,45,90,False
+MCT-0019,CDG,Paris Charles de Gaulle,INT-DOM,60,45,90,False
+MCT-0020,CDG,Paris Charles de Gaulle,INT-INT,90,60,120,False
+MCT-0021,FRA,Frankfurt Airport,DOM-DOM,45,30,60,True
+MCT-0022,FRA,Frankfurt Airport,DOM-INT,60,45,90,True
+MCT-0023,FRA,Frankfurt Airport,INT-DOM,60,45,90,True
+MCT-0024,FRA,Frankfurt Airport,INT-INT,90,60,120,True
+MCT-0025,JFK,John F Kennedy International,DOM-DOM,45,30,60,False
+MCT-0026,JFK,John F Kennedy International,DOM-INT,60,45,90,False
+MCT-0027,JFK,John F Kennedy International,INT-DOM,60,45,90,False
+MCT-0028,JFK,John F Kennedy International,INT-INT,90,60,120,False
+MCT-0029,DEL,Indira Gandhi International,DOM-DOM,45,30,60,True
+MCT-0030,DEL,Indira Gandhi International,DOM-INT,60,45,90,True
+MCT-0031,DEL,Indira Gandhi International,INT-DOM,60,45,90,True
+MCT-0032,DEL,Indira Gandhi International,INT-INT,90,60,120,True
+MCT-0033,SYD,Sydney Kingsford Smith,DOM-DOM,45,30,60,True
+MCT-0034,SYD,Sydney Kingsford Smith,DOM-INT,60,45,90,True
+MCT-0035,SYD,Sydney Kingsford Smith,INT-DOM,60,45,90,True
+MCT-0036,SYD,Sydney Kingsford Smith,INT-INT,90,60,120,True
+MCT-0037,CAI,Cairo International,DOM-DOM,45,30,60,True
+MCT-0038,CAI,Cairo International,DOM-INT,60,45,90,True
+MCT-0039,CAI,Cairo International,INT-DOM,60,45,90,True
+MCT-0040,CAI,Cairo International,INT-INT,90,60,120,True
+MCT-0041,FCO,Rome Fiumicino,DOM-DOM,45,30,60,True
+MCT-0042,FCO,Rome Fiumicino,DOM-INT,60,45,90,True
+MCT-0043,FCO,Rome Fiumicino,INT-DOM,60,45,90,True
+MCT-0044,FCO,Rome Fiumicino,INT-INT,90,60,120,True
+MCT-0045,DOH,Hamad International,DOM-DOM,45,30,60,True
+MCT-0046,DOH,Hamad International,DOM-INT,60,45,90,True
+MCT-0047,DOH,Hamad International,INT-DOM,60,45,90,True
+MCT-0048,DOH,Hamad International,INT-INT,90,60,120,True
+MCT-0049,MCT,Muscat International,DOM-DOM,45,30,60,True
+MCT-0050,MCT,Muscat International,DOM-INT,60,45,90,True
+MCT-0051,MCT,Muscat International,INT-DOM,60,45,90,True
+MCT-0052,MCT,Muscat International,INT-INT,90,60,120,True

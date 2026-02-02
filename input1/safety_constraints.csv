@@ -1,0 +1,71 @@
+constraint_id,category,constraint_code,description,min_value,max_value,unit,applies_to,is_waivable,waiver_authority,regulatory_reference,violation_severity,penalty_description,notes
+SAFE-001,CREW_FDP,FDP_MAX_UNAUGMENTED,Maximum FDP Unaugmented Crew,,,14,hours,FLIGHT_CREW,False,,14 CFR Part 117,CRITICAL,Grounding + FAA investigation,Based on duty start time
+SAFE-002,CREW_FDP,FDP_MAX_AUGMENTED,Maximum FDP Augmented Crew,,,17,hours,FLIGHT_CREW,False,,14 CFR Part 117,CRITICAL,Grounding + FAA investigation,3-pilot augmented
+SAFE-003,CREW_FDP,FDP_EXTENSION_MAX,Maximum FDP Extension,,,2,hours,FLIGHT_CREW,True,Captain PIC,14 CFR Part 117,HIGH,Documentation required,Unforeseen circumstances only
+SAFE-004,CREW_REST,REST_MIN_STANDARD,Minimum Rest Period,10,,hours,FLIGHT_CREW,False,,14 CFR Part 117,CRITICAL,Crew cannot operate,Must include 8hr sleep opportunity
+SAFE-005,CREW_REST,REST_MIN_REDUCED,Minimum Reduced Rest,8,,hours,FLIGHT_CREW,True,Ops Control,14 CFR Part 117,HIGH,Subsequent rest extension required,Max 3 consecutive reduced rest
+SAFE-006,CREW_REST,SLEEP_OPPORTUNITY,Minimum Sleep Opportunity,8,,hours,FLIGHT_CREW,False,,14 CFR Part 117,CRITICAL,Part of rest requirement,Uninterrupted
+SAFE-007,CREW_CUMULATIVE,FLIGHT_TIME_24HR,Max Flight Time 24 Hours,,,10,hours,FLIGHT_CREW,False,,14 CFR Part 117,CRITICAL,Exceeds daily limit,Rolling 24hr window
+SAFE-008,CREW_CUMULATIVE,FLIGHT_TIME_672HR,Max Flight Time 672 Hours,,,100,hours,FLIGHT_CREW,False,,14 CFR Part 117,CRITICAL,Exceeds 28-day limit,Rolling window
+SAFE-009,CREW_CUMULATIVE,FLIGHT_TIME_365DAY,Max Flight Time 365 Days,,,1000,hours,FLIGHT_CREW,False,,14 CFR Part 117,CRITICAL,Exceeds annual limit,Rolling year
+SAFE-010,CREW_CUMULATIVE,DUTY_TIME_168HR,Max Duty Time 168 Hours,,,60,hours,FLIGHT_CREW,False,,14 CFR Part 117,HIGH,Exceeds weekly limit,7-day rolling
+SAFE-011,CREW_CABIN,CABIN_FDP_MAX,Cabin Crew Max FDP,,,14,hours,CABIN_CREW,False,,EASA FTL,HIGH,Crew cannot operate,Standard limit
+SAFE-012,CREW_CABIN,CABIN_REST_MIN,Cabin Crew Min Rest,10,,hours,CABIN_CREW,False,,EASA FTL,HIGH,Crew cannot operate,Standard requirement
+SAFE-013,CREW_CABIN,CABIN_DUTY_7DAY,Cabin Crew 7-Day Duty,,,55,hours,CABIN_CREW,False,,EASA FTL,MEDIUM,Exceeds weekly limit,Rolling window
+SAFE-014,CREW_QUAL,TYPE_RATING,Valid Type Rating Required,,,0,days,FLIGHT_CREW,False,,14 CFR Part 61,CRITICAL,Cannot operate aircraft,Must be current
+SAFE-015,CREW_QUAL,MEDICAL_CERTIFICATE,Valid Medical Certificate,,,0,days,FLIGHT_CREW,False,,14 CFR Part 67,CRITICAL,Cannot operate,Class 1 for ATP
+SAFE-016,CREW_QUAL,RECENCY_LANDING,Landing Recency,3,,landings,FLIGHT_CREW,False,,14 CFR Part 61.57,HIGH,Requires check ride,90-day rolling
+SAFE-017,CREW_QUAL,RECENCY_IFR,IFR Recency,6,,approaches,FLIGHT_CREW,False,,14 CFR Part 61.57,HIGH,Requires IPC,6-month rolling
+SAFE-018,CREW_QUAL,LINE_CHECK,Line Check Currency,,,12,months,FLIGHT_CREW,False,,Ops Specs,HIGH,Requires check,Annual requirement
+SAFE-019,AIRCRAFT_MEL,MEL_CAT_A,MEL Category A Rectification,,,0,days,AIRCRAFT,False,,MMEL,HIGH,As specified in MEL,Per specific item
+SAFE-020,AIRCRAFT_MEL,MEL_CAT_B,MEL Category B Rectification,,,3,days,AIRCRAFT,True,M&E Director,MMEL,MEDIUM,Must rectify within limit,Calendar days
+SAFE-021,AIRCRAFT_MEL,MEL_CAT_C,MEL Category C Rectification,,,10,days,AIRCRAFT,True,M&E Director,MMEL,MEDIUM,Must rectify within limit,Calendar days
+SAFE-022,AIRCRAFT_MEL,MEL_CAT_D,MEL Category D Rectification,,,120,days,AIRCRAFT,True,M&E Director,MMEL,LOW,Must rectify within limit,Calendar days
+SAFE-023,AIRCRAFT_MEL,MEL_MULTIPLE,Multiple MEL Items,,,3,items,AIRCRAFT,True,Chief Pilot,MMEL,HIGH,Operational assessment required,Cumulative effect
+SAFE-024,AIRCRAFT_MAINT,A_CHECK_INTERVAL,A-Check Interval,,,500,flight_hours,AIRCRAFT,False,,Maintenance Program,HIGH,Aircraft grounded,Or 60 days
+SAFE-025,AIRCRAFT_MAINT,C_CHECK_INTERVAL,C-Check Interval,,,6000,flight_hours,AIRCRAFT,False,,Maintenance Program,CRITICAL,Aircraft grounded,Or 18-24 months
+SAFE-026,AIRCRAFT_CERT,ETOPS_CERTIFICATION,ETOPS Certification Required,,,0,boolean,AIRCRAFT,False,,14 CFR Part 121,CRITICAL,Cannot fly ETOPS route,Route specific
+SAFE-027,AIRCRAFT_CERT,RVSM_CERTIFICATION,RVSM Certification Required,,,0,boolean,AIRCRAFT,False,,14 CFR Part 91,HIGH,Cannot fly FL290-410,Airspace specific
+SAFE-028,AIRCRAFT_CERT,PBN_CERTIFICATION,PBN Certification Required,,,0,boolean,AIRCRAFT,False,,ICAO Doc 9613,MEDIUM,Route restrictions,Approach specific
+SAFE-029,AIRCRAFT_CERT,CAT_III_CERTIFICATION,CAT III Certification,,,0,boolean,AIRCRAFT,False,,14 CFR Part 91,MEDIUM,Cannot land CAT III,Low visibility ops
+SAFE-030,FUEL,FUEL_RESERVE_MIN,Minimum Fuel Reserve,45,,minutes,FLIGHT,False,,14 CFR Part 121,CRITICAL,Cannot dispatch,Final reserve
+SAFE-031,FUEL,FUEL_ALTERNATE,Alternate Fuel Required,,,0,boolean,FLIGHT,False,,14 CFR Part 121,HIGH,Must carry alternate fuel,Weather dependent
+SAFE-032,FUEL,FUEL_CONTINGENCY,Contingency Fuel,5,,percent,FLIGHT,False,,14 CFR Part 121,HIGH,Of trip fuel,Minimum requirement
+SAFE-033,FUEL,FUEL_TANKERING_MAX,Maximum Tankering,,,15,percent,FLIGHT,True,Flight Ops,Operations,LOW,Weight penalty,Above planned fuel
+SAFE-034,PAX_TARMAC,TARMAC_DELAY_DOM,Domestic Tarmac Delay Max,,,180,minutes,FLIGHT,False,,DOT Regulation,CRITICAL,Must deplane,US domestic
+SAFE-035,PAX_TARMAC,TARMAC_DELAY_INT,International Tarmac Delay Max,,,240,minutes,FLIGHT,False,,DOT Regulation,CRITICAL,Must deplane,US international
+SAFE-036,PAX_TARMAC,TARMAC_FOOD_WATER,Food/Water Requirement,,,120,minutes,FLIGHT,False,,DOT Regulation,HIGH,Must provide,During tarmac delay
+SAFE-037,PAX_TARMAC,TARMAC_LAVATORY,Lavatory Requirement,,,0,minutes,FLIGHT,False,,DOT Regulation,HIGH,Must be operable,During tarmac delay
+SAFE-038,AIRPORT_OPS,CURFEW_LHR,London Heathrow Curfew,23.5,6,hours,AIRPORT,True,Airport Authority,Airport Rules,HIGH,Curfew violation fine,£15000 per movement
+SAFE-039,AIRPORT_OPS,CURFEW_FRA,Frankfurt Curfew,23,5,hours,AIRPORT,True,Airport Authority,Airport Rules,HIGH,Curfew violation fine,€12000 per movement
+SAFE-040,AIRPORT_OPS,CURFEW_CDG,Paris CDG Curfew,0,5.5,hours,AIRPORT,True,Airport Authority,Airport Rules,HIGH,Curfew violation fine,€18000 per movement
+SAFE-041,AIRPORT_OPS,CURFEW_SYD,Sydney Curfew,23,6,hours,AIRPORT,True,Airport Authority,Airport Rules,HIGH,Curfew violation fine,AUD20000 per movement
+SAFE-042,AIRPORT_OPS,SLOT_TOLERANCE,Slot Time Tolerance,,,15,minutes,AIRPORT,False,,Slot Regulations,MEDIUM,Slot misuse penalty,IATA WSG
+SAFE-043,AIRPORT_OPS,SLOT_RETENTION,Slot Retention Threshold,80,,percent,AIRPORT,False,,Slot Regulations,HIGH,Risk of slot loss,Use-it-or-lose-it
+SAFE-044,AIRSPACE,CTOT_COMPLIANCE,CTOT Compliance Window,,,15,minutes,FLIGHT,False,,EUROCONTROL,MEDIUM,New slot required,Of assigned CTOT
+SAFE-045,AIRSPACE,GDP_COMPLIANCE,Ground Delay Program,,,0,boolean,FLIGHT,False,,FAA ATCSCC,HIGH,Must comply,US airspace
+SAFE-046,AIRSPACE,GROUND_STOP,Ground Stop Compliance,,,0,boolean,FLIGHT,False,,FAA ATCSCC,CRITICAL,No departures,US airspace
+SAFE-047,AIRSPACE,EDCT_COMPLIANCE,EDCT Compliance,,,5,minutes,FLIGHT,False,,FAA ATCSCC,MEDIUM,Of assigned time,Expected Departure Clearance Time
+SAFE-048,DANGEROUS_GOODS,DG_ACCEPTANCE,DG Acceptance Check,,,0,boolean,CARGO,False,,IATA DGR,CRITICAL,Cannot accept,Shipper declaration required
+SAFE-049,DANGEROUS_GOODS,DG_SEGREGATION,DG Segregation Rules,,,0,boolean,CARGO,False,,IATA DGR,CRITICAL,Incompatible goods,Class-specific rules
+SAFE-050,DANGEROUS_GOODS,DG_PILOT_NOTIF,DG Pilot Notification,,,0,boolean,FLIGHT,False,,IATA DGR,HIGH,NOTOC required,Before departure
+SAFE-051,LIVE_ANIMALS,LAR_COMPLIANCE,Live Animal Regulations,,,0,boolean,CARGO,False,,IATA LAR,HIGH,Welfare requirements,Species-specific
+SAFE-052,LIVE_ANIMALS,LAR_TEMP_RANGE,Live Animal Temperature,15,25,celsius,CARGO,False,,IATA LAR,HIGH,Must maintain range,Hold temperature
+SAFE-053,LIVE_ANIMALS,LAR_MAX_DELAY,Live Animal Max Delay,,,6,hours,CARGO,True,Cargo Manager,IATA LAR,HIGH,Welfare intervention,Feeding/watering required
+SAFE-054,SECURITY,SECURITY_SCREENING,Passenger Screening,,,0,boolean,PASSENGER,False,,TSA/ECAC,CRITICAL,Cannot board,100% screening
+SAFE-055,SECURITY,BAGGAGE_RECONCILIATION,Baggage Reconciliation,,,0,boolean,FLIGHT,False,,ICAO Annex 17,CRITICAL,Cannot depart,Positive bag match
+SAFE-056,SECURITY,CREW_BACKGROUND,Crew Background Check,,,0,boolean,CREW,False,,TSA/ECAC,CRITICAL,Cannot operate,Valid clearance
+SAFE-057,WEIGHT_BALANCE,MAX_TAKEOFF_WEIGHT,Maximum Takeoff Weight,,,0,kg,AIRCRAFT,False,,AFM,CRITICAL,Cannot dispatch,Type-specific
+SAFE-058,WEIGHT_BALANCE,MAX_LANDING_WEIGHT,Maximum Landing Weight,,,0,kg,AIRCRAFT,False,,AFM,CRITICAL,May require fuel burn,Type-specific
+SAFE-059,WEIGHT_BALANCE,CG_LIMITS,Center of Gravity Limits,,,0,percent_mac,AIRCRAFT,False,,AFM,CRITICAL,Load adjustment required,Forward/aft limits
+SAFE-060,WEATHER_MINS,TAKEOFF_VISIBILITY,Takeoff Visibility Minimum,,,0,meters,FLIGHT,False,,Ops Specs,HIGH,Cannot depart,RVR-based
+SAFE-061,WEATHER_MINS,LANDING_VISIBILITY,Landing Visibility Minimum,,,0,meters,FLIGHT,False,,Ops Specs,HIGH,Cannot land,CAT I/II/III dependent
+SAFE-062,WEATHER_MINS,CROSSWIND_LIMIT,Maximum Crosswind Component,,,0,knots,FLIGHT,False,,AFM,HIGH,Cannot operate,Type-specific
+SAFE-063,WEATHER_MINS,TAILWIND_LIMIT,Maximum Tailwind Component,,,15,knots,FLIGHT,False,,AFM,HIGH,Runway change required,Standard limit
+SAFE-064,INTERNATIONAL,BILATERAL_RIGHTS,Bilateral Agreement Required,,,0,boolean,FLIGHT,False,,Air Services Agreement,CRITICAL,Cannot operate route,Country-specific
+SAFE-065,INTERNATIONAL,FIFTH_FREEDOM,Fifth Freedom Rights,,,0,boolean,FLIGHT,False,,Air Services Agreement,HIGH,Route restriction,Traffic rights
+SAFE-066,INTERNATIONAL,CABOTAGE,Cabotage Restriction,,,0,boolean,FLIGHT,False,,National Law,CRITICAL,Cannot carry domestic,Country-specific
+SAFE-067,INTERNATIONAL,OVERFLIGHT_PERMIT,Overflight Permit Required,,,0,boolean,FLIGHT,False,,National Law,HIGH,Route deviation required,Country-specific
+SAFE-068,EMERGENCY,EMERGENCY_EQUIPMENT,Emergency Equipment Check,,,0,boolean,AIRCRAFT,False,,14 CFR Part 121,CRITICAL,Cannot dispatch,Life vests/rafts/ELT
+SAFE-069,EMERGENCY,OXYGEN_SUPPLY,Oxygen Supply Minimum,,,0,minutes,AIRCRAFT,False,,14 CFR Part 121,CRITICAL,Cannot dispatch,Altitude-dependent
+SAFE-070,EMERGENCY,FIRE_SUPPRESSION,Fire Suppression System,,,0,boolean,AIRCRAFT,False,,14 CFR Part 121,CRITICAL,Cannot dispatch,Cargo hold requirement
