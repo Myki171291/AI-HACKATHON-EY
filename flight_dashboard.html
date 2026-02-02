@@ -7,61 +7,73 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Segoe UI', sans-serif; background: #0a1628; color: #e0e6ed; }
-        .header { background: linear-gradient(135deg, #1a2744, #0d1a2d); padding: 20px; border-bottom: 2px solid #2d4a6f; }
-        .header h1 { font-size: 24px; color: #4fc3f7; }
-        .filters { display: flex; gap: 15px; margin-top: 15px; flex-wrap: wrap; align-items: center; }
-        .filter-group { display: flex; flex-direction: column; gap: 5px; }
-        .filter-group label { font-size: 11px; color: #81d4fa; text-transform: uppercase; }
-        .filter-group select, .filter-group input { padding: 10px; border-radius: 6px; border: 1px solid #2d4a6f; background: #1a2744; color: #e0e6ed; min-width: 180px; }
-        .btn { padding: 10px 20px; background: #00897b; color: white; border: none; border-radius: 6px; cursor: pointer; margin-top: 18px; }
+        .header { background: linear-gradient(135deg, #1a2744, #0d1a2d); padding: 15px 20px; border-bottom: 2px solid #2d4a6f; }
+        .header h1 { font-size: 22px; color: #4fc3f7; }
+        .filters { display: flex; gap: 15px; margin-top: 12px; flex-wrap: wrap; align-items: center; }
+        .filter-group { display: flex; flex-direction: column; gap: 4px; }
+        .filter-group label { font-size: 10px; color: #81d4fa; text-transform: uppercase; }
+        .filter-group select { padding: 8px 12px; border-radius: 6px; border: 1px solid #2d4a6f; background: #1a2744; color: #e0e6ed; min-width: 200px; }
+        .btn { padding: 8px 20px; background: #00897b; color: white; border: none; border-radius: 6px; cursor: pointer; margin-top: 16px; }
         .btn:hover { background: #00695c; }
-        .main { padding: 20px; display: grid; grid-template-columns: 1fr 2fr; gap: 20px; }
-        .flight-info { background: linear-gradient(135deg, #1a2744, #152238); border-radius: 10px; padding: 20px; border: 1px solid #2d4a6f; }
-        .flight-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .flight-number { font-size: 28px; font-weight: 700; color: #4fc3f7; }
-        .flight-status { padding: 6px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .nav-tabs { display: flex; background: #152238; border-bottom: 1px solid #2d4a6f; overflow-x: auto; }
+        .nav-tab { padding: 12px 20px; cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap; font-size: 13px; }
+        .nav-tab:hover { background: rgba(79,195,247,0.1); }
+        .nav-tab.active { border-bottom-color: #4fc3f7; color: #4fc3f7; background: rgba(79,195,247,0.1); }
+        .nav-tab .icon { margin-right: 6px; }
+        .main { padding: 15px; display: grid; grid-template-columns: 320px 1fr; gap: 15px; min-height: calc(100vh - 160px); }
+        .flight-summary { background: linear-gradient(135deg, #1a2744, #152238); border-radius: 10px; padding: 15px; border: 1px solid #2d4a6f; }
+        .flight-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+        .flight-number { font-size: 24px; font-weight: 700; color: #4fc3f7; }
+        .status-badge { padding: 4px 12px; border-radius: 15px; font-size: 11px; font-weight: 600; }
         .status-delayed { background: rgba(255,183,77,0.2); color: #ffb74d; }
         .status-cancelled { background: rgba(239,83,80,0.2); color: #ef5350; }
         .status-ontime { background: rgba(102,187,106,0.2); color: #66bb6a; }
-        .flight-route { display: flex; align-items: center; gap: 20px; margin: 20px 0; }
+        .route-display { display: flex; align-items: center; gap: 15px; margin: 15px 0; padding: 15px; background: #0d1a2d; border-radius: 8px; }
         .airport { text-align: center; }
-        .airport-code { font-size: 24px; font-weight: 700; }
-        .airport-time { font-size: 14px; color: #81d4fa; }
-        .route-line { flex: 1; height: 2px; background: #2d4a6f; position: relative; }
+        .airport-code { font-size: 20px; font-weight: 700; }
+        .airport-time { font-size: 12px; color: #81d4fa; }
+        .route-line { flex: 1; height: 2px; background: linear-gradient(90deg, #2d4a6f, #4fc3f7, #2d4a6f); position: relative; }
         .route-line::after { content: "✈"; position: absolute; top: -10px; left: 50%; transform: translateX(-50%); color: #4fc3f7; }
-        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-        .info-item { background: #0d1a2d; padding: 12px; border-radius: 8px; }
-        .info-label { font-size: 11px; color: #81d4fa; text-transform: uppercase; }
-        .info-value { font-size: 16px; font-weight: 600; margin-top: 5px; }
-        .passengers-section { background: linear-gradient(135deg, #1a2744, #152238); border-radius: 10px; border: 1px solid #2d4a6f; }
-        .section-header { padding: 15px 20px; background: #2d4a6f; font-weight: 600; display: flex; justify-content: space-between; border-radius: 10px 10px 0 0; }
-        .pax-list { max-height: 500px; overflow-y: auto; }
-        .pax-item { padding: 15px 20px; border-bottom: 1px solid #2d4a6f; cursor: pointer; transition: background 0.2s; }
+        .info-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #2d4a6f; font-size: 13px; }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { color: #81d4fa; }
+        .info-value { font-weight: 600; }
+        .agent-content { display: none; background: linear-gradient(135deg, #1a2744, #152238); border-radius: 10px; padding: 15px; border: 1px solid #2d4a6f; }
+        .agent-content.active { display: block; }
+        .section-title { font-size: 16px; color: #4fc3f7; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #2d4a6f; }
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+        .card { background: #0d1a2d; border-radius: 8px; padding: 12px; border: 1px solid #2d4a6f; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .card-title { font-weight: 600; color: #4fc3f7; }
+        .card-badge { padding: 3px 8px; border-radius: 10px; font-size: 10px; }
+        .card-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; }
+        .card-label { color: #81d4fa; }
+        .timeline { margin-top: 15px; }
+        .timeline-item { display: flex; gap: 12px; padding: 12px 0; border-left: 2px solid #2d4a6f; margin-left: 8px; padding-left: 15px; position: relative; }
+        .timeline-item::before { content: ""; width: 10px; height: 10px; background: #4fc3f7; border-radius: 50%; position: absolute; left: -6px; top: 15px; }
+        .timeline-time { font-size: 11px; color: #81d4fa; min-width: 80px; }
+        .timeline-content { flex: 1; }
+        .timeline-action { font-weight: 600; font-size: 13px; }
+        .timeline-detail { font-size: 12px; color: #b0bec5; margin-top: 3px; }
+        .empty-state { text-align: center; color: #81d4fa; padding: 40px; }
+        .tag { display: inline-block; padding: 2px 6px; border-radius: 4px; font-size: 10px; margin: 2px; }
+        .tag-warning { background: rgba(255,183,77,0.2); color: #ffb74d; }
+        .tag-danger { background: rgba(239,83,80,0.2); color: #ef5350; }
+        .tag-success { background: rgba(102,187,106,0.2); color: #66bb6a; }
+        .tag-info { background: rgba(79,195,247,0.2); color: #4fc3f7; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 15px; }
+        .kpi-box { background: #0d1a2d; border-radius: 8px; padding: 12px; text-align: center; }
+        .kpi-value { font-size: 24px; font-weight: 700; color: #4fc3f7; }
+        .kpi-label { font-size: 11px; color: #81d4fa; margin-top: 4px; }
+        .pax-list { max-height: 400px; overflow-y: auto; }
+        .pax-item { padding: 10px; border-bottom: 1px solid #2d4a6f; cursor: pointer; }
         .pax-item:hover { background: rgba(79,195,247,0.1); }
         .pax-item.selected { background: rgba(79,195,247,0.2); border-left: 3px solid #4fc3f7; }
         .pax-name { font-weight: 600; }
-        .pax-details { font-size: 12px; color: #81d4fa; margin-top: 5px; }
-        .pax-status { display: inline-block; padding: 3px 8px; border-radius: 10px; font-size: 10px; margin-top: 5px; }
-        .pax-disrupted { background: rgba(239,83,80,0.2); color: #ef5350; }
-        .pax-rebooked { background: rgba(102,187,106,0.2); color: #66bb6a; }
-        .pax-pending { background: rgba(255,183,77,0.2); color: #ffb74d; }
-        .detail-panel { grid-column: 1 / -1; background: linear-gradient(135deg, #1a2744, #152238); border-radius: 10px; border: 1px solid #4fc3f7; padding: 20px; display: none; }
+        .pax-details { font-size: 11px; color: #81d4fa; margin-top: 3px; }
+        .detail-panel { margin-top: 15px; padding: 15px; background: #0d1a2d; border-radius: 8px; border: 1px solid #4fc3f7; display: none; }
         .detail-panel.active { display: block; }
-        .detail-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
-        .detail-title { font-size: 20px; font-weight: 600; color: #4fc3f7; }
-        .close-btn { background: none; border: none; color: #81d4fa; font-size: 24px; cursor: pointer; }
-        .timeline { margin-top: 20px; }
-        .timeline-item { display: flex; gap: 15px; padding: 15px 0; border-left: 2px solid #2d4a6f; margin-left: 10px; padding-left: 20px; position: relative; }
-        .timeline-item::before { content: ""; width: 12px; height: 12px; background: #4fc3f7; border-radius: 50%; position: absolute; left: -7px; }
-        .timeline-time { font-size: 12px; color: #81d4fa; min-width: 100px; }
-        .timeline-content { flex: 1; }
-        .timeline-action { font-weight: 600; }
-        .timeline-detail { font-size: 13px; color: #b0bec5; margin-top: 5px; }
-        .special-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
-        .tag { padding: 3px 8px; border-radius: 4px; font-size: 10px; background: rgba(79,195,247,0.2); color: #4fc3f7; }
-        .tag.wheelchair { background: rgba(156,39,176,0.2); color: #ce93d8; }
-        .tag.um { background: rgba(255,152,0,0.2); color: #ffb74d; }
-        .tag.ffp { background: rgba(255,215,0,0.2); color: #ffd700; }
+        @media (max-width: 900px) { .main { grid-template-columns: 1fr; } .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
 <body>
@@ -70,342 +82,282 @@
     <div class="filters">
         <div class="filter-group">
             <label>Date</label>
-            <select id="dateSelect"></select>
+            <select id="dateSelect" onchange="populateFlights()"></select>
         </div>
         <div class="filter-group">
-            <label>Flight Number</label>
+            <label>Flight</label>
             <select id="flightSelect"></select>
         </div>
-        <button class="btn" onclick="loadFlightData()">Load Flight</button>
+        <button class="btn" onclick="loadFlight()">Load Flight</button>
     </div>
+</div>
+<div class="nav-tabs" id="navTabs">
+    <div class="nav-tab active" data-tab="overview"><span class="icon">📊</span>Overview</div>
+    <div class="nav-tab" data-tab="passengers"><span class="icon">👥</span>Passengers</div>
+    <div class="nav-tab" data-tab="crew"><span class="icon">👨‍✈️</span>Crew</div>
+    <div class="nav-tab" data-tab="maintenance"><span class="icon">🔧</span>Maintenance</div>
+    <div class="nav-tab" data-tab="cargo"><span class="icon">📦</span>Cargo</div>
+    <div class="nav-tab" data-tab="recovery"><span class="icon">🔄</span>Recovery</div>
 </div>
 <div class="main">
-    <div class="flight-info" id="flightInfo">
-        <div style="text-align:center;color:#81d4fa;padding:50px;">Select a date and flight to view details</div>
+    <div class="flight-summary" id="flightSummary">
+        <div class="empty-state">Select a date and flight to view details</div>
     </div>
-    <div class="passengers-section">
-        <div class="section-header">
-            <span>Passengers</span>
-            <span id="paxCount">0 passengers</span>
-        </div>
-        <div class="pax-list" id="paxList">
-            <div style="text-align:center;color:#81d4fa;padding:50px;">No flight selected</div>
-        </div>
+    <div id="agentContents">
+        <div class="agent-content active" id="content-overview"></div>
+        <div class="agent-content" id="content-passengers"></div>
+        <div class="agent-content" id="content-crew"></div>
+        <div class="agent-content" id="content-maintenance"></div>
+        <div class="agent-content" id="content-cargo"></div>
+        <div class="agent-content" id="content-recovery"></div>
     </div>
-    <div class="detail-panel" id="detailPanel"></div>
 </div>
 <script src="data.js"></script>
+</body>
+</html>
 <script>
-// Global state
-let selectedFlight = null;
+let currentFlight = null;
+let flightData = {};
 let selectedPassenger = null;
 
-// Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
+    initTabs();
     populateDates();
 });
 
-// Get unique dates from flights
-function populateDates() {
-    const dates = [...new Set(DASHBOARD_DATA.flights_scenarios.map(f => {
-        const d = new Date(f.scheduled_departure);
-        return d.toISOString().split('T')[0];
-    }))].sort();
-    
-    const dateSelect = document.getElementById('dateSelect');
-    dateSelect.innerHTML = '<option value="">Select Date</option>';
-    dates.forEach(date => {
-        const opt = document.createElement('option');
-        opt.value = date;
-        opt.textContent = formatDate(date);
-        dateSelect.appendChild(opt);
+function initTabs() {
+    document.querySelectorAll('.nav-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.agent-content').forEach(c => c.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById('content-' + tab.dataset.tab).classList.add('active');
+        });
     });
-    
-    dateSelect.addEventListener('change', populateFlights);
 }
 
-// Format date for display
-function formatDate(dateStr) {
-    const d = new Date(dateStr);
-    return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+function populateDates() {
+    const dates = [...new Set(DASHBOARD_DATA.flights_scenarios.map(f => f.scheduled_departure.split(' ')[0]))].sort();
+    const sel = document.getElementById('dateSelect');
+    sel.innerHTML = '<option value="">Select Date</option>' + dates.map(d => 
+        `<option value="${d}">${new Date(d).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</option>`
+    ).join('');
 }
 
-// Populate flights for selected date
 function populateFlights() {
     const date = document.getElementById('dateSelect').value;
-    const flightSelect = document.getElementById('flightSelect');
-    flightSelect.innerHTML = '<option value="">Select Flight</option>';
-    
-    if (!date) return;
-    
-    const flights = DASHBOARD_DATA.flights_scenarios.filter(f => {
-        const d = new Date(f.scheduled_departure);
-        return d.toISOString().split('T')[0] === date;
-    }).sort((a, b) => new Date(a.scheduled_departure) - new Date(b.scheduled_departure));
-    
-    flights.forEach(f => {
-        const opt = document.createElement('option');
-        opt.value = f.flight_id;
-        const time = new Date(f.scheduled_departure).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-        const status = f.flight_status === 'Delayed' ? ' ⚠️' : f.flight_status === 'Cancelled' ? ' ❌' : '';
-        opt.textContent = `${f.flight_number} - ${f.origin_code}→${f.destination_code} (${time})${status}`;
-        flightSelect.appendChild(opt);
-    });
+    const sel = document.getElementById('flightSelect');
+    if (!date) { sel.innerHTML = '<option value="">Select Flight</option>'; return; }
+    const flights = DASHBOARD_DATA.flights_scenarios.filter(f => f.scheduled_departure.startsWith(date))
+        .sort((a,b) => a.scheduled_departure.localeCompare(b.scheduled_departure));
+    sel.innerHTML = '<option value="">Select Flight</option>' + flights.map(f => {
+        const time = f.scheduled_departure.split(' ')[1].substring(0,5);
+        const icon = f.flight_status === 'Delayed' ? '⚠️' : f.flight_status === 'Cancelled' ? '❌' : '✅';
+        return `<option value="${f.flight_id}">${icon} ${f.flight_number} ${f.origin_code}→${f.destination_code} (${time})</option>`;
+    }).join('');
 }
 
-// Load flight data
-function loadFlightData() {
+function loadFlight() {
     const flightId = document.getElementById('flightSelect').value;
-    if (!flightId) {
-        alert('Please select a flight');
-        return;
-    }
+    if (!flightId) { alert('Please select a flight'); return; }
+    currentFlight = DASHBOARD_DATA.flights_scenarios.find(f => f.flight_id === flightId);
+    if (!currentFlight) return;
     
-    selectedFlight = DASHBOARD_DATA.flights_scenarios.find(f => f.flight_id === flightId);
-    if (!selectedFlight) return;
+    flightData = {
+        flight: currentFlight,
+        passengers: (DASHBOARD_DATA.passengers_enriched_final || []).filter(p => p.flight_id === flightId),
+        bookings: (DASHBOARD_DATA.bookings || []).filter(b => b.flight_id === flightId),
+        crew: (DASHBOARD_DATA.crew_roster_enriched || []).filter(c => c.flight_id === flightId || c.flight_number === currentFlight.flight_number),
+        cargo: (DASHBOARD_DATA.cargo_shipments || []).filter(c => c.flight_id === flightId || c.flight_number === currentFlight.flight_number),
+        maintenance: (DASHBOARD_DATA.aircraft_maintenance_workorders || []).filter(m => m.aircraft_registration === currentFlight.aircraft_registration),
+        aircraft: (DASHBOARD_DATA.aircraft_availability_enriched_mel || []).find(a => a.aircraft_registration === currentFlight.aircraft_registration),
+        weather: (DASHBOARD_DATA.weather || []).filter(w => w.airport_code === currentFlight.origin_code || w.airport_code === currentFlight.destination_code),
+        disruptions: (DASHBOARD_DATA.disruption_events || []).filter(d => d.flight_id === flightId || d.scenario_id === currentFlight.scenario_id),
+        recovery: (DASHBOARD_DATA.recovery_scenarios || []).filter(r => r.scenario_id === currentFlight.scenario_id),
+        rebooking: (DASHBOARD_DATA.oal_rebooking_options || []).filter(r => r.flight_id === flightId),
+        costs: (DASHBOARD_DATA.disruption_costs || []).filter(c => c.scenario_id === currentFlight.scenario_id),
+        swapOptions: (DASHBOARD_DATA.aircraft_swap_options || []).filter(s => s.flight_id === flightId),
+        reserveCrew: (DASHBOARD_DATA.reserve_crew_pool || []).filter(r => r.scenario_id === currentFlight.scenario_id)
+    };
     
-    renderFlightInfo();
+    renderFlightSummary();
+    renderOverview();
     renderPassengers();
-    closeDetailPanel();
+    renderCrew();
+    renderMaintenance();
+    renderCargo();
+    renderRecovery();
 }
 
-// Render flight information
-function renderFlightInfo() {
-    const f = selectedFlight;
-    const statusClass = f.flight_status === 'Delayed' ? 'status-delayed' : 
-                        f.flight_status === 'Cancelled' ? 'status-cancelled' : 'status-ontime';
+function renderFlightSummary() {
+    const f = currentFlight;
+    const statusClass = f.flight_status === 'Delayed' ? 'status-delayed' : f.flight_status === 'Cancelled' ? 'status-cancelled' : 'status-ontime';
+    const depTime = f.scheduled_departure.split(' ')[1].substring(0,5);
+    const arrTime = f.scheduled_arrival.split(' ')[1].substring(0,5);
     
-    const depTime = new Date(f.scheduled_departure).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-    const arrTime = new Date(f.scheduled_arrival).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-    const actualArr = new Date(f.arrival_time).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-    
-    document.getElementById('flightInfo').innerHTML = `
+    document.getElementById('flightSummary').innerHTML = `
         <div class="flight-header">
             <span class="flight-number">${f.flight_number}</span>
-            <span class="flight-status ${statusClass}">${f.flight_status}${f.delay_minutes > 0 ? ' (+' + f.delay_minutes + 'min)' : ''}</span>
+            <span class="status-badge ${statusClass}">${f.flight_status}${f.delay_minutes > 0 ? ' +' + f.delay_minutes + 'm' : ''}</span>
         </div>
-        <div class="flight-route">
-            <div class="airport">
-                <div class="airport-code">${f.origin_code}</div>
-                <div class="airport-time">${depTime}</div>
-            </div>
+        <div class="route-display">
+            <div class="airport"><div class="airport-code">${f.origin_code}</div><div class="airport-time">${depTime}</div></div>
             <div class="route-line"></div>
-            <div class="airport">
-                <div class="airport-code">${f.destination_code}</div>
-                <div class="airport-time">${arrTime}${f.delay_minutes > 0 ? ' → ' + actualArr : ''}</div>
-            </div>
+            <div class="airport"><div class="airport-code">${f.destination_code}</div><div class="airport-time">${arrTime}</div></div>
         </div>
-        <div class="info-grid">
-            <div class="info-item">
-                <div class="info-label">Aircraft</div>
-                <div class="info-value">${f.aircraft_registration} (${f.aircraft_code})</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Gate / Terminal</div>
-                <div class="info-value">${f.gate} / T${f.terminal}</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Scenario</div>
-                <div class="info-value" style="font-size:12px;">${f.scenario_name}</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Disruption</div>
-                <div class="info-value" style="font-size:12px;">${f.disruption_reason || 'None'}</div>
-            </div>
-            ${f.mel_status === 'ACTIVE' ? `
-            <div class="info-item" style="grid-column: 1/-1; background: rgba(255,183,77,0.1);">
-                <div class="info-label" style="color:#ffb74d;">MEL Status</div>
-                <div class="info-value" style="color:#ffb74d;">${f.mel_item} - Cat ${f.mel_category} (${f.mel_days_remaining} days remaining) - ${f.mel_restrictions}</div>
+        <div class="info-row"><span class="info-label">Aircraft</span><span class="info-value">${f.aircraft_registration}</span></div>
+        <div class="info-row"><span class="info-label">Type</span><span class="info-value">${f.aircraft_code}</span></div>
+        <div class="info-row"><span class="info-label">Gate/Terminal</span><span class="info-value">${f.gate} / T${f.terminal}</span></div>
+        <div class="info-row"><span class="info-label">Scenario</span><span class="info-value" style="font-size:11px;">${f.scenario_name}</span></div>
+        ${f.disruption_reason ? `<div class="info-row"><span class="info-label">Disruption</span><span class="info-value" style="font-size:11px;color:#ffb74d;">${f.disruption_reason}</span></div>` : ''}
+        ${f.mel_status === 'ACTIVE' ? `<div style="margin-top:10px;padding:8px;background:rgba(255,183,77,0.1);border-radius:6px;font-size:11px;">
+            <div style="color:#ffb74d;font-weight:600;">⚠️ MEL Active</div>
+            <div style="color:#b0bec5;margin-top:4px;">${f.mel_item} - Cat ${f.mel_category} (${f.mel_days_remaining} days left)</div>
+        </div>` : ''}
+    `;
+}
+
+function renderOverview() {
+    const f = currentFlight;
+    const paxCount = flightData.passengers.length;
+    const disruptedPax = flightData.passengers.filter(p => p.disruption_status && p.disruption_status !== 'None').length;
+    const crewCount = flightData.crew.length;
+    const cargoCount = flightData.cargo.length;
+    
+    document.getElementById('content-overview').innerHTML = `
+        <div class="section-title">📊 Flight Overview - ${f.flight_number}</div>
+        <div class="kpi-grid">
+            <div class="kpi-box"><div class="kpi-value">${paxCount}</div><div class="kpi-label">Passengers</div></div>
+            <div class="kpi-box"><div class="kpi-value" style="color:${disruptedPax > 0 ? '#ffb74d' : '#66bb6a'}">${disruptedPax}</div><div class="kpi-label">Disrupted</div></div>
+            <div class="kpi-box"><div class="kpi-value">${crewCount}</div><div class="kpi-label">Crew</div></div>
+            <div class="kpi-box"><div class="kpi-value">${cargoCount}</div><div class="kpi-label">Cargo Items</div></div>
+        </div>
+        <div class="card-grid">
+            ${flightData.weather.length > 0 ? `<div class="card">
+                <div class="card-header"><span class="card-title">🌤️ Weather</span></div>
+                ${flightData.weather.map(w => `<div class="card-row"><span class="card-label">${w.airport_code}</span><span>${w.condition || w.weather_condition || 'N/A'}</span></div>`).join('')}
+            </div>` : ''}
+            ${flightData.disruptions.length > 0 ? `<div class="card">
+                <div class="card-header"><span class="card-title">⚠️ Disruptions</span></div>
+                ${flightData.disruptions.slice(0,3).map(d => `<div class="card-row"><span class="card-label">${d.disruption_type || 'Event'}</span><span style="font-size:11px;">${d.description || d.disruption_reason || 'N/A'}</span></div>`).join('')}
+            </div>` : ''}
+            ${flightData.swapOptions.length > 0 ? `<div class="card">
+                <div class="card-header"><span class="card-title">🔄 Swap Options</span></div>
+                ${flightData.swapOptions.slice(0,3).map(s => `<div class="card-row"><span class="card-label">${s.swap_aircraft || s.replacement_aircraft || 'N/A'}</span><span class="tag tag-info">${s.swap_status || 'Available'}</span></div>`).join('')}
             </div>` : ''}
         </div>
     `;
 }
-
-// Render passengers list
+</script>
+<script>
 function renderPassengers() {
-    const passengers = DASHBOARD_DATA.passengers_enriched_final.filter(p => p.flight_id === selectedFlight.flight_id);
+    const passengers = flightData.passengers;
+    const disruptedCount = passengers.filter(p => p.disruption_status && p.disruption_status !== 'None').length;
+    const rebookedCount = passengers.filter(p => p.rebooking_status === 'Rebooked' || p.rebooking_status === 'Confirmed').length;
     
-    document.getElementById('paxCount').textContent = `${passengers.length} passengers`;
-    
-    if (passengers.length === 0) {
-        document.getElementById('paxList').innerHTML = '<div style="text-align:center;color:#81d4fa;padding:50px;">No passengers on this flight</div>';
-        return;
-    }
-    
-    const paxHtml = passengers.map(p => {
-        const isDisrupted = p.disruption_status && p.disruption_status !== 'None' && p.disruption_status !== '';
-        const isRebooked = p.rebooking_status === 'Rebooked' || p.rebooking_status === 'Confirmed';
-        const statusClass = isRebooked ? 'pax-rebooked' : isDisrupted ? 'pax-disrupted' : 'pax-pending';
-        const statusText = isRebooked ? 'Rebooked' : isDisrupted ? 'Disrupted' : 'OK';
-        
-        const tags = [];
-        if (p.wheelchair_required === 'Y' || p.wheelchair_required === true) tags.push('<span class="tag wheelchair">WCHR</span>');
-        if (p.unaccompanied_minor === 'Y' || p.unaccompanied_minor === true) tags.push('<span class="tag um">UM</span>');
-        if (p.frequent_flyer_tier && p.frequent_flyer_tier !== '' && p.frequent_flyer_tier !== 'None') tags.push(`<span class="tag ffp">${p.frequent_flyer_tier}</span>`);
-        if (p.special_meal && p.special_meal !== '' && p.special_meal !== 'None') tags.push(`<span class="tag">${p.special_meal}</span>`);
-        
-        return `
-            <div class="pax-item" onclick="showPassengerDetail('${p.passenger_id}')">
-                <div class="pax-name">${p.first_name} ${p.last_name}</div>
-                <div class="pax-details">
-                    ${p.booking_reference || p.booking_id} | Seat: ${p.seat_number || 'TBA'} | ${p.cabin_class || 'Economy'}
+    document.getElementById('content-passengers').innerHTML = `
+        <div class="section-title">👥 Passengers (${passengers.length})</div>
+        <div class="kpi-grid">
+            <div class="kpi-box"><div class="kpi-value">${passengers.length}</div><div class="kpi-label">Total</div></div>
+            <div class="kpi-box"><div class="kpi-value" style="color:#ef5350">${disruptedCount}</div><div class="kpi-label">Disrupted</div></div>
+            <div class="kpi-box"><div class="kpi-value" style="color:#66bb6a">${rebookedCount}</div><div class="kpi-label">Rebooked</div></div>
+            <div class="kpi-box"><div class="kpi-value">${passengers.filter(p => p.connecting_flight).length}</div><div class="kpi-label">Connecting</div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
+            <div>
+                <h4 style="color:#81d4fa;margin-bottom:10px;font-size:13px;">Passenger List</h4>
+                <div class="pax-list" id="paxList">
+                    ${passengers.length === 0 ? '<div class="empty-state">No passengers</div>' : 
+                    passengers.map(p => {
+                        const isDisrupted = p.disruption_status && p.disruption_status !== 'None';
+                        const isRebooked = p.rebooking_status === 'Rebooked' || p.rebooking_status === 'Confirmed';
+                        const statusClass = isRebooked ? 'tag-success' : isDisrupted ? 'tag-danger' : 'tag-info';
+                        const statusText = isRebooked ? 'Rebooked' : isDisrupted ? 'Disrupted' : 'OK';
+                        return `<div class="pax-item" onclick="showPaxDetail('${p.passenger_id}')">
+                            <div class="pax-name">${p.first_name} ${p.last_name} <span class="tag ${statusClass}">${statusText}</span></div>
+                            <div class="pax-details">${p.booking_reference || p.booking_id || 'N/A'} | Seat: ${p.seat_number || 'TBA'} | ${p.cabin_class || 'Economy'}</div>
+                            ${p.frequent_flyer_tier ? `<span class="tag tag-warning">${p.frequent_flyer_tier}</span>` : ''}
+                            ${p.wheelchair_required === 'Y' ? '<span class="tag tag-info">WCHR</span>' : ''}
+                            ${p.connecting_flight ? '<span class="tag tag-warning">CNX</span>' : ''}
+                        </div>`;
+                    }).join('')}
                 </div>
-                <span class="pax-status ${statusClass}">${statusText}</span>
-                ${tags.length > 0 ? `<div class="special-tags">${tags.join('')}</div>` : ''}
             </div>
-        `;
-    }).join('');
-    
-    document.getElementById('paxList').innerHTML = paxHtml;
+            <div>
+                <h4 style="color:#81d4fa;margin-bottom:10px;font-size:13px;">Passenger Details</h4>
+                <div class="detail-panel" id="paxDetail">Select a passenger to view details and recovery timeline</div>
+            </div>
+        </div>
+    `;
 }
 
-// Show passenger detail with recovery timeline
-function showPassengerDetail(passengerId) {
-    selectedPassenger = DASHBOARD_DATA.passengers_enriched_final.find(p => p.passenger_id === passengerId);
-    if (!selectedPassenger) return;
+function showPaxDetail(passengerId) {
+    const p = flightData.passengers.find(px => px.passenger_id === passengerId);
+    if (!p) return;
+    selectedPassenger = p;
     
-    // Highlight selected passenger
     document.querySelectorAll('.pax-item').forEach(el => el.classList.remove('selected'));
     event.currentTarget.classList.add('selected');
     
-    const p = selectedPassenger;
-    const booking = DASHBOARD_DATA.bookings?.find(b => b.booking_id === p.booking_id || b.booking_reference === p.booking_reference);
-    const rebooking = DASHBOARD_DATA.oal_rebooking_options?.find(r => r.passenger_id === p.passenger_id || r.booking_id === p.booking_id);
+    const rebooking = flightData.rebooking.find(r => r.passenger_id === p.passenger_id);
+    const timeline = buildTimeline(p, rebooking);
     
-    // Build timeline
-    const timeline = buildRecoveryTimeline(p, booking, rebooking);
-    
-    const panel = document.getElementById('detailPanel');
+    const panel = document.getElementById('paxDetail');
     panel.innerHTML = `
-        <div class="detail-header">
-            <div class="detail-title">👤 ${p.first_name} ${p.last_name}</div>
-            <button class="close-btn" onclick="closeDetailPanel()">×</button>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;">
+            <div style="font-size:16px;font-weight:600;color:#4fc3f7;">👤 ${p.first_name} ${p.last_name}</div>
         </div>
-        <div class="info-grid" style="grid-template-columns: repeat(4, 1fr);">
-            <div class="info-item">
-                <div class="info-label">Passenger ID</div>
-                <div class="info-value">${p.passenger_id}</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Booking Ref</div>
-                <div class="info-value">${p.booking_reference || p.booking_id}</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Seat</div>
-                <div class="info-value">${p.seat_number || 'TBA'}</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Class</div>
-                <div class="info-value">${p.cabin_class || 'Economy'}</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Contact</div>
-                <div class="info-value" style="font-size:12px;">${p.email || 'N/A'}</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Phone</div>
-                <div class="info-value">${p.phone || 'N/A'}</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">FFP Tier</div>
-                <div class="info-value">${p.frequent_flyer_tier || 'None'}</div>
-            </div>
-            <div class="info-item">
-                <div class="info-label">Nationality</div>
-                <div class="info-value">${p.nationality || 'N/A'}</div>
-            </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;">
+            <div class="card-row"><span class="card-label">Passenger ID</span><span>${p.passenger_id}</span></div>
+            <div class="card-row"><span class="card-label">Booking</span><span>${p.booking_reference || p.booking_id}</span></div>
+            <div class="card-row"><span class="card-label">Seat</span><span>${p.seat_number || 'TBA'}</span></div>
+            <div class="card-row"><span class="card-label">Class</span><span>${p.cabin_class || 'Economy'}</span></div>
+            <div class="card-row"><span class="card-label">Email</span><span style="font-size:10px;">${p.email || 'N/A'}</span></div>
+            <div class="card-row"><span class="card-label">Phone</span><span>${p.phone || 'N/A'}</span></div>
+            <div class="card-row"><span class="card-label">FFP Tier</span><span>${p.frequent_flyer_tier || 'None'}</span></div>
+            <div class="card-row"><span class="card-label">Nationality</span><span>${p.nationality || 'N/A'}</span></div>
         </div>
-        ${p.connecting_flight ? `
-        <div class="info-item" style="margin-top:15px; background: rgba(79,195,247,0.1);">
-            <div class="info-label">Connecting Flight</div>
-            <div class="info-value">${p.connecting_flight} to ${p.final_destination || 'N/A'}</div>
+        ${p.connecting_flight ? `<div style="margin-top:10px;padding:8px;background:rgba(79,195,247,0.1);border-radius:6px;font-size:11px;">
+            <div style="color:#4fc3f7;font-weight:600;">✈️ Connecting Flight</div>
+            <div style="color:#b0bec5;margin-top:4px;">${p.connecting_flight} to ${p.final_destination || 'N/A'}</div>
         </div>` : ''}
-        <div class="timeline">
-            <h3 style="color:#4fc3f7; margin-bottom:15px;">Recovery Timeline</h3>
+        <div class="timeline" style="margin-top:15px;">
+            <h4 style="color:#4fc3f7;margin-bottom:10px;font-size:13px;">Recovery Timeline</h4>
             ${timeline}
         </div>
     `;
     panel.classList.add('active');
 }
 
-// Build recovery timeline based on passenger data
-function buildRecoveryTimeline(p, booking, rebooking) {
+function buildTimeline(p, rebooking) {
     const events = [];
-    const flight = selectedFlight;
+    const f = currentFlight;
     
-    // Original booking
-    events.push({
-        time: 'Original',
-        action: 'Booked on ' + flight.flight_number,
-        detail: `${flight.origin_code} → ${flight.destination_code}, Scheduled: ${new Date(flight.scheduled_departure).toLocaleString()}`
-    });
+    events.push({ time: 'Booked', action: 'Original Booking', detail: `${f.flight_number}: ${f.origin_code}→${f.destination_code}` });
     
-    // Disruption detected
-    if (flight.delay_minutes > 0 || flight.flight_status === 'Cancelled' || flight.flight_status === 'Delayed') {
-        events.push({
-            time: 'Disruption',
-            action: flight.flight_status === 'Cancelled' ? 'Flight Cancelled' : `Flight Delayed ${flight.delay_minutes} min`,
-            detail: flight.disruption_reason || 'Operational disruption'
-        });
+    if (f.delay_minutes > 0 || f.flight_status === 'Cancelled' || f.flight_status === 'Delayed') {
+        events.push({ time: 'Disrupted', action: f.flight_status === 'Cancelled' ? 'Flight Cancelled' : `Delayed ${f.delay_minutes}min`, detail: f.disruption_reason || 'Operational issue' });
     }
     
-    // Notification
-    if (p.notification_sent === 'Y' || p.notification_sent === true || p.sms_sent === 'Y') {
-        events.push({
-            time: 'Notified',
-            action: 'Passenger Notified',
-            detail: `Via ${p.notification_channel || 'SMS/Email'}`
-        });
+    if (p.notification_sent === 'Y' || p.sms_sent === 'Y') {
+        events.push({ time: 'Notified', action: 'Passenger Notified', detail: `Via ${p.notification_channel || 'SMS/Email'}` });
     }
     
-    // Rebooking action
-    if (p.rebooking_status && p.rebooking_status !== 'None' && p.rebooking_status !== '') {
-        const rebookDetail = rebooking ? 
-            `New flight: ${rebooking.new_flight_number || rebooking.alternative_flight || 'TBD'}` : 
-            (p.new_flight_number ? `New flight: ${p.new_flight_number}` : 'Processing rebooking options');
-        events.push({
-            time: 'Rebooking',
-            action: p.rebooking_status,
-            detail: rebookDetail
-        });
+    if (p.rebooking_status && p.rebooking_status !== 'None') {
+        const newFlight = rebooking ? (rebooking.new_flight_number || rebooking.alternative_flight) : p.new_flight_number;
+        events.push({ time: 'Rebooking', action: p.rebooking_status, detail: newFlight ? `New flight: ${newFlight}` : 'Processing options' });
     }
     
-    // Compensation
-    if (p.compensation_offered === 'Y' || p.compensation_amount > 0 || p.voucher_issued === 'Y') {
-        events.push({
-            time: 'Compensation',
-            action: 'Compensation Offered',
-            detail: p.compensation_amount ? `Amount: $${p.compensation_amount}` : 'Voucher/Miles credited'
-        });
+    if (p.compensation_offered === 'Y' || p.compensation_amount > 0) {
+        events.push({ time: 'Compensation', action: 'Compensation Offered', detail: p.compensation_amount ? `$${p.compensation_amount}` : 'Voucher issued' });
     }
     
-    // Hotel accommodation
     if (p.hotel_booked === 'Y' || p.accommodation_provided === 'Y') {
-        events.push({
-            time: 'Accommodation',
-            action: 'Hotel Arranged',
-            detail: p.hotel_name || 'Airport hotel booked'
-        });
+        events.push({ time: 'Hotel', action: 'Accommodation Arranged', detail: p.hotel_name || 'Airport hotel' });
     }
     
-    // Meal voucher
-    if (p.meal_voucher === 'Y' || p.meal_provided === 'Y') {
-        events.push({
-            time: 'Meals',
-            action: 'Meal Voucher Issued',
-            detail: 'Airport dining voucher provided'
-        });
-    }
-    
-    // Final status
-    const finalStatus = p.rebooking_status === 'Rebooked' || p.rebooking_status === 'Confirmed' ? 
-        'Passenger successfully rebooked' : 
-        (flight.delay_minutes > 0 ? 'Awaiting updated departure' : 'Ready for departure');
-    events.push({
-        time: 'Current',
-        action: 'Status',
-        detail: finalStatus
-    });
+    const status = p.rebooking_status === 'Rebooked' ? 'Successfully rebooked' : (f.delay_minutes > 0 ? 'Awaiting departure' : 'Ready');
+    events.push({ time: 'Current', action: 'Status', detail: status });
     
     return events.map(e => `
         <div class="timeline-item">
@@ -417,13 +369,163 @@ function buildRecoveryTimeline(p, booking, rebooking) {
         </div>
     `).join('');
 }
+</script>
+<script>
+function renderCrew() {
+    const crew = flightData.crew;
+    const reserveCrew = flightData.reserveCrew;
+    
+    document.getElementById('content-crew').innerHTML = `
+        <div class="section-title">👨‍✈️ Crew Management</div>
+        <div class="kpi-grid">
+            <div class="kpi-box"><div class="kpi-value">${crew.length}</div><div class="kpi-label">Assigned Crew</div></div>
+            <div class="kpi-box"><div class="kpi-value">${crew.filter(c => c.role === 'Captain' || c.role === 'First Officer' || c.position === 'Captain').length}</div><div class="kpi-label">Flight Crew</div></div>
+            <div class="kpi-box"><div class="kpi-value">${crew.filter(c => c.role === 'Cabin Crew' || c.position === 'Cabin Crew').length}</div><div class="kpi-label">Cabin Crew</div></div>
+            <div class="kpi-box"><div class="kpi-value">${reserveCrew.length}</div><div class="kpi-label">Reserve Available</div></div>
+        </div>
+        <div class="card-grid">
+            ${crew.length === 0 ? '<div class="empty-state">No crew data</div>' : crew.map(c => `
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">${c.crew_name || c.first_name + ' ' + c.last_name || 'Crew Member'}</span>
+                        <span class="tag tag-info">${c.role || c.position || 'N/A'}</span>
+                    </div>
+                    <div class="card-row"><span class="card-label">Crew ID</span><span>${c.crew_id}</span></div>
+                    <div class="card-row"><span class="card-label">Duty Status</span><span>${c.duty_status || c.status || 'On Duty'}</span></div>
+                    ${c.flight_hours_remaining ? `<div class="card-row"><span class="card-label">Hours Remaining</span><span>${c.flight_hours_remaining}h</span></div>` : ''}
+                    ${c.rest_required === 'Y' ? '<div class="card-row"><span class="card-label">Alert</span><span class="tag tag-warning">Rest Required</span></div>' : ''}
+                </div>
+            `).join('')}
+        </div>
+        ${reserveCrew.length > 0 ? `
+            <h4 style="color:#81d4fa;margin:20px 0 10px;font-size:13px;">Reserve Crew Pool</h4>
+            <div class="card-grid">
+                ${reserveCrew.slice(0,6).map(r => `
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">${r.crew_name || r.first_name + ' ' + r.last_name || 'Reserve'}</span>
+                            <span class="tag tag-success">Available</span>
+                        </div>
+                        <div class="card-row"><span class="card-label">Position</span><span>${r.position || r.role || 'N/A'}</span></div>
+                        <div class="card-row"><span class="card-label">Base</span><span>${r.base_airport || r.home_base || 'N/A'}</span></div>
+                    </div>
+                `).join('')}
+            </div>
+        ` : ''}
+    `;
+}
 
-// Close detail panel
-function closeDetailPanel() {
-    document.getElementById('detailPanel').classList.remove('active');
-    document.querySelectorAll('.pax-item').forEach(el => el.classList.remove('selected'));
-    selectedPassenger = null;
+function renderMaintenance() {
+    const maintenance = flightData.maintenance;
+    const aircraft = flightData.aircraft;
+    const f = currentFlight;
+    
+    document.getElementById('content-maintenance').innerHTML = `
+        <div class="section-title">🔧 Maintenance & Aircraft</div>
+        <div class="card" style="margin-bottom:15px;">
+            <div class="card-header">
+                <span class="card-title">✈️ ${f.aircraft_registration} - ${f.aircraft_code}</span>
+                <span class="tag ${f.mel_status === 'ACTIVE' ? 'tag-warning' : 'tag-success'}">${f.mel_status || 'CLEAR'}</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+                <div class="card-row"><span class="card-label">Capacity</span><span>${f.aircraft_capacity} pax</span></div>
+                <div class="card-row"><span class="card-label">Cargo Capacity</span><span>${f.aircraft_cargo_capacity} kg</span></div>
+                <div class="card-row"><span class="card-label">Cabin Crew Req</span><span>${f.cabin_crew_required}</span></div>
+                ${aircraft ? `<div class="card-row"><span class="card-label">Status</span><span>${aircraft.availability_status || 'Available'}</span></div>` : ''}
+            </div>
+            ${f.mel_status === 'ACTIVE' ? `
+                <div style="margin-top:10px;padding:10px;background:rgba(255,183,77,0.1);border-radius:6px;">
+                    <div style="color:#ffb74d;font-weight:600;font-size:12px;">⚠️ MEL Item: ${f.mel_item}</div>
+                    <div style="font-size:11px;color:#b0bec5;margin-top:5px;">Category ${f.mel_category} | ${f.mel_days_remaining} days remaining | ${f.mel_restrictions || 'No restrictions'}</div>
+                </div>
+            ` : ''}
+        </div>
+        <h4 style="color:#81d4fa;margin-bottom:10px;font-size:13px;">Work Orders</h4>
+        <div class="card-grid">
+            ${maintenance.length === 0 ? '<div class="empty-state">No active work orders</div>' : maintenance.map(m => `
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">${m.work_order_id || m.workorder_id || 'WO'}</span>
+                        <span class="tag ${m.status === 'Completed' ? 'tag-success' : m.status === 'In Progress' ? 'tag-warning' : 'tag-info'}">${m.status || 'Pending'}</span>
+                    </div>
+                    <div class="card-row"><span class="card-label">Type</span><span>${m.maintenance_type || m.work_type || 'N/A'}</span></div>
+                    <div class="card-row"><span class="card-label">Description</span><span style="font-size:10px;">${m.description || 'N/A'}</span></div>
+                    ${m.estimated_completion ? `<div class="card-row"><span class="card-label">ETC</span><span>${m.estimated_completion}</span></div>` : ''}
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function renderCargo() {
+    const cargo = flightData.cargo;
+    const totalWeight = cargo.reduce((sum, c) => sum + (parseFloat(c.weight) || 0), 0);
+    
+    document.getElementById('content-cargo').innerHTML = `
+        <div class="section-title">📦 Cargo Shipments</div>
+        <div class="kpi-grid">
+            <div class="kpi-box"><div class="kpi-value">${cargo.length}</div><div class="kpi-label">Shipments</div></div>
+            <div class="kpi-box"><div class="kpi-value">${Math.round(totalWeight)}</div><div class="kpi-label">Total Weight (kg)</div></div>
+            <div class="kpi-box"><div class="kpi-value">${cargo.filter(c => c.priority === 'High' || c.priority === 'Critical').length}</div><div class="kpi-label">Priority</div></div>
+            <div class="kpi-box"><div class="kpi-value">${cargo.filter(c => c.special_handling).length}</div><div class="kpi-label">Special Handling</div></div>
+        </div>
+        <div class="card-grid">
+            ${cargo.length === 0 ? '<div class="empty-state">No cargo shipments</div>' : cargo.map(c => `
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">${c.shipment_id || c.cargo_id || 'Shipment'}</span>
+                        <span class="tag ${c.priority === 'High' || c.priority === 'Critical' ? 'tag-danger' : 'tag-info'}">${c.priority || 'Normal'}</span>
+                    </div>
+                    <div class="card-row"><span class="card-label">Type</span><span>${c.cargo_type || c.shipment_type || 'General'}</span></div>
+                    <div class="card-row"><span class="card-label">Weight</span><span>${c.weight || 0} kg</span></div>
+                    <div class="card-row"><span class="card-label">Status</span><span>${c.status || 'Loaded'}</span></div>
+                    ${c.special_handling ? `<div class="card-row"><span class="card-label">Special</span><span class="tag tag-warning">${c.special_handling}</span></div>` : ''}
+                </div>
+            `).join('')}
+        </div>
+    `;
+}
+
+function renderRecovery() {
+    const recovery = flightData.recovery;
+    const costs = flightData.costs;
+    const totalCost = costs.reduce((sum, c) => sum + (parseFloat(c.total_cost) || parseFloat(c.cost_amount) || 0), 0);
+    
+    document.getElementById('content-recovery').innerHTML = `
+        <div class="section-title">🔄 Recovery Planning</div>
+        <div class="kpi-grid">
+            <div class="kpi-box"><div class="kpi-value">${recovery.length}</div><div class="kpi-label">Recovery Options</div></div>
+            <div class="kpi-box"><div class="kpi-value">${flightData.rebooking.length}</div><div class="kpi-label">Rebooking Options</div></div>
+            <div class="kpi-box"><div class="kpi-value">${flightData.swapOptions.length}</div><div class="kpi-label">Aircraft Swaps</div></div>
+            <div class="kpi-box"><div class="kpi-value">$${Math.round(totalCost).toLocaleString()}</div><div class="kpi-label">Est. Cost</div></div>
+        </div>
+        <h4 style="color:#81d4fa;margin-bottom:10px;font-size:13px;">Recovery Scenarios</h4>
+        <div class="card-grid">
+            ${recovery.length === 0 ? '<div class="empty-state">No recovery scenarios</div>' : recovery.slice(0,6).map(r => `
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">${r.recovery_id || r.scenario_id || 'Recovery'}</span>
+                        <span class="tag ${r.status === 'Implemented' ? 'tag-success' : 'tag-info'}">${r.status || 'Proposed'}</span>
+                    </div>
+                    <div class="card-row"><span class="card-label">Type</span><span>${r.recovery_type || r.action_type || 'N/A'}</span></div>
+                    <div class="card-row"><span class="card-label">Description</span><span style="font-size:10px;">${r.description || r.recovery_action || 'N/A'}</span></div>
+                    ${r.estimated_cost ? `<div class="card-row"><span class="card-label">Cost</span><span>$${r.estimated_cost}</span></div>` : ''}
+                </div>
+            `).join('')}
+        </div>
+        ${costs.length > 0 ? `
+            <h4 style="color:#81d4fa;margin:20px 0 10px;font-size:13px;">Cost Breakdown</h4>
+            <div class="card-grid">
+                ${costs.slice(0,4).map(c => `
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">${c.cost_category || c.cost_type || 'Cost'}</span>
+                        </div>
+                        <div class="card-row"><span class="card-label">Amount</span><span>$${(c.total_cost || c.cost_amount || 0).toLocaleString()}</span></div>
+                    </div>
+                `).join('')}
+            </div>
+        ` : ''}
+    `;
 }
 </script>
-</body>
-</html>
