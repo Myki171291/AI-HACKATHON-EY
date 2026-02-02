@@ -19,7 +19,6 @@
         .nav-tab { padding: 12px 20px; cursor: pointer; border-bottom: 3px solid transparent; white-space: nowrap; font-size: 13px; }
         .nav-tab:hover { background: rgba(79,195,247,0.1); }
         .nav-tab.active { border-bottom-color: #4fc3f7; color: #4fc3f7; background: rgba(79,195,247,0.1); }
-        .nav-tab .icon { margin-right: 6px; }
         .main { padding: 15px; display: grid; grid-template-columns: 320px 1fr; gap: 15px; min-height: calc(100vh - 160px); }
         .flight-summary { background: linear-gradient(135deg, #1a2744, #152238); border-radius: 10px; padding: 15px; border: 1px solid #2d4a6f; }
         .flight-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
@@ -45,7 +44,6 @@
         .card { background: #0d1a2d; border-radius: 8px; padding: 12px; border: 1px solid #2d4a6f; }
         .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
         .card-title { font-weight: 600; color: #4fc3f7; }
-        .card-badge { padding: 3px 8px; border-radius: 10px; font-size: 10px; }
         .card-row { display: flex; justify-content: space-between; font-size: 12px; padding: 4px 0; }
         .card-label { color: #81d4fa; }
         .timeline { margin-top: 15px; }
@@ -71,8 +69,7 @@
         .pax-item.selected { background: rgba(79,195,247,0.2); border-left: 3px solid #4fc3f7; }
         .pax-name { font-weight: 600; }
         .pax-details { font-size: 11px; color: #81d4fa; margin-top: 3px; }
-        .detail-panel { margin-top: 15px; padding: 15px; background: #0d1a2d; border-radius: 8px; border: 1px solid #4fc3f7; display: none; }
-        .detail-panel.active { display: block; }
+        .detail-panel { margin-top: 15px; padding: 15px; background: #0d1a2d; border-radius: 8px; border: 1px solid #4fc3f7; }
         @media (max-width: 900px) { .main { grid-template-columns: 1fr; } .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
     </style>
 </head>
@@ -91,20 +88,20 @@
         <button class="btn" onclick="loadFlight()">Load Flight</button>
     </div>
 </div>
-<div class="nav-tabs" id="navTabs">
-    <div class="nav-tab active" data-tab="overview"><span class="icon">📊</span>Overview</div>
-    <div class="nav-tab" data-tab="passengers"><span class="icon">👥</span>Passengers</div>
-    <div class="nav-tab" data-tab="crew"><span class="icon">👨‍✈️</span>Crew</div>
-    <div class="nav-tab" data-tab="maintenance"><span class="icon">🔧</span>Maintenance</div>
-    <div class="nav-tab" data-tab="cargo"><span class="icon">📦</span>Cargo</div>
-    <div class="nav-tab" data-tab="recovery"><span class="icon">🔄</span>Recovery</div>
+<div class="nav-tabs">
+    <div class="nav-tab active" data-tab="overview">📊 Overview</div>
+    <div class="nav-tab" data-tab="passengers">👥 Passengers</div>
+    <div class="nav-tab" data-tab="crew">👨‍✈️ Crew</div>
+    <div class="nav-tab" data-tab="maintenance">🔧 Maintenance</div>
+    <div class="nav-tab" data-tab="cargo">📦 Cargo</div>
+    <div class="nav-tab" data-tab="recovery">🔄 Recovery</div>
 </div>
 <div class="main">
     <div class="flight-summary" id="flightSummary">
         <div class="empty-state">Select a date and flight to view details</div>
     </div>
     <div id="agentContents">
-        <div class="agent-content active" id="content-overview"></div>
+        <div class="agent-content active" id="content-overview"><div class="empty-state">Select a flight to view overview</div></div>
         <div class="agent-content" id="content-passengers"></div>
         <div class="agent-content" id="content-crew"></div>
         <div class="agent-content" id="content-maintenance"></div>
@@ -113,12 +110,19 @@
     </div>
 </div>
 <script src="data.js"></script>
-</body>
-</html>
 <script>
 let currentFlight = null;
 let flightData = {};
-let selectedPassenger = null;
+
+// Get flights data - handle both naming conventions
+function getFlights() {
+    return DASHBOARD_DATA.flights_enriched_scenarios || DASHBOARD_DATA.flights_scenarios || [];
+}
+
+// Get passengers data
+function getPassengers() {
+    return DASHBOARD_DATA.passengers_enriched_final || DASHBOARD_DATA.passengers || [];
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     initTabs();
@@ -137,7 +141,8 @@ function initTabs() {
 }
 
 function populateDates() {
-    const dates = [...new Set(DASHBOARD_DATA.flights_scenarios.map(f => f.scheduled_departure.split(' ')[0]))].sort();
+    const flights = getFlights();
+    const dates = [...new Set(flights.map(f => f.scheduled_departure.split(' ')[0]))].sort();
     const sel = document.getElementById('dateSelect');
     sel.innerHTML = '<option value="">Select Date</option>' + dates.map(d => 
         `<option value="${d}">${new Date(d).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</option>`
@@ -148,11 +153,13 @@ function populateFlights() {
     const date = document.getElementById('dateSelect').value;
     const sel = document.getElementById('flightSelect');
     if (!date) { sel.innerHTML = '<option value="">Select Flight</option>'; return; }
-    const flights = DASHBOARD_DATA.flights_scenarios.filter(f => f.scheduled_departure.startsWith(date))
+    
+    const flights = getFlights().filter(f => f.scheduled_departure.startsWith(date))
         .sort((a,b) => a.scheduled_departure.localeCompare(b.scheduled_departure));
+    
     sel.innerHTML = '<option value="">Select Flight</option>' + flights.map(f => {
         const time = f.scheduled_departure.split(' ')[1].substring(0,5);
-        const icon = f.flight_status === 'Delayed' ? '⚠️' : f.flight_status === 'Cancelled' ? '❌' : '✅';
+        const icon = f.is_cancelled === 'Y' ? '❌' : f.is_disrupted === 'Y' ? '⚠️' : '✅';
         return `<option value="${f.flight_id}">${icon} ${f.flight_number} ${f.origin_code}→${f.destination_code} (${time})</option>`;
     }).join('');
 }
@@ -160,24 +167,26 @@ function populateFlights() {
 function loadFlight() {
     const flightId = document.getElementById('flightSelect').value;
     if (!flightId) { alert('Please select a flight'); return; }
-    currentFlight = DASHBOARD_DATA.flights_scenarios.find(f => f.flight_id === flightId);
+    
+    currentFlight = getFlights().find(f => f.flight_id === flightId);
     if (!currentFlight) return;
     
+    // Gather all related data
     flightData = {
         flight: currentFlight,
-        passengers: (DASHBOARD_DATA.passengers_enriched_final || []).filter(p => p.flight_id === flightId),
+        passengers: getPassengers().filter(p => p.flight_id === flightId),
         bookings: (DASHBOARD_DATA.bookings || []).filter(b => b.flight_id === flightId),
         crew: (DASHBOARD_DATA.crew_roster_enriched || []).filter(c => c.flight_id === flightId || c.flight_number === currentFlight.flight_number),
         cargo: (DASHBOARD_DATA.cargo_shipments || []).filter(c => c.flight_id === flightId || c.flight_number === currentFlight.flight_number),
         maintenance: (DASHBOARD_DATA.aircraft_maintenance_workorders || []).filter(m => m.aircraft_registration === currentFlight.aircraft_registration),
         aircraft: (DASHBOARD_DATA.aircraft_availability_enriched_mel || []).find(a => a.aircraft_registration === currentFlight.aircraft_registration),
         weather: (DASHBOARD_DATA.weather || []).filter(w => w.airport_code === currentFlight.origin_code || w.airport_code === currentFlight.destination_code),
-        disruptions: (DASHBOARD_DATA.disruption_events || []).filter(d => d.flight_id === flightId || d.scenario_id === currentFlight.scenario_id),
-        recovery: (DASHBOARD_DATA.recovery_scenarios || []).filter(r => r.scenario_id === currentFlight.scenario_id),
+        disruptions: (DASHBOARD_DATA.disruption_events || []).filter(d => d.scenario_id == currentFlight.scenario_id),
+        recovery: (DASHBOARD_DATA.recovery_scenarios || []).filter(r => r.scenario_id == currentFlight.scenario_id),
         rebooking: (DASHBOARD_DATA.oal_rebooking_options || []).filter(r => r.flight_id === flightId),
-        costs: (DASHBOARD_DATA.disruption_costs || []).filter(c => c.scenario_id === currentFlight.scenario_id),
+        costs: (DASHBOARD_DATA.disruption_costs || []).filter(c => c.scenario_id == currentFlight.scenario_id),
         swapOptions: (DASHBOARD_DATA.aircraft_swap_options || []).filter(s => s.flight_id === flightId),
-        reserveCrew: (DASHBOARD_DATA.reserve_crew_pool || []).filter(r => r.scenario_id === currentFlight.scenario_id)
+        reserveCrew: (DASHBOARD_DATA.reserve_crew_pool || []).filter(r => r.scenario_id == currentFlight.scenario_id)
     };
     
     renderFlightSummary();
@@ -188,17 +197,21 @@ function loadFlight() {
     renderCargo();
     renderRecovery();
 }
-
+</script>
+</body>
+</html>
+<script>
 function renderFlightSummary() {
     const f = currentFlight;
-    const statusClass = f.flight_status === 'Delayed' ? 'status-delayed' : f.flight_status === 'Cancelled' ? 'status-cancelled' : 'status-ontime';
+    const statusClass = f.is_cancelled === 'Y' ? 'status-cancelled' : f.is_disrupted === 'Y' ? 'status-delayed' : 'status-ontime';
+    const statusText = f.is_cancelled === 'Y' ? 'Cancelled' : f.is_disrupted === 'Y' ? 'Disrupted' : 'On-Time';
     const depTime = f.scheduled_departure.split(' ')[1].substring(0,5);
     const arrTime = f.scheduled_arrival.split(' ')[1].substring(0,5);
     
     document.getElementById('flightSummary').innerHTML = `
         <div class="flight-header">
             <span class="flight-number">${f.flight_number}</span>
-            <span class="status-badge ${statusClass}">${f.flight_status}${f.delay_minutes > 0 ? ' +' + f.delay_minutes + 'm' : ''}</span>
+            <span class="status-badge ${statusClass}">${statusText}${f.delay_minutes > 0 ? ' +' + f.delay_minutes + 'm' : ''}</span>
         </div>
         <div class="route-display">
             <div class="airport"><div class="airport-code">${f.origin_code}</div><div class="airport-time">${depTime}</div></div>
@@ -208,11 +221,13 @@ function renderFlightSummary() {
         <div class="info-row"><span class="info-label">Aircraft</span><span class="info-value">${f.aircraft_registration}</span></div>
         <div class="info-row"><span class="info-label">Type</span><span class="info-value">${f.aircraft_code}</span></div>
         <div class="info-row"><span class="info-label">Gate/Terminal</span><span class="info-value">${f.gate} / T${f.terminal}</span></div>
+        <div class="info-row"><span class="info-label">Is Disrupted</span><span class="info-value ${f.is_disrupted === 'Y' ? 'tag-warning' : ''}">${f.is_disrupted}</span></div>
+        <div class="info-row"><span class="info-label">Is Cancelled</span><span class="info-value ${f.is_cancelled === 'Y' ? 'tag-danger' : ''}">${f.is_cancelled}</span></div>
         <div class="info-row"><span class="info-label">Scenario</span><span class="info-value" style="font-size:11px;">${f.scenario_name}</span></div>
-        ${f.disruption_reason ? `<div class="info-row"><span class="info-label">Disruption</span><span class="info-value" style="font-size:11px;color:#ffb74d;">${f.disruption_reason}</span></div>` : ''}
+        ${f.disruption_reason ? `<div class="info-row"><span class="info-label">Reason</span><span class="info-value" style="font-size:11px;color:#ffb74d;">${f.disruption_reason}</span></div>` : ''}
         ${f.mel_status === 'ACTIVE' ? `<div style="margin-top:10px;padding:8px;background:rgba(255,183,77,0.1);border-radius:6px;font-size:11px;">
-            <div style="color:#ffb74d;font-weight:600;">⚠️ MEL Active</div>
-            <div style="color:#b0bec5;margin-top:4px;">${f.mel_item} - Cat ${f.mel_category} (${f.mel_days_remaining} days left)</div>
+            <div style="color:#ffb74d;font-weight:600;">⚠️ MEL Active: ${f.mel_item}</div>
+            <div style="color:#b0bec5;margin-top:4px;">Cat ${f.mel_category} | ${f.mel_days_remaining} days left</div>
         </div>` : ''}
     `;
 }
@@ -220,67 +235,67 @@ function renderFlightSummary() {
 function renderOverview() {
     const f = currentFlight;
     const paxCount = flightData.passengers.length;
-    const disruptedPax = flightData.passengers.filter(p => p.disruption_status && p.disruption_status !== 'None').length;
+    const disruptedPax = flightData.passengers.filter(p => p.is_disrupted === 'Y').length;
+    const cancelledPax = flightData.passengers.filter(p => p.is_cancelled === 'Y').length;
     const crewCount = flightData.crew.length;
-    const cargoCount = flightData.cargo.length;
     
     document.getElementById('content-overview').innerHTML = `
         <div class="section-title">📊 Flight Overview - ${f.flight_number}</div>
         <div class="kpi-grid">
             <div class="kpi-box"><div class="kpi-value">${paxCount}</div><div class="kpi-label">Passengers</div></div>
-            <div class="kpi-box"><div class="kpi-value" style="color:${disruptedPax > 0 ? '#ffb74d' : '#66bb6a'}">${disruptedPax}</div><div class="kpi-label">Disrupted</div></div>
+            <div class="kpi-box"><div class="kpi-value" style="color:#ffb74d">${disruptedPax}</div><div class="kpi-label">Disrupted</div></div>
+            <div class="kpi-box"><div class="kpi-value" style="color:#ef5350">${cancelledPax}</div><div class="kpi-label">Cancelled</div></div>
             <div class="kpi-box"><div class="kpi-value">${crewCount}</div><div class="kpi-label">Crew</div></div>
-            <div class="kpi-box"><div class="kpi-value">${cargoCount}</div><div class="kpi-label">Cargo Items</div></div>
         </div>
         <div class="card-grid">
+            <div class="card">
+                <div class="card-header"><span class="card-title">✈️ Flight Status</span></div>
+                <div class="card-row"><span class="card-label">Is Disrupted</span><span class="tag ${f.is_disrupted === 'Y' ? 'tag-warning' : 'tag-success'}">${f.is_disrupted}</span></div>
+                <div class="card-row"><span class="card-label">Is Cancelled</span><span class="tag ${f.is_cancelled === 'Y' ? 'tag-danger' : 'tag-success'}">${f.is_cancelled}</span></div>
+                <div class="card-row"><span class="card-label">Delay</span><span>${f.delay_minutes || 0} min</span></div>
+            </div>
             ${flightData.weather.length > 0 ? `<div class="card">
                 <div class="card-header"><span class="card-title">🌤️ Weather</span></div>
                 ${flightData.weather.map(w => `<div class="card-row"><span class="card-label">${w.airport_code}</span><span>${w.condition || w.weather_condition || 'N/A'}</span></div>`).join('')}
             </div>` : ''}
             ${flightData.disruptions.length > 0 ? `<div class="card">
-                <div class="card-header"><span class="card-title">⚠️ Disruptions</span></div>
-                ${flightData.disruptions.slice(0,3).map(d => `<div class="card-row"><span class="card-label">${d.disruption_type || 'Event'}</span><span style="font-size:11px;">${d.description || d.disruption_reason || 'N/A'}</span></div>`).join('')}
-            </div>` : ''}
-            ${flightData.swapOptions.length > 0 ? `<div class="card">
-                <div class="card-header"><span class="card-title">🔄 Swap Options</span></div>
-                ${flightData.swapOptions.slice(0,3).map(s => `<div class="card-row"><span class="card-label">${s.swap_aircraft || s.replacement_aircraft || 'N/A'}</span><span class="tag tag-info">${s.swap_status || 'Available'}</span></div>`).join('')}
+                <div class="card-header"><span class="card-title">⚠️ Disruption Events</span></div>
+                ${flightData.disruptions.slice(0,3).map(d => `<div class="card-row"><span class="card-label">${d.disruption_type || 'Event'}</span><span style="font-size:10px;">${d.description || d.disruption_reason || 'N/A'}</span></div>`).join('')}
             </div>` : ''}
         </div>
     `;
 }
-</script>
-<script>
+
 function renderPassengers() {
     const passengers = flightData.passengers;
-    const disruptedCount = passengers.filter(p => p.disruption_status && p.disruption_status !== 'None').length;
-    const rebookedCount = passengers.filter(p => p.rebooking_status === 'Rebooked' || p.rebooking_status === 'Confirmed').length;
+    const disruptedCount = passengers.filter(p => p.is_disrupted === 'Y').length;
+    const cancelledCount = passengers.filter(p => p.is_cancelled === 'Y').length;
+    const rebookedCount = passengers.filter(p => p.rebook_status === 'CONFIRMED' || p.rebook_status === 'Rebooked').length;
     
     document.getElementById('content-passengers').innerHTML = `
         <div class="section-title">👥 Passengers (${passengers.length})</div>
         <div class="kpi-grid">
             <div class="kpi-box"><div class="kpi-value">${passengers.length}</div><div class="kpi-label">Total</div></div>
-            <div class="kpi-box"><div class="kpi-value" style="color:#ef5350">${disruptedCount}</div><div class="kpi-label">Disrupted</div></div>
+            <div class="kpi-box"><div class="kpi-value" style="color:#ffb74d">${disruptedCount}</div><div class="kpi-label">Disrupted</div></div>
+            <div class="kpi-box"><div class="kpi-value" style="color:#ef5350">${cancelledCount}</div><div class="kpi-label">Cancelled</div></div>
             <div class="kpi-box"><div class="kpi-value" style="color:#66bb6a">${rebookedCount}</div><div class="kpi-label">Rebooked</div></div>
-            <div class="kpi-box"><div class="kpi-value">${passengers.filter(p => p.connecting_flight).length}</div><div class="kpi-label">Connecting</div></div>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:15px;">
             <div>
                 <h4 style="color:#81d4fa;margin-bottom:10px;font-size:13px;">Passenger List</h4>
                 <div class="pax-list" id="paxList">
-                    ${passengers.length === 0 ? '<div class="empty-state">No passengers</div>' : 
-                    passengers.map(p => {
-                        const isDisrupted = p.disruption_status && p.disruption_status !== 'None';
-                        const isRebooked = p.rebooking_status === 'Rebooked' || p.rebooking_status === 'Confirmed';
-                        const statusClass = isRebooked ? 'tag-success' : isDisrupted ? 'tag-danger' : 'tag-info';
-                        const statusText = isRebooked ? 'Rebooked' : isDisrupted ? 'Disrupted' : 'OK';
+                    ${passengers.length === 0 ? '<div class="empty-state">No passengers on this flight</div>' : 
+                    passengers.slice(0, 50).map(p => {
+                        const statusClass = p.is_cancelled === 'Y' ? 'tag-danger' : p.is_disrupted === 'Y' ? 'tag-warning' : 'tag-success';
+                        const statusText = p.is_cancelled === 'Y' ? 'Cancelled' : p.is_disrupted === 'Y' ? 'Disrupted' : 'OK';
                         return `<div class="pax-item" onclick="showPaxDetail('${p.passenger_id}')">
                             <div class="pax-name">${p.first_name} ${p.last_name} <span class="tag ${statusClass}">${statusText}</span></div>
-                            <div class="pax-details">${p.booking_reference || p.booking_id || 'N/A'} | Seat: ${p.seat_number || 'TBA'} | ${p.cabin_class || 'Economy'}</div>
-                            ${p.frequent_flyer_tier ? `<span class="tag tag-warning">${p.frequent_flyer_tier}</span>` : ''}
-                            ${p.wheelchair_required === 'Y' ? '<span class="tag tag-info">WCHR</span>' : ''}
-                            ${p.connecting_flight ? '<span class="tag tag-warning">CNX</span>' : ''}
+                            <div class="pax-details">${p.pnr || p.booking_id || 'N/A'} | ${p.original_cabin_class || 'Economy'}</div>
+                            ${p.frequent_flyer_tier_id ? `<span class="tag tag-warning">FFP</span>` : ''}
+                            ${p.is_vip == 1 ? '<span class="tag tag-info">VIP</span>' : ''}
                         </div>`;
                     }).join('')}
+                    ${passengers.length > 50 ? `<div style="padding:10px;color:#81d4fa;text-align:center;">... and ${passengers.length - 50} more passengers</div>` : ''}
                 </div>
             </div>
             <div>
@@ -294,69 +309,66 @@ function renderPassengers() {
 function showPaxDetail(passengerId) {
     const p = flightData.passengers.find(px => px.passenger_id === passengerId);
     if (!p) return;
-    selectedPassenger = p;
     
     document.querySelectorAll('.pax-item').forEach(el => el.classList.remove('selected'));
-    event.currentTarget.classList.add('selected');
+    if (event && event.currentTarget) event.currentTarget.classList.add('selected');
     
-    const rebooking = flightData.rebooking.find(r => r.passenger_id === p.passenger_id);
-    const timeline = buildTimeline(p, rebooking);
+    const timeline = buildTimeline(p);
     
-    const panel = document.getElementById('paxDetail');
-    panel.innerHTML = `
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;">
-            <div style="font-size:16px;font-weight:600;color:#4fc3f7;">👤 ${p.first_name} ${p.last_name}</div>
-        </div>
+    document.getElementById('paxDetail').innerHTML = `
+        <div style="font-size:16px;font-weight:600;color:#4fc3f7;margin-bottom:15px;">👤 ${p.first_name} ${p.last_name}</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;">
             <div class="card-row"><span class="card-label">Passenger ID</span><span>${p.passenger_id}</span></div>
-            <div class="card-row"><span class="card-label">Booking</span><span>${p.booking_reference || p.booking_id}</span></div>
-            <div class="card-row"><span class="card-label">Seat</span><span>${p.seat_number || 'TBA'}</span></div>
-            <div class="card-row"><span class="card-label">Class</span><span>${p.cabin_class || 'Economy'}</span></div>
+            <div class="card-row"><span class="card-label">PNR</span><span>${p.pnr || 'N/A'}</span></div>
+            <div class="card-row"><span class="card-label">Is Disrupted</span><span class="tag ${p.is_disrupted === 'Y' ? 'tag-warning' : 'tag-success'}">${p.is_disrupted}</span></div>
+            <div class="card-row"><span class="card-label">Is Cancelled</span><span class="tag ${p.is_cancelled === 'Y' ? 'tag-danger' : 'tag-success'}">${p.is_cancelled}</span></div>
+            <div class="card-row"><span class="card-label">Class</span><span>${p.original_cabin_class || 'Economy'}</span></div>
+            <div class="card-row"><span class="card-label">Nationality</span><span>${p.nationality || 'N/A'}</span></div>
             <div class="card-row"><span class="card-label">Email</span><span style="font-size:10px;">${p.email || 'N/A'}</span></div>
             <div class="card-row"><span class="card-label">Phone</span><span>${p.phone || 'N/A'}</span></div>
-            <div class="card-row"><span class="card-label">FFP Tier</span><span>${p.frequent_flyer_tier || 'None'}</span></div>
-            <div class="card-row"><span class="card-label">Nationality</span><span>${p.nationality || 'N/A'}</span></div>
         </div>
-        ${p.connecting_flight ? `<div style="margin-top:10px;padding:8px;background:rgba(79,195,247,0.1);border-radius:6px;font-size:11px;">
-            <div style="color:#4fc3f7;font-weight:600;">✈️ Connecting Flight</div>
-            <div style="color:#b0bec5;margin-top:4px;">${p.connecting_flight} to ${p.final_destination || 'N/A'}</div>
+        ${p.disruption_reason ? `<div style="margin-top:10px;padding:8px;background:rgba(255,183,77,0.1);border-radius:6px;font-size:11px;">
+            <div style="color:#ffb74d;font-weight:600;">⚠️ Disruption Reason</div>
+            <div style="color:#b0bec5;margin-top:4px;">${p.disruption_reason}</div>
         </div>` : ''}
         <div class="timeline" style="margin-top:15px;">
             <h4 style="color:#4fc3f7;margin-bottom:10px;font-size:13px;">Recovery Timeline</h4>
             ${timeline}
         </div>
     `;
-    panel.classList.add('active');
 }
 
-function buildTimeline(p, rebooking) {
+function buildTimeline(p) {
     const events = [];
     const f = currentFlight;
     
     events.push({ time: 'Booked', action: 'Original Booking', detail: `${f.flight_number}: ${f.origin_code}→${f.destination_code}` });
     
-    if (f.delay_minutes > 0 || f.flight_status === 'Cancelled' || f.flight_status === 'Delayed') {
-        events.push({ time: 'Disrupted', action: f.flight_status === 'Cancelled' ? 'Flight Cancelled' : `Delayed ${f.delay_minutes}min`, detail: f.disruption_reason || 'Operational issue' });
+    if (p.is_disrupted === 'Y') {
+        events.push({ time: 'Disrupted', action: 'Flight Disrupted', detail: p.disruption_reason || f.disruption_reason || 'Operational issue' });
     }
     
-    if (p.notification_sent === 'Y' || p.sms_sent === 'Y') {
-        events.push({ time: 'Notified', action: 'Passenger Notified', detail: `Via ${p.notification_channel || 'SMS/Email'}` });
+    if (p.is_cancelled === 'Y') {
+        events.push({ time: 'Cancelled', action: 'Flight Cancelled', detail: 'Flight has been cancelled' });
     }
     
-    if (p.rebooking_status && p.rebooking_status !== 'None') {
-        const newFlight = rebooking ? (rebooking.new_flight_number || rebooking.alternative_flight) : p.new_flight_number;
-        events.push({ time: 'Rebooking', action: p.rebooking_status, detail: newFlight ? `New flight: ${newFlight}` : 'Processing options' });
+    if (p.rebook_status && p.rebook_status !== '') {
+        events.push({ time: 'Rebooking', action: p.rebook_status, detail: p.rebook_flight_number ? `New flight: ${p.rebook_flight_number}` : 'Processing' });
     }
     
-    if (p.compensation_offered === 'Y' || p.compensation_amount > 0) {
-        events.push({ time: 'Compensation', action: 'Compensation Offered', detail: p.compensation_amount ? `$${p.compensation_amount}` : 'Voucher issued' });
+    if (p.compensation_offered === 'Y' || p.compensation_amount_usd > 0) {
+        events.push({ time: 'Compensation', action: 'Compensation Offered', detail: p.compensation_amount_usd ? `$${p.compensation_amount_usd}` : 'Voucher' });
     }
     
-    if (p.hotel_booked === 'Y' || p.accommodation_provided === 'Y') {
-        events.push({ time: 'Hotel', action: 'Accommodation Arranged', detail: p.hotel_name || 'Airport hotel' });
+    if (p.hotel_provided === 'Y') {
+        events.push({ time: 'Hotel', action: 'Hotel Provided', detail: 'Accommodation arranged' });
     }
     
-    const status = p.rebooking_status === 'Rebooked' ? 'Successfully rebooked' : (f.delay_minutes > 0 ? 'Awaiting departure' : 'Ready');
+    if (p.meal_voucher_provided === 'Y') {
+        events.push({ time: 'Meals', action: 'Meal Voucher', detail: 'Meal voucher provided' });
+    }
+    
+    const status = p.rebook_status === 'CONFIRMED' ? 'Successfully rebooked' : (p.is_disrupted === 'Y' ? 'Awaiting resolution' : 'Ready');
     events.push({ time: 'Current', action: 'Status', detail: status });
     
     return events.map(e => `
@@ -378,46 +390,28 @@ function renderCrew() {
     document.getElementById('content-crew').innerHTML = `
         <div class="section-title">👨‍✈️ Crew Management</div>
         <div class="kpi-grid">
-            <div class="kpi-box"><div class="kpi-value">${crew.length}</div><div class="kpi-label">Assigned Crew</div></div>
-            <div class="kpi-box"><div class="kpi-value">${crew.filter(c => c.role === 'Captain' || c.role === 'First Officer' || c.position === 'Captain').length}</div><div class="kpi-label">Flight Crew</div></div>
-            <div class="kpi-box"><div class="kpi-value">${crew.filter(c => c.role === 'Cabin Crew' || c.position === 'Cabin Crew').length}</div><div class="kpi-label">Cabin Crew</div></div>
-            <div class="kpi-box"><div class="kpi-value">${reserveCrew.length}</div><div class="kpi-label">Reserve Available</div></div>
+            <div class="kpi-box"><div class="kpi-value">${crew.length}</div><div class="kpi-label">Assigned</div></div>
+            <div class="kpi-box"><div class="kpi-value">${crew.filter(c => c.role === 'Captain' || c.position === 'Captain').length}</div><div class="kpi-label">Captains</div></div>
+            <div class="kpi-box"><div class="kpi-value">${crew.filter(c => c.role === 'Cabin Crew' || c.position === 'Cabin Crew').length}</div><div class="kpi-label">Cabin</div></div>
+            <div class="kpi-box"><div class="kpi-value">${reserveCrew.length}</div><div class="kpi-label">Reserve</div></div>
         </div>
         <div class="card-grid">
-            ${crew.length === 0 ? '<div class="empty-state">No crew data</div>' : crew.map(c => `
+            ${crew.length === 0 ? '<div class="empty-state">No crew assigned</div>' : crew.map(c => `
                 <div class="card">
                     <div class="card-header">
-                        <span class="card-title">${c.crew_name || c.first_name + ' ' + c.last_name || 'Crew Member'}</span>
+                        <span class="card-title">${c.crew_name || (c.first_name + ' ' + c.last_name) || 'Crew'}</span>
                         <span class="tag tag-info">${c.role || c.position || 'N/A'}</span>
                     </div>
-                    <div class="card-row"><span class="card-label">Crew ID</span><span>${c.crew_id}</span></div>
-                    <div class="card-row"><span class="card-label">Duty Status</span><span>${c.duty_status || c.status || 'On Duty'}</span></div>
-                    ${c.flight_hours_remaining ? `<div class="card-row"><span class="card-label">Hours Remaining</span><span>${c.flight_hours_remaining}h</span></div>` : ''}
-                    ${c.rest_required === 'Y' ? '<div class="card-row"><span class="card-label">Alert</span><span class="tag tag-warning">Rest Required</span></div>' : ''}
+                    <div class="card-row"><span class="card-label">ID</span><span>${c.crew_id}</span></div>
+                    <div class="card-row"><span class="card-label">Status</span><span>${c.duty_status || c.status || 'On Duty'}</span></div>
                 </div>
             `).join('')}
         </div>
-        ${reserveCrew.length > 0 ? `
-            <h4 style="color:#81d4fa;margin:20px 0 10px;font-size:13px;">Reserve Crew Pool</h4>
-            <div class="card-grid">
-                ${reserveCrew.slice(0,6).map(r => `
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">${r.crew_name || r.first_name + ' ' + r.last_name || 'Reserve'}</span>
-                            <span class="tag tag-success">Available</span>
-                        </div>
-                        <div class="card-row"><span class="card-label">Position</span><span>${r.position || r.role || 'N/A'}</span></div>
-                        <div class="card-row"><span class="card-label">Base</span><span>${r.base_airport || r.home_base || 'N/A'}</span></div>
-                    </div>
-                `).join('')}
-            </div>
-        ` : ''}
     `;
 }
 
 function renderMaintenance() {
     const maintenance = flightData.maintenance;
-    const aircraft = flightData.aircraft;
     const f = currentFlight;
     
     document.getElementById('content-maintenance').innerHTML = `
@@ -429,28 +423,24 @@ function renderMaintenance() {
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
                 <div class="card-row"><span class="card-label">Capacity</span><span>${f.aircraft_capacity} pax</span></div>
-                <div class="card-row"><span class="card-label">Cargo Capacity</span><span>${f.aircraft_cargo_capacity} kg</span></div>
-                <div class="card-row"><span class="card-label">Cabin Crew Req</span><span>${f.cabin_crew_required}</span></div>
-                ${aircraft ? `<div class="card-row"><span class="card-label">Status</span><span>${aircraft.availability_status || 'Available'}</span></div>` : ''}
+                <div class="card-row"><span class="card-label">Cargo</span><span>${f.aircraft_cargo_capacity} kg</span></div>
             </div>
             ${f.mel_status === 'ACTIVE' ? `
                 <div style="margin-top:10px;padding:10px;background:rgba(255,183,77,0.1);border-radius:6px;">
-                    <div style="color:#ffb74d;font-weight:600;font-size:12px;">⚠️ MEL Item: ${f.mel_item}</div>
-                    <div style="font-size:11px;color:#b0bec5;margin-top:5px;">Category ${f.mel_category} | ${f.mel_days_remaining} days remaining | ${f.mel_restrictions || 'No restrictions'}</div>
+                    <div style="color:#ffb74d;font-weight:600;font-size:12px;">⚠️ MEL: ${f.mel_item}</div>
+                    <div style="font-size:11px;color:#b0bec5;margin-top:5px;">Cat ${f.mel_category} | ${f.mel_days_remaining} days | ${f.mel_restrictions || 'No restrictions'}</div>
                 </div>
             ` : ''}
         </div>
         <h4 style="color:#81d4fa;margin-bottom:10px;font-size:13px;">Work Orders</h4>
         <div class="card-grid">
-            ${maintenance.length === 0 ? '<div class="empty-state">No active work orders</div>' : maintenance.map(m => `
+            ${maintenance.length === 0 ? '<div class="empty-state">No work orders</div>' : maintenance.map(m => `
                 <div class="card">
                     <div class="card-header">
-                        <span class="card-title">${m.work_order_id || m.workorder_id || 'WO'}</span>
-                        <span class="tag ${m.status === 'Completed' ? 'tag-success' : m.status === 'In Progress' ? 'tag-warning' : 'tag-info'}">${m.status || 'Pending'}</span>
+                        <span class="card-title">${m.work_order_id || 'WO'}</span>
+                        <span class="tag ${m.status === 'Completed' ? 'tag-success' : 'tag-warning'}">${m.status || 'Pending'}</span>
                     </div>
-                    <div class="card-row"><span class="card-label">Type</span><span>${m.maintenance_type || m.work_type || 'N/A'}</span></div>
-                    <div class="card-row"><span class="card-label">Description</span><span style="font-size:10px;">${m.description || 'N/A'}</span></div>
-                    ${m.estimated_completion ? `<div class="card-row"><span class="card-label">ETC</span><span>${m.estimated_completion}</span></div>` : ''}
+                    <div class="card-row"><span class="card-label">Type</span><span>${m.maintenance_type || 'N/A'}</span></div>
                 </div>
             `).join('')}
         </div>
@@ -465,21 +455,19 @@ function renderCargo() {
         <div class="section-title">📦 Cargo Shipments</div>
         <div class="kpi-grid">
             <div class="kpi-box"><div class="kpi-value">${cargo.length}</div><div class="kpi-label">Shipments</div></div>
-            <div class="kpi-box"><div class="kpi-value">${Math.round(totalWeight)}</div><div class="kpi-label">Total Weight (kg)</div></div>
-            <div class="kpi-box"><div class="kpi-value">${cargo.filter(c => c.priority === 'High' || c.priority === 'Critical').length}</div><div class="kpi-label">Priority</div></div>
-            <div class="kpi-box"><div class="kpi-value">${cargo.filter(c => c.special_handling).length}</div><div class="kpi-label">Special Handling</div></div>
+            <div class="kpi-box"><div class="kpi-value">${Math.round(totalWeight)}</div><div class="kpi-label">Weight (kg)</div></div>
+            <div class="kpi-box"><div class="kpi-value">${cargo.filter(c => c.priority === 'High').length}</div><div class="kpi-label">Priority</div></div>
+            <div class="kpi-box"><div class="kpi-value">${cargo.filter(c => c.special_handling).length}</div><div class="kpi-label">Special</div></div>
         </div>
         <div class="card-grid">
-            ${cargo.length === 0 ? '<div class="empty-state">No cargo shipments</div>' : cargo.map(c => `
+            ${cargo.length === 0 ? '<div class="empty-state">No cargo</div>' : cargo.slice(0,12).map(c => `
                 <div class="card">
                     <div class="card-header">
-                        <span class="card-title">${c.shipment_id || c.cargo_id || 'Shipment'}</span>
-                        <span class="tag ${c.priority === 'High' || c.priority === 'Critical' ? 'tag-danger' : 'tag-info'}">${c.priority || 'Normal'}</span>
+                        <span class="card-title">${c.shipment_id || c.cargo_id || 'Cargo'}</span>
+                        <span class="tag ${c.priority === 'High' ? 'tag-danger' : 'tag-info'}">${c.priority || 'Normal'}</span>
                     </div>
-                    <div class="card-row"><span class="card-label">Type</span><span>${c.cargo_type || c.shipment_type || 'General'}</span></div>
+                    <div class="card-row"><span class="card-label">Type</span><span>${c.cargo_type || 'General'}</span></div>
                     <div class="card-row"><span class="card-label">Weight</span><span>${c.weight || 0} kg</span></div>
-                    <div class="card-row"><span class="card-label">Status</span><span>${c.status || 'Loaded'}</span></div>
-                    ${c.special_handling ? `<div class="card-row"><span class="card-label">Special</span><span class="tag tag-warning">${c.special_handling}</span></div>` : ''}
                 </div>
             `).join('')}
         </div>
@@ -489,43 +477,28 @@ function renderCargo() {
 function renderRecovery() {
     const recovery = flightData.recovery;
     const costs = flightData.costs;
-    const totalCost = costs.reduce((sum, c) => sum + (parseFloat(c.total_cost) || parseFloat(c.cost_amount) || 0), 0);
+    const totalCost = costs.reduce((sum, c) => sum + (parseFloat(c.total_cost) || 0), 0);
     
     document.getElementById('content-recovery').innerHTML = `
         <div class="section-title">🔄 Recovery Planning</div>
         <div class="kpi-grid">
-            <div class="kpi-box"><div class="kpi-value">${recovery.length}</div><div class="kpi-label">Recovery Options</div></div>
-            <div class="kpi-box"><div class="kpi-value">${flightData.rebooking.length}</div><div class="kpi-label">Rebooking Options</div></div>
-            <div class="kpi-box"><div class="kpi-value">${flightData.swapOptions.length}</div><div class="kpi-label">Aircraft Swaps</div></div>
+            <div class="kpi-box"><div class="kpi-value">${recovery.length}</div><div class="kpi-label">Options</div></div>
+            <div class="kpi-box"><div class="kpi-value">${flightData.rebooking.length}</div><div class="kpi-label">Rebookings</div></div>
+            <div class="kpi-box"><div class="kpi-value">${flightData.swapOptions.length}</div><div class="kpi-label">Swaps</div></div>
             <div class="kpi-box"><div class="kpi-value">$${Math.round(totalCost).toLocaleString()}</div><div class="kpi-label">Est. Cost</div></div>
         </div>
-        <h4 style="color:#81d4fa;margin-bottom:10px;font-size:13px;">Recovery Scenarios</h4>
         <div class="card-grid">
             ${recovery.length === 0 ? '<div class="empty-state">No recovery scenarios</div>' : recovery.slice(0,6).map(r => `
                 <div class="card">
                     <div class="card-header">
-                        <span class="card-title">${r.recovery_id || r.scenario_id || 'Recovery'}</span>
-                        <span class="tag ${r.status === 'Implemented' ? 'tag-success' : 'tag-info'}">${r.status || 'Proposed'}</span>
+                        <span class="card-title">${r.recovery_id || 'Recovery'}</span>
+                        <span class="tag tag-info">${r.status || 'Proposed'}</span>
                     </div>
-                    <div class="card-row"><span class="card-label">Type</span><span>${r.recovery_type || r.action_type || 'N/A'}</span></div>
-                    <div class="card-row"><span class="card-label">Description</span><span style="font-size:10px;">${r.description || r.recovery_action || 'N/A'}</span></div>
-                    ${r.estimated_cost ? `<div class="card-row"><span class="card-label">Cost</span><span>$${r.estimated_cost}</span></div>` : ''}
+                    <div class="card-row"><span class="card-label">Type</span><span>${r.recovery_type || 'N/A'}</span></div>
+                    <div class="card-row"><span class="card-label">Action</span><span style="font-size:10px;">${r.recovery_action || r.description || 'N/A'}</span></div>
                 </div>
             `).join('')}
         </div>
-        ${costs.length > 0 ? `
-            <h4 style="color:#81d4fa;margin:20px 0 10px;font-size:13px;">Cost Breakdown</h4>
-            <div class="card-grid">
-                ${costs.slice(0,4).map(c => `
-                    <div class="card">
-                        <div class="card-header">
-                            <span class="card-title">${c.cost_category || c.cost_type || 'Cost'}</span>
-                        </div>
-                        <div class="card-row"><span class="card-label">Amount</span><span>$${(c.total_cost || c.cost_amount || 0).toLocaleString()}</span></div>
-                    </div>
-                `).join('')}
-            </div>
-        ` : ''}
     `;
 }
 </script>
