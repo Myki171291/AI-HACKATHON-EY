@@ -290,7 +290,7 @@ function renderOverview() {
     
     // Calculate financial totals
     const totalRevenue = flightData.financial.reduce((sum, t) => sum + (parseFloat(t.amount) || 0), 0);
-    const totalCosts = flightData.costs.reduce((sum, c) => sum + (parseFloat(c.total_cost) || 0), 0);
+    const totalCosts = flightData.costs.reduce((sum, c) => sum + (parseFloat(c.total_cost_usd) || 0), 0);
     
     document.getElementById('content-overview').innerHTML = `
         <div class="section-title">📊 Flight Overview - ${f.flight_number}</div>
@@ -574,7 +574,7 @@ function renderFinancial() {
     const totalRevenue = financial.filter(t => t.transaction_type === 'Revenue' || parseFloat(t.amount) > 0).reduce((sum, t) => sum + Math.abs(parseFloat(t.amount) || 0), 0);
     const totalRefunds = financial.filter(t => t.transaction_type === 'Refund').reduce((sum, t) => sum + Math.abs(parseFloat(t.amount) || 0), 0);
     const totalCompensation = financial.filter(t => t.transaction_type === 'Compensation').reduce((sum, t) => sum + Math.abs(parseFloat(t.amount) || 0), 0);
-    const totalDisruptionCost = costs.reduce((sum, c) => sum + (parseFloat(c.total_cost) || 0), 0);
+    const totalDisruptionCost = costs.reduce((sum, c) => sum + (parseFloat(c.total_cost_usd) || 0), 0);
     
     document.getElementById('content-financial').innerHTML = `
         <div class="section-title">💰 Financial & Revenue Analysis</div>
@@ -628,7 +628,7 @@ function renderFinancial() {
 function renderRecovery() {
     const recovery = flightData.recovery;
     const costs = flightData.costs;
-    const totalCost = costs.reduce((sum, c) => sum + (parseFloat(c.total_cost) || 0), 0);
+    const totalCost = costs.reduce((sum, c) => sum + (parseFloat(c.total_cost_usd) || 0), 0);
     
     document.getElementById('content-recovery').innerHTML = `
         <div class="section-title">🔄 Recovery Planning</div>
