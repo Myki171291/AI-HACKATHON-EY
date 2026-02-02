@@ -1,0 +1,12 @@
+impact_id,scenario_id,scenario_name,total_flights_affected,total_passengers_affected,total_delay_minutes,average_delay_minutes,compensation_cost_usd,hotel_cost_usd,meal_voucher_cost_usd,crew_overtime_cost_usd,fuel_cost_impact_usd,ground_handling_cost_usd,oal_rebooking_cost_usd,total_cost_usd,revenue_loss_usd,reputation_impact_score
+FIN-1,1,Bangkok Typhoon + Critical MEL Aircraft,10,1000,600,60.0,0,0,5000,39779,83731,6105,50060,122331,464598,2.1
+FIN-2,2,London Fog + Multiple Aircraft AOG,12,1200,2370,197.5,175600,0,17500,31067,74954,26738,59830,405120,447986,1.1
+FIN-3,3,Singapore Thunderstorms + MEL Expiry Cascade,8,800,1095,136.9,0,0,10000,11078,65442,19290,29387,84060,224867,3.8
+FIN-4,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,8,800,2160,270.0,182300,0,20000,5161,81518,11668,40592,253974,194180,4.1
+FIN-5,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,14,1400,2010,143.6,26850,0,17500,19549,28257,6781,43442,319970,210092,3.8
+FIN-6,6,Multiple Aircraft AOG + Engine Failure Cascade,8,800,3045,380.6,176200,90000,15000,44866,42498,18129,29356,365676,137042,4.7
+FIN-7,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,10,1000,2760,276.0,236100,0,25000,14693,57409,14116,61417,458479,449909,4.5
+FIN-8,8,Runway Closure + Airspace Flow Rate Restrictions,14,1400,1065,76.1,0,0,0,15421,71195,15196,40472,93940,475390,4.4
+FIN-9,9,Security Threat + Geopolitical Airspace Diversion,20,2000,3720,186.0,171150,0,50000,13847,10304,16626,64584,401388,338352,4.4
+FIN-10,10,Medical Emergency + Tarmac Delay + Slot Unavailability,3,300,660,220.0,55750,0,5000,28340,62034,22332,33855,293639,437560,2.1
+FIN-11,11,EY401 Typhoon -> EY406 LIAC,10,1000,600,60.0,0,0,5000,26245,97510,26408,11784,208340,250258,3.9

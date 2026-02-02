@@ -1,0 +1,67 @@
+constraint_id,scenario_id,scenario_name,constraint_type,description,min_value,max_value,unit,is_waivable,regulatory_reference,penalty_for_violation
+SAF-1-CREW_REST,1,Bangkok Typhoon + Critical MEL Aircraft,CREW_REST,Crew Rest safety constraint,10.0,12.0,hours,N,GCAA-674,WARNING
+SAF-1-FDP_LIMIT,1,Bangkok Typhoon + Critical MEL Aircraft,FDP_LIMIT,Fdp Limit safety constraint,11.0,16.0,hours,N,GCAA-458,GROUNDING
+SAF-1-DUTY_LIMIT,1,Bangkok Typhoon + Critical MEL Aircraft,DUTY_LIMIT,Duty Limit safety constraint,10.0,16.0,hours,Y,GCAA-885,FINE
+SAF-1-ETOPS,1,Bangkok Typhoon + Critical MEL Aircraft,ETOPS,Etops safety constraint,,,,Y,GCAA-927,GROUNDING
+SAF-1-MEL,1,Bangkok Typhoon + Critical MEL Aircraft,MEL,Mel safety constraint,,,,Y,GCAA-113,FINE
+SAF-1-WEIGHT_BALANCE,1,Bangkok Typhoon + Critical MEL Aircraft,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-148,WARNING
+SAF-2-CREW_REST,2,London Fog + Multiple Aircraft AOG,CREW_REST,Crew Rest safety constraint,12.0,16.0,hours,N,GCAA-818,GROUNDING
+SAF-2-FDP_LIMIT,2,London Fog + Multiple Aircraft AOG,FDP_LIMIT,Fdp Limit safety constraint,9.0,14.0,hours,N,GCAA-629,FINE
+SAF-2-DUTY_LIMIT,2,London Fog + Multiple Aircraft AOG,DUTY_LIMIT,Duty Limit safety constraint,12.0,16.0,hours,Y,GCAA-376,FINE
+SAF-2-ETOPS,2,London Fog + Multiple Aircraft AOG,ETOPS,Etops safety constraint,,,,Y,GCAA-225,WARNING
+SAF-2-MEL,2,London Fog + Multiple Aircraft AOG,MEL,Mel safety constraint,,,,Y,GCAA-584,GROUNDING
+SAF-2-WEIGHT_BALANCE,2,London Fog + Multiple Aircraft AOG,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-157,WARNING
+SAF-3-CREW_REST,3,Singapore Thunderstorms + MEL Expiry Cascade,CREW_REST,Crew Rest safety constraint,9.0,12.0,hours,N,GCAA-688,WARNING
+SAF-3-FDP_LIMIT,3,Singapore Thunderstorms + MEL Expiry Cascade,FDP_LIMIT,Fdp Limit safety constraint,9.0,15.0,hours,N,GCAA-787,WARNING
+SAF-3-DUTY_LIMIT,3,Singapore Thunderstorms + MEL Expiry Cascade,DUTY_LIMIT,Duty Limit safety constraint,10.0,13.0,hours,Y,GCAA-508,WARNING
+SAF-3-ETOPS,3,Singapore Thunderstorms + MEL Expiry Cascade,ETOPS,Etops safety constraint,,,,Y,GCAA-181,WARNING
+SAF-3-MEL,3,Singapore Thunderstorms + MEL Expiry Cascade,MEL,Mel safety constraint,,,,Y,GCAA-907,WARNING
+SAF-3-WEIGHT_BALANCE,3,Singapore Thunderstorms + MEL Expiry Cascade,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-387,WARNING
+SAF-4-CREW_REST,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,CREW_REST,Crew Rest safety constraint,10.0,16.0,hours,N,GCAA-904,WARNING
+SAF-4-FDP_LIMIT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,FDP_LIMIT,Fdp Limit safety constraint,12.0,12.0,hours,N,GCAA-325,WARNING
+SAF-4-DUTY_LIMIT,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,DUTY_LIMIT,Duty Limit safety constraint,10.0,14.0,hours,Y,GCAA-832,FINE
+SAF-4-ETOPS,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,ETOPS,Etops safety constraint,,,,Y,GCAA-117,FINE
+SAF-4-MEL,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,MEL,Mel safety constraint,,,,Y,GCAA-459,GROUNDING
+SAF-4-WEIGHT_BALANCE,4,Paris Winter Storm + Temperature-Controlled Cargo Crisis,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-322,FINE
+SAF-5-CREW_REST,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,CREW_REST,Crew Rest safety constraint,8.0,14.0,hours,N,GCAA-161,WARNING
+SAF-5-FDP_LIMIT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,FDP_LIMIT,Fdp Limit safety constraint,12.0,14.0,hours,N,GCAA-514,WARNING
+SAF-5-DUTY_LIMIT,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,DUTY_LIMIT,Duty Limit safety constraint,8.0,15.0,hours,Y,GCAA-290,GROUNDING
+SAF-5-ETOPS,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,ETOPS,Etops safety constraint,,,,Y,GCAA-175,WARNING
+SAF-5-MEL,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,MEL,Mel safety constraint,,,,Y,GCAA-227,GROUNDING
+SAF-5-WEIGHT_BALANCE,5,Dubai Sandstorm + Hub Congestion + Multiple MEL Aircraft,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-167,FINE
+SAF-6-CREW_REST,6,Multiple Aircraft AOG + Engine Failure Cascade,CREW_REST,Crew Rest safety constraint,11.0,13.0,hours,N,GCAA-744,GROUNDING
+SAF-6-FDP_LIMIT,6,Multiple Aircraft AOG + Engine Failure Cascade,FDP_LIMIT,Fdp Limit safety constraint,11.0,13.0,hours,N,GCAA-530,GROUNDING
+SAF-6-DUTY_LIMIT,6,Multiple Aircraft AOG + Engine Failure Cascade,DUTY_LIMIT,Duty Limit safety constraint,9.0,12.0,hours,Y,GCAA-736,FINE
+SAF-6-ETOPS,6,Multiple Aircraft AOG + Engine Failure Cascade,ETOPS,Etops safety constraint,,,,Y,GCAA-916,WARNING
+SAF-6-MEL,6,Multiple Aircraft AOG + Engine Failure Cascade,MEL,Mel safety constraint,,,,Y,GCAA-138,WARNING
+SAF-6-WEIGHT_BALANCE,6,Multiple Aircraft AOG + Engine Failure Cascade,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-526,GROUNDING
+SAF-7-CREW_REST,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,CREW_REST,Crew Rest safety constraint,9.0,14.0,hours,N,GCAA-796,GROUNDING
+SAF-7-FDP_LIMIT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,FDP_LIMIT,Fdp Limit safety constraint,10.0,14.0,hours,N,GCAA-458,FINE
+SAF-7-DUTY_LIMIT,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,DUTY_LIMIT,Duty Limit safety constraint,9.0,12.0,hours,Y,GCAA-466,WARNING
+SAF-7-ETOPS,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,ETOPS,Etops safety constraint,,,,Y,GCAA-629,WARNING
+SAF-7-MEL,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,MEL,Mel safety constraint,,,,Y,GCAA-141,WARNING
+SAF-7-WEIGHT_BALANCE,7,Crew Out of Hours + Insufficient Cabin Crew Crisis,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-183,WARNING
+SAF-8-CREW_REST,8,Runway Closure + Airspace Flow Rate Restrictions,CREW_REST,Crew Rest safety constraint,9.0,16.0,hours,N,GCAA-263,WARNING
+SAF-8-FDP_LIMIT,8,Runway Closure + Airspace Flow Rate Restrictions,FDP_LIMIT,Fdp Limit safety constraint,8.0,15.0,hours,N,GCAA-777,FINE
+SAF-8-DUTY_LIMIT,8,Runway Closure + Airspace Flow Rate Restrictions,DUTY_LIMIT,Duty Limit safety constraint,10.0,16.0,hours,Y,GCAA-361,FINE
+SAF-8-ETOPS,8,Runway Closure + Airspace Flow Rate Restrictions,ETOPS,Etops safety constraint,,,,Y,GCAA-845,FINE
+SAF-8-MEL,8,Runway Closure + Airspace Flow Rate Restrictions,MEL,Mel safety constraint,,,,Y,GCAA-471,GROUNDING
+SAF-8-WEIGHT_BALANCE,8,Runway Closure + Airspace Flow Rate Restrictions,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-275,FINE
+SAF-9-CREW_REST,9,Security Threat + Geopolitical Airspace Diversion,CREW_REST,Crew Rest safety constraint,9.0,14.0,hours,N,GCAA-937,FINE
+SAF-9-FDP_LIMIT,9,Security Threat + Geopolitical Airspace Diversion,FDP_LIMIT,Fdp Limit safety constraint,10.0,13.0,hours,N,GCAA-851,WARNING
+SAF-9-DUTY_LIMIT,9,Security Threat + Geopolitical Airspace Diversion,DUTY_LIMIT,Duty Limit safety constraint,11.0,14.0,hours,Y,GCAA-260,FINE
+SAF-9-ETOPS,9,Security Threat + Geopolitical Airspace Diversion,ETOPS,Etops safety constraint,,,,Y,GCAA-561,GROUNDING
+SAF-9-MEL,9,Security Threat + Geopolitical Airspace Diversion,MEL,Mel safety constraint,,,,Y,GCAA-873,FINE
+SAF-9-WEIGHT_BALANCE,9,Security Threat + Geopolitical Airspace Diversion,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-929,WARNING
+SAF-10-CREW_REST,10,Medical Emergency + Tarmac Delay + Slot Unavailability,CREW_REST,Crew Rest safety constraint,10.0,14.0,hours,N,GCAA-191,FINE
+SAF-10-FDP_LIMIT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,FDP_LIMIT,Fdp Limit safety constraint,9.0,16.0,hours,N,GCAA-129,GROUNDING
+SAF-10-DUTY_LIMIT,10,Medical Emergency + Tarmac Delay + Slot Unavailability,DUTY_LIMIT,Duty Limit safety constraint,10.0,14.0,hours,Y,GCAA-861,GROUNDING
+SAF-10-ETOPS,10,Medical Emergency + Tarmac Delay + Slot Unavailability,ETOPS,Etops safety constraint,,,,Y,GCAA-798,FINE
+SAF-10-MEL,10,Medical Emergency + Tarmac Delay + Slot Unavailability,MEL,Mel safety constraint,,,,Y,GCAA-906,FINE
+SAF-10-WEIGHT_BALANCE,10,Medical Emergency + Tarmac Delay + Slot Unavailability,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-650,WARNING
+SAF-11-CREW_REST,11,EY401 Typhoon -> EY406 LIAC,CREW_REST,Crew Rest safety constraint,11.0,12.0,hours,N,GCAA-189,FINE
+SAF-11-FDP_LIMIT,11,EY401 Typhoon -> EY406 LIAC,FDP_LIMIT,Fdp Limit safety constraint,9.0,16.0,hours,N,GCAA-371,FINE
+SAF-11-DUTY_LIMIT,11,EY401 Typhoon -> EY406 LIAC,DUTY_LIMIT,Duty Limit safety constraint,8.0,15.0,hours,Y,GCAA-735,FINE
+SAF-11-ETOPS,11,EY401 Typhoon -> EY406 LIAC,ETOPS,Etops safety constraint,,,,Y,GCAA-259,GROUNDING
+SAF-11-MEL,11,EY401 Typhoon -> EY406 LIAC,MEL,Mel safety constraint,,,,Y,GCAA-451,FINE
+SAF-11-WEIGHT_BALANCE,11,EY401 Typhoon -> EY406 LIAC,WEIGHT_BALANCE,Weight Balance safety constraint,,,,Y,GCAA-668,WARNING
