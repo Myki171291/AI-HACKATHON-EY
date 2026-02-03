@@ -1,3 +1,0 @@
-scenario_id,scenario_name,primary_flights,secondary_flights,total_impact_flights,recovery_time_hours,financial_impact_usd,financial_impact_aed
-SCENARIO-001,Bangkok Typhoon + Critical MEL Aircraft,EY117;EY5293,EY334;EY424;EY454;EY101;EY313;EY472,10,24,351000,1287135
-SCENARIO-002,London Fog + Multiple Aircraft AOG,EY8184;EY6268;EY25;EY19;EY11,EY334;EY424;EY454;EY101;EY639;EY3102;EY912,12,36,421000,1544070
