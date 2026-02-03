@@ -277,10 +277,44 @@ UNDERSTANDING,YES,2026-01-30 07:00:00,4.2,78
 
 ---
 
-## CATEGORY 7: QUALITY METRICS & KPIs (REMOVED)
+## CATEGORY 7: QUALITY METRICS & KPIs
 
-**Note**: recovery_scenarios.csv has been REMOVED from the enhancement roadmap per user request.
-KPI tracking will be integrated into financial_impact.csv and individual disruption reports instead.
+### Affected Files:
+- **recovery_scenarios.csv** (ENHANCED)
+- **NEW FILE RECOMMENDED**: `kpi_tracking_metrics.csv`
+
+### **RECOMMENDED ADDITIONS to recovery_scenarios.csv:**
+
+| New Column | Data Type | Purpose | Example |
+|------------|-----------|---------|---------|
+| **schedule_reliability_pct** | DECIMAL | On-time performance during recovery | 0.92 (92%) |
+| **nps_score** | INTEGER | Net Promoter Score after disruption | 42 |
+| **customer_satisfaction_pct** | DECIMAL | % satisfied with handling | 0.78 (78%) |
+| **revenue_recovery_pct** | DECIMAL | % of normal revenue recovered | 0.85 (85%) |
+| **operational_recovery_hours** | DECIMAL | Hours to full normal operations | 24.5 |
+| **repeat_incident_risk_pct** | DECIMAL | Risk of similar disruption | 0.08 (8%) |
+| **cost_per_passenger_aed** | DECIMAL | Disruption cost per pax | 445 |
+
+### **NEW FILE: kpi_tracking_metrics.csv**
+
+**Columns**:
+```
+kpi_id, disruption_id, kpi_name, kpi_category, target_value, actual_value,
+performance_status, measurement_date, trend_direction, root_cause_if_missed,
+improvement_action, owner_department
+```
+
+**Sample Data**:
+```
+KPI-EY117-001,DISRUPT-WEATHER-001,Schedule_Reliability,%,95,78,MISS,2026-01-31,DOWN,
+Weather_Beyond_Control,Improve_Forecast_Lead_Time,Operations
+
+KPI-EY117-002,DISRUPT-WEATHER-001,NPS_Score,Points,50,38,MISS,2026-01-31,DOWN,
+Poor_Communication_Response,Enhance_Notification_System,Customer_Service
+
+KPI-EY117-003,DISRUPT-WEATHER-001,Revenue_Recovery,%,90,82,MISS,2026-01-31,DOWN,
+Competitor_Pressure,Loyalty_Incentive_Offer,Revenue_Management
+```
 
 ---
 
@@ -429,12 +463,6 @@ PATTERN-MEDICAL-DIVERSION,MEDICAL_EMERGENCY,ROUTE,2.5,6,PAX_ILLNESS=60%;CREW_ILL
 
 ## SUMMARY TABLE: CSV FILE ENHANCEMENT ROADMAP
 
-**REMOVED FILES** (Per User Request):
-- ❌ disruption_costs.csv
-- ❌ disruption_events.csv
-- ❌ financial_transactions.csv (consolidated into financial_impact.csv)
-- ❌ recovery_scenarios.csv (metrics integrated into reports)
-
 | File | Category | Enhancement Level | New Columns | New File Required |
 |------|----------|-------------------|-------------|-------------------|
 | **aircraft_maintenance_workorders.csv** | 1,2 | HIGH | 15 | NO |
@@ -443,13 +471,14 @@ PATTERN-MEDICAL-DIVERSION,MEDICAL_EMERGENCY,ROUTE,2.5,6,PAX_ILLNESS=60%;CREW_ILL
 | **airport_slots.csv** | 4,6 | MEDIUM | 7 | NO |
 | **minimum_connection_times.csv** | 6 | LOW | 4 | NO |
 | **airport_curfews.csv** | 6 | LOW | 4 | NO |
-| **passengers_enriched_final.csv** | 5 | HIGH | 6 | NO |
-| **bookings.csv** | 5 | HIGH | 4 | NO |
-| **crew_roster_enriched.csv** | 9 | HIGH | 8 + RESERVE_CREW | NO |
-| **reserve_crew_pool.csv** (MERGED INTO crew_roster) | 9 | HIGH | 6 | NO |
+| **passengers_enriched_final.csv** | 5 | MEDIUM | 6 | NO |
+| **bookings.csv** | 5 | MEDIUM | 4 | NO |
+| **crew_roster_enriched.csv** | 9 | HIGH | 6 | NO |
+| **reserve_crew_pool.csv** | 9 | HIGH | 6 | NO |
 | **aircraft_availability_enriched_mel.csv** | 9 | HIGH | 3 | NO |
-| **financial_impact.csv** | 3,8 | HIGH | 12 (consolidated) | NO |
-| **NEW: baggage.csv** (from input1) | NEW | HIGH | Enhanced tracking | YES |
+| **financial_impact.csv** | 3,8 | HIGH | 7 | NO |
+| **recovery_scenarios.csv** | 7,10 | HIGH | 8 | NO |
+| **disruption_events.csv** | 10 | MEDIUM | 6 | NO |
 | **NEW: maintenance_facilities_repair_logistics.csv** | 2 | HIGH | 17 | YES |
 | **NEW: sustainability_impact_metrics.csv** | 3 | MEDIUM | 13 | YES |
 | **NEW: partner_airline_capacity.csv** | 4 | MEDIUM | 10 | YES |

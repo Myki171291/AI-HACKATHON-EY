@@ -7,27 +7,27 @@ Read all CSV files. then remove unecessary datasets not needed and update the cs
 5. synthesize data to ensure a proper simulation for the following test scenario
 
 2. data_creation_scenarios 
-Scenario 1: Bangkok Typhoon + Critical MEL Aircraft
-Primary Flights (Directly Disrupted):
-EY117 (BKK→AUH) - Cannot depart due to typhoon
-EY5293 (AUH→BKK) - LIAC (Late Inbound Aircraft Connection)
-Secondary Flights (Indirectly Affected):
-Connecting flights at AUH fed by EY117 passengers (estimated 6-8 flights)
-European/US banks affected by misconnects
-Total Impact: 2 primary + ~8 secondary = 10 flights
- 
-Scenario 2: London Fog + Multiple Aircraft AOG
-Primary Flights (Directly Disrupted):
-EY8184 (AUH→LHR) - Fog delays arrival
-EY6268 (AUH→LHR) - Fog delays arrival
-EY25 (LHR→AUH) - Cannot depart due to fog
-EY19 (LHR→AUH) - Cannot depart due to fog
-EY11 (LHR→AUH) - Cannot depart due to fog
-Secondary Flights (Indirectly Affected):
-Aircraft rotations for EY25, EY19, EY11 (next sectors)
-Connecting flights at AUH from LHR arrivals
-3 flights at AUH delayed due to AOG aircraft
-Total Impact: 5 primary + ~7 secondary = 12 flights
+    Scenario 1: Bangkok Typhoon + Critical MEL Aircraft
+    Primary Flights (Directly Disrupted):
+    EY117 (BKK→AUH) - Cannot depart due to typhoon
+    EY5293 (AUH→BKK) - LIAC (Late Inbound Aircraft Connection)
+    Secondary Flights (Indirectly Affected):
+    Connecting flights at AUH fed by EY117 passengers (estimated 6-8 flights)
+    European/US banks affected by misconnects
+    Total Impact: 2 primary + ~8 secondary = 10 flights
+    
+    Scenario 2: London Fog + Multiple Aircraft AOG
+    Primary Flights (Directly Disrupted):
+    EY8184 (AUH→LHR) - Fog delays arrival
+    EY6268 (AUH→LHR) - Fog delays arrival
+    EY25 (LHR→AUH) - Cannot depart due to fog
+    EY19 (LHR→AUH) - Cannot depart due to fog
+    EY11 (LHR→AUH) - Cannot depart due to fog
+    Secondary Flights (Indirectly Affected):
+    Aircraft rotations for EY25, EY19, EY11 (next sectors)
+    Connecting flights at AUH from LHR arrivals
+    3 flights at AUH delayed due to AOG aircraft
+    Total Impact: 5 primary + ~7 secondary = 12 flights
  
 
 4. report creation v2
